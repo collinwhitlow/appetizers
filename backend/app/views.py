@@ -35,7 +35,8 @@ def findactor(request):
         return HttpResponse(status=400)
 
     # loading form-encoded data
-    userid = json.loads(request.body)['userid']
+    # FIXME, this is not working for some reason, all the users are null -- could be that im using curl... not sure
+    userid = request.POST.get("userid")
 
     if request.FILES.get("image"):
         content = request.FILES['image']
@@ -79,7 +80,7 @@ def findactor(request):
     cursor.execute('INSERT INTO history (userid, actor, imageurl) VALUES '
                    '(%s, %s, %s);', (userid, actorName, imageurl))
 
-    response = {"actor": actorName, "confidence": confidence, "image": "SOMEHOW RETURN AN IMAGE", 'user': userid}
+    response = {"actor": actorName, "confidence": confidence, "image": "SOMEHOW RETURN AN IMAGE", "userid": userid}
     return JsonResponse(response)
 
 
