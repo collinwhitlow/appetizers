@@ -40,8 +40,9 @@ def getwatchlist(request):
     cursor.execute('SELECT movietitle FROM watchlist WHERE userid=%s ORDER BY movietitle ASC;', (userid,))
     rows = cursor.fetchall()
 
-    response = {}
-    response['watchlist'] = rows
+    response = {'watchlist': []}
+    for row in rows:
+        response['watchlist'].append(row[0])
  
     return JsonResponse(response)
 
