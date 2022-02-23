@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from app import views
 
 urlpatterns = [
+    path('findfaces/', views.findfaces, name='findfaces'),
+    path('findactor/', views.findactor, name='findactor'),
+    path('getactorinfo/', views.getactorinfo, name='getactorinfo'),
+    path('getwatchlist/', views.getwatchlist, name='getwatchlist'),
+    path('postwatchlist/', views.postwatchlist, name='postwatchlist'),
+    path('gethistory/', views.gethistory, name='gethistory'),
+    path('deletehistory/', views.deletehistory, name='deletehistory'),
+    path('deletewatchlist/', views.deletewatchlist, name='deletewatchlist'),
     path('admin/', admin.site.urls),
 ]
