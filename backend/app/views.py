@@ -72,8 +72,8 @@ def findactor(request):
         actorName = api_response["CelebrityFaces"][max_ind]["Name"]
         confidence = max_conf
     else:
-        actorName = api_response["CelebrityFaces"][max_ind]["Name"]
-        confidence = api_response["CelebrityFaces"][max_ind]["MatchConfidence"]
+        actorName = api_response["CelebrityFaces"][0]["Name"]
+        confidence = api_response["CelebrityFaces"][0]["MatchConfidence"]
 
     cursor = connection.cursor()
     cursor.execute('INSERT INTO history (userid, actor, imageurl) VALUES '
