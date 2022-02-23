@@ -49,12 +49,12 @@ def findactor(request):
 
     # submit the photo, get the name back 
     # TODO
-    test1 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}]}
-    #test2 = {"CelebrityFaces": []}
+    # test1 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}]}
+    test2 = {"CelebrityFaces": []}
     #test3 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 94.0,"Name": "NOT BESSOS", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 99.0,"Name": "Jefff", "Urls": ["www.imdb.com/name/nm1757263"]}]}
 
     
-    api_response = test1
+    api_response = test2
     actorName = ""
     confidence = 0
     if len(api_response["CelebrityFaces"]) == 0:
