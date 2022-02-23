@@ -37,7 +37,7 @@ def getwatchlist(request):
     userid = json_data['userid']
 
     cursor = connection.cursor()
-    cursor.execute('SELECT movietitle FROM watchlist WHERE userid=%s ORDER BY movietitle DESC;', (userid,))
+    cursor.execute('SELECT movietitle FROM watchlist WHERE userid=%s ORDER BY movietitle ASC;', (userid,))
     rows = cursor.fetchall()
 
     response = {}
