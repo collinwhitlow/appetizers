@@ -35,7 +35,7 @@ def findactor(request):
         return HttpResponse(status=400)
 
     # loading form-encoded data
-    userid = request.POST.get("userid")
+    userid = json.loads(request.body)['userid']
 
     if request.FILES.get("image"):
         content = request.FILES['image']
