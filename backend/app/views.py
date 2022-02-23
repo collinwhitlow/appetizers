@@ -16,16 +16,16 @@ def findfaces(request):
         return HttpResponse(status=400)
 
     # loading form-encoded data
-    username = request.POST.get("userid")
+    userid = request.POST.get("userid")
 
     if request.FILES.get("image"):
         content = request.FILES['image']
-        filename = username+str(time.time())+".jpeg"
-        fs = FileSystemStorage()
-        filename = fs.save(filename, content)
-        imageurl = fs.url(filename)
+        filename = userid+str(time.time())+".jpeg"
     else:
-        imageurl = None
+        return HttpResponse(status=400)
+    content
+    filename
+    # todo, submit the image parse the response and get the name out
 
     return JsonResponse({})
 
@@ -46,12 +46,41 @@ def findactor(request):
     else:
         imageurl = None
 
+
+    # submit the photo, get the name back 
+    # TODO
+    test1 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}]}
+    #test2 = {"CelebrityFaces": []}
+    #test3 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 94.0,"Name": "NOT BESSOS", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 99.0,"Name": "Jefff", "Urls": ["www.imdb.com/name/nm1757263"]}]}
+
+    
+    api_response = test1
     actorName = ""
+    confidence = 0
+    if len(api_response["CelebrityFaces"]) == 0:
+        actorName = ""
+    elif len(api_response["CelebrityFaces"]) > 1:
+        max_conf = 0
+        max_ind = -1
+        counter = 0
+        for tmp in api_response["CelebrityFaces"]:
+            if tmp["MatchConfidence"] > max_conf:
+                max_conf = tmp["MatchConfidence"]
+                max_ind = counter
+                counter = counter + 1
+
+        actorName = api_response["CelebrityFaces"][max_ind]["Name"]
+        confidence = max_conf
+    else:
+        actorName = api_response["CelebrityFaces"][max_ind]["Name"]
+        confidence = api_response["CelebrityFaces"][max_ind]["MatchConfidence"]
+
     cursor = connection.cursor()
     cursor.execute('INSERT INTO history (userid, actor, imageurl) VALUES '
                    '(%s, %s, %s);', (userid, actorName, imageurl))
 
-    return JsonResponse({})
+    response = {"actor": actorName, "confidence": confidence, "image": "SOMEHOW RETURN AN IMAGE"}
+    return JsonResponse(response)
 
 
 def getactorinfo(request):
