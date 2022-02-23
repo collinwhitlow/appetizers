@@ -67,7 +67,7 @@ def findactor(request):
             if tmp["MatchConfidence"] > max_conf:
                 max_conf = tmp["MatchConfidence"]
                 max_ind = counter
-                counter = counter + 1
+            counter = counter + 1
 
         actorName = api_response["CelebrityFaces"][max_ind]["Name"]
         confidence = max_conf
