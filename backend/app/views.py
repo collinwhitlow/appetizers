@@ -12,6 +12,7 @@ from django.core.files.storage import FileSystemStorage
 # This function sends a base64 encoded image to cloudVision to parse the image and detect faces
 @csrf_exempt
 def findfaces(request):
+    # set environment variable
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/ubuntu/appetizers/superb-garden-342817-a513aa1e0d3e.json"
     from google.cloud import vision
 
@@ -42,7 +43,6 @@ def findfaces(request):
             '{}\nFor more info on error messages, check: '
             'https://cloud.google.com/apis/design/errors'.format(
                 response.error.message))
-
 
     return JsonResponse(return_resp)
 
