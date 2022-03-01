@@ -9,7 +9,9 @@ import json
 import os, time
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-
+from google.cloud import vision
+import io
+# This function sends a base64 encoded image to cloudVision to parse the image and detect faces
 @csrf_exempt
 def findfaces(request):
     if request.method != 'POST':
@@ -20,14 +22,28 @@ def findfaces(request):
 
     if request.FILES.get("image"):
         content = request.FILES['image']
-        filename = userid+str(time.time())+".jpeg"
     else:
         return HttpResponse(status=400)
-    content
-    filename
-    # todo, submit the image parse the response and get the name out
 
-    return JsonResponse({})
+    client = vision.ImageAnnotatorClient()
+    image = vision.Image(content=content)
+
+    response = client.face_detection(image=image)
+    faces = response.face_annotations
+
+    return_resp = {"bounding_boxes": []}
+    for face in faces:
+        for vertex in face.bounding_poly.vertices:
+            return_resp["bounding_boxes"].append([vertex.x, vertex.y])
+
+    if response.error.message:
+        raise Exception(
+            '{}\nFor more info on error messages, check: '
+            'https://cloud.google.com/apis/design/errors'.format(
+                response.error.message))
+
+
+    return JsonResponse(return_resp)
 
 @csrf_exempt
 def findactor(request):
