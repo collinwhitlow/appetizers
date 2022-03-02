@@ -9,6 +9,7 @@ import json
 import os, time
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from matplotlib.font_manager import json_dump
 # This function sends a base64 encoded image to cloudVision to parse the image and detect faces
 @csrf_exempt
 def findfaces(request):
@@ -21,37 +22,34 @@ def findfaces(request):
 
 
     json_data = json.loads(request.body)
+    if not json_data:
+        return JsonResponse({"error": "no json"})
+
+    # loading form-encoded data
+    if not json_data["image"] or not json_data["userid"]:
+        return JsonResponse({"error": "no image?"})
+
     userid = json_data['userid']
-    image = json_data['image']
-    return JsonResponse({"id": userid, "im": image})
+    content = json_data['image']
 
-    # # loading form-encoded data
-    # userid = request.POST.get("userid")
+    client = vision.ImageAnnotatorClient()
+    image = vision.Image(content=content)
 
-    # if not request.POST.get("image"):
-    #     return JsonResponse({"error": "no image?"})
-             
-    # # get the base64 encoded string
-    # content = request.POST.get("image")
+    response = client.face_detection(image=image)
+    faces = response.face_annotations
 
-    # client = vision.ImageAnnotatorClient()
-    # image = vision.Image(content=content)
+    return_resp = {"bounding_boxes": [], "userid": userid}
+    for face in faces:
+        for vertex in face.bounding_poly.vertices:
+            return_resp["bounding_boxes"].append([vertex.x, vertex.y])
 
-    # response = client.face_detection(image=image)
-    # faces = response.face_annotations
+    if response.error.message:
+        raise Exception(
+            '{}\nFor more info on error messages, check: '
+            'https://cloud.google.com/apis/design/errors'.format(
+                response.error.message))
 
-    # return_resp = {"bounding_boxes": []}
-    # for face in faces:
-    #     for vertex in face.bounding_poly.vertices:
-    #         return_resp["bounding_boxes"].append([vertex.x, vertex.y])
-
-    # if response.error.message:
-    #     raise Exception(
-    #         '{}\nFor more info on error messages, check: '
-    #         'https://cloud.google.com/apis/design/errors'.format(
-    #             response.error.message))
-
-    # return JsonResponse(return_resp)
+    return JsonResponse(return_resp)
 
 @csrf_exempt
 def findactor(request):
