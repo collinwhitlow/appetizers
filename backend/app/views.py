@@ -22,11 +22,11 @@ def findfaces(request):
     # loading form-encoded data
     userid = request.POST.get("userid")
 
-    if not request.json or 'image' not in request.json: 
+    if not request.POST.get("image"):
         return HttpResponse(status=400)
              
     # get the base64 encoded string
-    content = request.json['image']
+    content = request.POST.get("image")
 
     client = vision.ImageAnnotatorClient()
     image = vision.Image(content=content)
