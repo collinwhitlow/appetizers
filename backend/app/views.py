@@ -25,7 +25,7 @@ def findfaces(request):
     if request.FILES.get("image"):
         content = request.FILES['image']
     else:
-        return HttpResponse(status=400)
+        return JsonResponse({"image": "no image"})
 
     client = vision.ImageAnnotatorClient()
     image = vision.Image(content=content)

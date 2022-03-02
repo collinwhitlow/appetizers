@@ -15,7 +15,7 @@ headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 payload = json.dumps({"image": im_b64, "userid": "test_user"})
 response = requests.post(api, data=payload, headers=headers, verify=False)
 try:
-    print(response.text)                
+    print(response)                
 except requests.exceptions.RequestException:
     print(response.text)
 
