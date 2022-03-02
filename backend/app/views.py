@@ -18,7 +18,12 @@ def findfaces(request):
 
     if request.method != 'POST':
         return HttpResponse(status=400)
-    return JsonResponse({})
+
+
+    json_data = json.loads(request.body)
+    userid = json_data['userid']
+    image = json_data['image']
+    return JsonResponse({"id": userid, "im": image})
 
     # # loading form-encoded data
     # userid = request.POST.get("userid")
