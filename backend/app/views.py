@@ -20,33 +20,33 @@ def findfaces(request):
         return HttpResponse(status=400)
     return request
 
-    # loading form-encoded data
-    userid = request.POST.get("userid")
+    # # loading form-encoded data
+    # userid = request.POST.get("userid")
 
-    if not request.POST.get("image"):
-        return JsonResponse({"error": "no image?"})
+    # if not request.POST.get("image"):
+    #     return JsonResponse({"error": "no image?"})
              
-    # get the base64 encoded string
-    content = request.POST.get("image")
+    # # get the base64 encoded string
+    # content = request.POST.get("image")
 
-    client = vision.ImageAnnotatorClient()
-    image = vision.Image(content=content)
+    # client = vision.ImageAnnotatorClient()
+    # image = vision.Image(content=content)
 
-    response = client.face_detection(image=image)
-    faces = response.face_annotations
+    # response = client.face_detection(image=image)
+    # faces = response.face_annotations
 
-    return_resp = {"bounding_boxes": []}
-    for face in faces:
-        for vertex in face.bounding_poly.vertices:
-            return_resp["bounding_boxes"].append([vertex.x, vertex.y])
+    # return_resp = {"bounding_boxes": []}
+    # for face in faces:
+    #     for vertex in face.bounding_poly.vertices:
+    #         return_resp["bounding_boxes"].append([vertex.x, vertex.y])
 
-    if response.error.message:
-        raise Exception(
-            '{}\nFor more info on error messages, check: '
-            'https://cloud.google.com/apis/design/errors'.format(
-                response.error.message))
+    # if response.error.message:
+    #     raise Exception(
+    #         '{}\nFor more info on error messages, check: '
+    #         'https://cloud.google.com/apis/design/errors'.format(
+    #             response.error.message))
 
-    return JsonResponse(return_resp)
+    # return JsonResponse(return_resp)
 
 @csrf_exempt
 def findactor(request):
