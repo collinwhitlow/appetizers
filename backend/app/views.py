@@ -40,8 +40,9 @@ def findfaces(request):
 
     return_resp = {"bounding_boxes": [], "userid": userid}
     for face in faces:
+        return_resp["bounding_boxes"].append([])
         for vertex in face.bounding_poly.vertices:
-            return_resp["bounding_boxes"].append([vertex.x, vertex.y])
+            return_resp["bounding_boxes"][-1].append([vertex.x, vertex.y])
 
     if response.error.message:
         raise Exception(
