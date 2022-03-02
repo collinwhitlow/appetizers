@@ -23,7 +23,7 @@ def findfaces(request):
     userid = request.POST.get("userid")
 
     if not request.POST.get("image"):
-        return HttpResponse(status=400)
+        return JsonResponse({"error": "no image?"})
              
     # get the base64 encoded string
     content = request.POST.get("image")
