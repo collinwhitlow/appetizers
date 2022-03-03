@@ -10,6 +10,8 @@ import os, time
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from matplotlib.font_manager import json_dump
+from PIL import Image 
+
 # This function sends a base64 encoded image to cloudVision to parse the image and detect faces
 @csrf_exempt
 def findfaces(request):
@@ -58,19 +60,43 @@ def findactor(request):
         return HttpResponse(status=400)
 
     # loading form-encoded data
-    # FIXME, this is not working for some reason, all the users are null -- could be that im using curl... not sure
-    userid = request.POST.get("userid")
+    json_data = json.loads(request.body)
+    if not json_data:
+        return JsonResponse({"error": "no json"})
 
-    if request.FILES.get("image"):
-        content = request.FILES['image']
-        filename = userid+str(time.time())+".jpeg"
-        fs = FileSystemStorage()
-        filename = fs.save(filename, content)
-        imageurl = fs.url(filename)
-    else:
-        imageurl = None
+    # loading form-encoded data
+    if not json_data["image"] or not json_data["userid"] or not json_data["bounding_box"]:
+        return JsonResponse({"error": "no image?"})
+    userid = json_data['userid']
+    content = json_data['userid']
+    bounds = json_data['userid'] # [[a b] [c d] [e f] [g h]]
+
+    filename = userid+str(time.time())+".jpeg"
+    fs = FileSystemStorage()
+    filename = fs.save(filename, content)
+    imageurl = fs.url(filename)
+
+    # get coordinates from bounding box
+    x_cords = []
+    y_cords = []
+    for bound in bounds:
+        x_cords.append(bound[0])
+        y_cords.append(bound[1])
 
 
+    img = Image.open(filename) 
+
+    # get right, left, top, bottom bounds
+    x = min(x_cords)
+    y = max(y_cords)
+    w = max(x_cords)
+    h = min(y_cords)
+
+    img_res = img.crop((x, y, x+w, y+h)) 
+    img_res = img_res.save(filename)
+
+
+    img_res.show()
     # submit the photo, get the name back 
     # TODO
     # test1 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}]}
