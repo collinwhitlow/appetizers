@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from pathlib import Path
 
 # Create your views here.
 from django.http import JsonResponse, HttpResponse
@@ -80,9 +81,9 @@ def findactor(request):
     for bound in bounds:
         x_cords.append(bound[0])
         y_cords.append(bound[1])
-
-
-    img = Image.open(filename) 
+    base_dir = Path(__file__).resolve().parent.parent 
+    filename_full = base_dir / 'media' / filename
+    img = Image.open(str(filename_full))
 
     # get right, left, top, bottom bounds
     x = min(x_cords)
@@ -91,11 +92,11 @@ def findactor(request):
     h = max(y_cords) - min(y_cords)
 
     img_res = img.crop((x, y, x+w, y+h)) 
-    img_res = img_res.save(filename)
+    img_res = img_res.save(filename_full)
     
     client=boto3.client('rekognition')
 
-    with open(filename, 'rb') as image:
+    with open(filename_full, 'rb') as image:
         api_response = client.recognize_celebrities(Image={'Bytes': image.read()})
 
     # test1 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}]}
@@ -127,7 +128,7 @@ def findactor(request):
     cursor.execute('INSERT INTO history (userid, actor, imageurl) VALUES '
                    '(%s, %s, %s);', (userid, actorName, imageurl))
 
-    with open(filename, 'rb') as image:
+    with open(filename_full, 'rb') as image:
         img_64 = image.read()
 
     response = {"actor": actorName, "confidence": confidence, "image": img_64, "userid": userid}
