@@ -62,17 +62,11 @@ def findactor(request):
         return HttpResponse(status=400)
 
     # loading form-encoded data
-    json_data = json.loads(request.body)
-    if not json_data:
-        return JsonResponse({"error": "no json"})
-
-    # loading form-encoded data
-    if not request.FILES.get("image") or not json_data["userid"] or not json_data["bounding_box"]:
+    if not request.FILES.get("image") or not request.DATA.get("userid") or not request.DATA.get("bounding_box"):
         return JsonResponse({"error": "no image?"})
-    userid = json_data['userid']
-    
+    userid = request.DATA("userid")
     content = request.FILES['image']
-    bounds = json_data['bounding_box'] # [[a b] [c d] [e f] [g h]]
+    bounds = request.DATA("bounding_box") # [[a b] [c d] [e f] [g h]]
 
     filename = userid+str(time.time())+".png"
     fs = FileSystemStorage()
