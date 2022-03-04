@@ -69,8 +69,8 @@ def findactor(request):
     if not json_data["image"] or not json_data["userid"] or not json_data["bounding_box"]:
         return JsonResponse({"error": "no image?"})
     userid = json_data['userid']
-    content = json_data['userid']
-    bounds = json_data['userid'] # [[a b] [c d] [e f] [g h]]
+    content = json_data['image']
+    bounds = json_data['bounding_box'] # [[a b] [c d] [e f] [g h]]
 
     filename = userid+str(time.time())+".png"
     fs = FileSystemStorage()
