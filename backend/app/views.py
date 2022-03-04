@@ -5,6 +5,7 @@ from django.http import JsonResponse, HttpResponse
 from django.db import connection
 from django.views.decorators.csrf import csrf_exempt
 import json
+import base64
 
 import os, time
 from django.conf import settings
@@ -69,11 +70,13 @@ def findactor(request):
     if not json_data["image"] or not json_data["userid"] or not json_data["bounding_box"]:
         return JsonResponse({"error": "no image?"})
     userid = json_data['userid']
-    content = json_data['image']
+    
+    content = base64.decodebytes(json_data['image'])
     bounds = json_data['bounding_box'] # [[a b] [c d] [e f] [g h]]
 
     filename = userid+str(time.time())+".png"
     fs = FileSystemStorage()
+
     filename = fs.save(filename, content)
     imageurl = fs.url(filename)
 
