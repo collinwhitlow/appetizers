@@ -88,9 +88,9 @@ def findactor(request):
 
     # get right, left, top, bottom bounds
     x = min(x_cords)
-	y = max(y_cords)
-    w = max(x_cords)
-    h = min(y_cords)
+	y = min(y_cords)	
+    w = max(x_cords) - min(x_cords)	
+    h = min(y_cords) - min(y_cords)
 
     img_res = img.crop((x, y, x+w, y+h)) 
     img_res = img_res.save(filename)
