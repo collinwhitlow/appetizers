@@ -131,7 +131,7 @@ def findactor(request):
     with open(filename_full, 'rb') as image:
         img_64 = image.read()
 
-    response = {"actor": actorName, "confidence": confidence, "image": img_64, "userid": userid}
+    response = {"actor": actorName, "confidence": confidence, "image": img_64.decode("utf-8"), "userid": userid}
     return JsonResponse(response)
 
 
