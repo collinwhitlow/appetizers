@@ -64,9 +64,9 @@ def findactor(request):
     # loading form-encoded data
     if not request.FILES.get("image") or not request.POST.get("userid") or not request.POST.get("bounding_box"):
         return JsonResponse({"error": "no image?"})
-    userid = request.POST("userid")
+    userid = request.POST["userid"]
     content = request.FILES['image']
-    bounds = request.POST("bounding_box") # [[a b] [c d] [e f] [g h]]
+    bounds = request.POST["bounding_box"] # [[a b] [c d] [e f] [g h]]
 
     filename = userid+str(time.time())+".png"
     fs = FileSystemStorage()
