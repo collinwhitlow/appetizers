@@ -130,7 +130,10 @@ def findactor(request):
     cursor.execute('INSERT INTO history (userid, actor, imageurl) VALUES '
                    '(%s, %s, %s);', (userid, actorName, imageurl))
 
-    response = {"actor": actorName, "confidence": confidence, "image": "SOMEHOW RETURN AN IMAGE", "userid": userid}
+    with open(filename, 'rb') as image:
+        img_64 = image.read()
+
+    response = {"actor": actorName, "confidence": confidence, "image": img_64, "userid": userid}
     return JsonResponse(response)
 
 
