@@ -157,13 +157,18 @@ def getwatchlist(request):
  
     return JsonResponse(response)
 
-
+@csrf_exempt
 def postwatchlist(request):
-    if request.method != 'GET':
+    if request.method != 'POST':
         return HttpResponse(status=404)
-    response = {}
-    response['chatts'] = ['Replace Me', 'DUMMY RESPONSE'] # **DUMMY response!**
-    return JsonResponse(response)
+
+    json_data = json.loads(request.body)
+    userid = json_data['userid']
+    movietitle = json_data['movietitle']
+    cursor = connection.cursor()
+    cursor.execute('INSERT INTO watchlist (userid, movietitle) VALUES ' '(%s, %s);', (userid, movietitle))
+    return JsonResponse({})
+
 
 
 def gethistory(request):
