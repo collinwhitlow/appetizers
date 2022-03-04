@@ -11,6 +11,7 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from matplotlib.font_manager import json_dump
 from PIL import Image 
+import boto3
 
 # This function sends a base64 encoded image to cloudVision to parse the image and detect faces
 @csrf_exempt
@@ -94,15 +95,17 @@ def findactor(request):
 
     img_res = img.crop((x, y, x+w, y+h)) 
     img_res = img_res.save(filename)
+    
+    client=boto3.client('rekognition')
 
-    # submit the photo, get the name back 
-    # TODO
+    with open(filename, 'rb') as image:
+        api_response = client.recognize_celebrities(Image={'Bytes': image.read()})
+
     # test1 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}]}
     # test2 = {"CelebrityFaces": []}
-    test3 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 94.0,"Name": "NOT BESSOS", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 99.0,"Name": "Jefff", "Urls": ["www.imdb.com/name/nm1757263"]}]}
+    # test3 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 94.0,"Name": "NOT BESSOS", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 99.0,"Name": "Jefff", "Urls": ["www.imdb.com/name/nm1757263"]}]}
 
-    
-    api_response = test3
+    # api_response = test3
     actorName = ""
     confidence = 0
     if len(api_response["CelebrityFaces"]) == 0:
