@@ -71,7 +71,7 @@ def findactor(request):
     content = json_data['userid']
     bounds = json_data['userid'] # [[a b] [c d] [e f] [g h]]
 
-    filename = userid+str(time.time())+".jpeg"
+    filename = userid+str(time.time())+".png"
     fs = FileSystemStorage()
     filename = fs.save(filename, content)
     imageurl = fs.url(filename)
@@ -88,15 +88,13 @@ def findactor(request):
 
     # get right, left, top, bottom bounds
     x = min(x_cords)
-	y = min(y_cords)	
+    y = min(y_cords)
     w = max(x_cords) - min(x_cords)	
-    h = min(y_cords) - min(y_cords)
+    h = max(y_cords) - min(y_cords)
 
     img_res = img.crop((x, y, x+w, y+h)) 
     img_res = img_res.save(filename)
 
-
-    img_res.show()
     # submit the photo, get the name back 
     # TODO
     # test1 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}]}
