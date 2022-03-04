@@ -157,11 +157,11 @@ def getwatchlist(request):
  
     return JsonResponse(response)
 
-
+@csrf_exempt
 def postwatchlist(request):
     if request.method != 'POST':
         return HttpResponse(status=404)
-        
+
     json_data = json.loads(request.body)
     userid = json_data['userid']
     movietitle = json_data['movietitle']
