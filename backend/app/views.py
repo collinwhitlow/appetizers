@@ -66,7 +66,7 @@ def findactor(request):
         return JsonResponse({"error": "no image?"})
     userid = request.POST["userid"]
     content = request.FILES['image']
-    bounds = request.POST["bounding_box"] # [[a b] [c d] [e f] [g h]]
+    bounds = json.loads(request.POST["bounding_box"]) # [[a b] [c d] [e f] [g h]]
 
     filename = userid+str(time.time())+".png"
     fs = FileSystemStorage()
