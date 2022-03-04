@@ -30,9 +30,11 @@ with open(image_file, "rb") as f:
 im_b64 = base64.b64encode(im_bytes).decode("utf8")
 
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-  
-payload = json.dumps({"image": im_b64, "userid": "test_1_user", "bounding_box": [[620, 38], [716, 38], [716, 149], [620, 149]]})
-response = requests.post(api, data=payload, headers=headers, verify=False)
+
+files = {'image': open('friends.jpeg', 'rb')}
+
+payload = json.dumps({"userid": "test_1_user", "bounding_box": [[620, 38], [716, 38], [716, 149], [620, 149]]})
+response = requests.post(api, files=files, data=payload, headers=headers, verify=False)
 try:
     print(response.text)                
 except requests.exceptions.RequestException:
