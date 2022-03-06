@@ -36,7 +36,11 @@ files = {'image': open('friends.jpeg', 'rb')}
 data = {"userid": "test_1_user", "bounding_box": json.dumps([[620, 38], [716, 38], [716, 149], [620, 149]])}
 response = requests.post(api, files=files, data=data, headers=headers, verify=False)
 try:
-    print(response.text)                
+    json_txt = response.json()
+    img_64 = json_txt["image"]
+    with open("out_test_auto.png","wb") as f:
+        f.write(base64.b64decode(img_64))
+
 except requests.exceptions.RequestException:
     print(response.text)
 
