@@ -189,8 +189,13 @@ def deletehistory(request):
     return JsonResponse(response)
 
 def deletewatchlist(request):
-    if request.method != 'GET':
+    if request.method != 'DELETE':
         return HttpResponse(status=404)
-    response = {}
-    response['chatts'] = ['Replace Me', 'DUMMY RESPONSE'] # **DUMMY response!**
+
+    json_data = json.loads(request.body)
+    userid = json_data['userid']
+    movietitle = json_data['movietitle']
+    cursor = connection.cursor()
+    cursor.execute('DELETE FROM watchlist WHERE userid='%s' AND movietitle='%s';, (userid, movietitle))
+    response = json_data
     return JsonResponse(response)
