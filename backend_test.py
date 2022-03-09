@@ -2,45 +2,35 @@ import requests
 import base64
 import json
 
-# api = 'https://3.144.236.126/findfaces/'
+api = 'https://3.144.236.126/findfaces/'
               
-# image_file = 'friends.jpeg'
-
-# with open(image_file, "rb") as f:
-#     im_bytes = f.read()        
-# im_b64 = base64.b64encode(im_bytes).decode("utf8")
-
-# headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-  
-# payload = json.dumps({"image": im_b64, "userid": "test_user"})
-# response = requests.post(api, data=payload, headers=headers, verify=False)
-# try:
-#     print(response.text)                
-# except requests.exceptions.RequestException:
-#     print(response.text)
-
-# curl -X POST -d '{ "userid": "user1"}' --insecure https://3.144.236.126/findactor/ > /Users/tobycormack/Desktop/test.html
-
-api = 'https://3.144.236.126/findactor/'
-              
-image_file = 'friends.jpeg'
-
-with open(image_file, "rb") as f:
-    im_bytes = f.read()        
-im_b64 = base64.b64encode(im_bytes).decode("utf8")
+image_file = 'test_2.jpeg'
 
 headers = {'Accept': 'text/plain'}
 
-files = {'image': open('friends.jpeg', 'rb')}
+files = {'image': open(image_file, 'rb')}
 
-data = {"userid": "test_1_user", "bounding_box": json.dumps([[620, 38], [716, 38], [716, 149], [620, 149]])}
+data = {"userid": "test_1_user"}
 response = requests.post(api, files=files, data=data, headers=headers, verify=False)
 try:
-    json_txt = response.json()
-    img_64 = json_txt["image"]
-    with open("out_test_auto.png","wb") as f:
-        f.write(base64.b64decode(img_64))
+    print(response.text)                
+except requests.exceptions.RequestException:
+    print(response.text)
 
+# curl -X POST -d '{ "userid": "user1"}' --insecure https://3.144.236.126/findactor/ > /Users/tobycormack/Desktop/test.html
+
+new_data = json.loads(response.text)
+
+api = 'https://3.144.236.126/findactor/'
+              
+headers = {'Accept': 'text/plain'}
+
+files = {'image': open(image_file, 'rb')}
+
+data = {"userid": "test_1_user", "bounding_box": json.dumps(new_data["bounding_boxes"][2])}
+response = requests.post(api, files=files, data=data, headers=headers, verify=False)
+try:
+    print(response.text)
 except requests.exceptions.RequestException:
     print(response.text)
 
