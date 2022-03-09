@@ -25,17 +25,14 @@ def findfaces(request):
     if request.method != 'POST':
         return HttpResponse(status=400)
 
-
-    json_data = json.loads(request.body)
-    if not json_data:
-        return JsonResponse({"error": "no json"})
-
-    # loading form-encoded data
-    if not json_data["image"] or not json_data["userid"]:
+    if not request.FILES.get("image") or not request.POST.get("userid"):
         return JsonResponse({"error": "no image?"})
 
-    userid = json_data['userid']
-    content = json_data['image']
+    userid = request.POST["userid"]
+
+    with request.FILES["image"] as f:
+        im_bytes = f.read()
+    content = base64.b64encode(im_bytes).decode("utf8")
 
     client = vision.ImageAnnotatorClient()
     image = vision.Image(content=content)
@@ -66,7 +63,7 @@ def findactor(request):
     if not request.FILES.get("image") or not request.POST.get("userid") or not request.POST.get("bounding_box"):
         return JsonResponse({"error": "no image?"})
     userid = request.POST["userid"]
-    content = request.FILES['image']
+    content = request.FILES["image"]
     bounds = json.loads(request.POST["bounding_box"]) # [[a b] [c d] [e f] [g h]]
 
     filename = userid+str(time.time())+".png"
@@ -99,11 +96,7 @@ def findactor(request):
     with open(filename_full, 'rb') as image:
         api_response = client.recognize_celebrities(Image={'Bytes': image.read()})
 
-    # test1 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}]}
-    # test2 = {"CelebrityFaces": []}
-    # test3 = {"CelebrityFaces": [{"KnownGender": { "Type": "Male"},"MatchConfidence": 98.0,"Name": "Jeff Bezos", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 94.0,"Name": "NOT BESSOS", "Urls": ["www.imdb.com/name/nm1757263"]}, {"KnownGender": { "Type": "Male"},"MatchConfidence": 99.0,"Name": "Jefff", "Urls": ["www.imdb.com/name/nm1757263"]}]}
 
-    # api_response = test3
     actorName = ""
     confidence = 0
     if len(api_response["CelebrityFaces"]) == 0:
@@ -125,13 +118,10 @@ def findactor(request):
         confidence = api_response["CelebrityFaces"][0]["MatchConfidence"]
 
     cursor = connection.cursor()
-    cursor.execute('INSERT INTO history (userid, actor, imageurl) VALUES '
-                   '(%s, %s, %s);', (userid, actorName, imageurl))
+    cursor.execute('INSERT INTO history (userid, actor, imageurl, confidence) VALUES '
+                   '(%s, %s, %s, %s);', (userid, actorName, imageurl, str(confidence)))
 
-    with open(filename_full, 'rb') as image:
-        img_64 = image.read()
-
-    response = {"actor": actorName, "confidence": confidence, "image": str(img_64), "userid": userid}
+    response = {"actor": actorName, "confidence": confidence, "userid": userid, "url": imageurl}
     return JsonResponse(response)
 
 
