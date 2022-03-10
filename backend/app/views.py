@@ -143,16 +143,33 @@ def getactorinfo(request):
     response2 = requests.get(get_info_endpoint + actorID)
     jsonDict2 = json.loads(response.text)
 
+    respArray = jsonDict2["castMovies"]
+
+    def make_comparator_dict(less_than):
+        def compareDict(x, y):
+            if less_than(x, y):
+                return -1
+            elif less_than(y, x):
+                return 1
+            else:
+                return 0
+        return compareDict
+    def lessThanDict(dict1, dict2):
+        return int(dict1["year"]) < int(dict2["year"])
+
+    sortedDict = sorted(respArray, cmp=make_comparator_dict(lessThanDict), reverse=True)
+
     response = {
         "name": name,
         "role": jsonDict2["role"],
         "summary": jsonDict2["summary"],
         "birthday": jsonDict2["birthDate"],
         "known_for": jsonDict2["knownFor"],
-        "cast_movies": jsonDict2["castMovies"],
+        "cast_movies": sortedDict,
         "image": jsonDict2["awards"],
         "awards":jsonDict2["image"]
     }
+
 
     return JsonResponse(response)
 

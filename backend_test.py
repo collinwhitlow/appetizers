@@ -34,6 +34,10 @@ try:
 except requests.exceptions.RequestException:
     print(response.text)
 
+name = json.loads(response.text)["actor"]
+api = 'https://3.144.236.126/getactorinfo/' + name
+
+
 # curl -X POST -d '{ "userid": "user1"}' --insecure https://3.144.236.126/findactor/ > /Users/tobycormack/Desktop/test.html    
 
 # [[620, 38], [716, 38], [716, 149], [620, 149]]
