@@ -125,7 +125,7 @@ def findactor(request):
     response = {"actor": actorName, "confidence": confidence, "userid": userid, "url": imageurl}
     return JsonResponse(response)
 
-
+@csrf_exempt
 def getactorinfo(request):
     if request.method != 'GET':
         return HttpResponse(status=404)
