@@ -7,6 +7,7 @@ from django.db import connection
 from django.views.decorators.csrf import csrf_exempt
 import json
 import base64
+import requests
 
 import os, time
 from django.conf import settings
@@ -128,8 +129,31 @@ def findactor(request):
 def getactorinfo(request):
     if request.method != 'GET':
         return HttpResponse(status=404)
-    response = {}
-    response['chatts'] = ['Replace Me', 'DUMMY RESPONSE'] # **DUMMY response!**
+    json_data = json.loads(request.body)
+    name = json_data['actorName']
+
+    key = "k_ek29gjuf"
+    findID_endpoint = "https://imdb-api.com/en/API/SearchName/" + key + "/" + name
+    get_info_endpoint = "https://imdb-api.com/en/API/Name/" + key + "/"
+
+    tmpResp = requests.get(findID_endpoint)
+    jsonDict = json.loads(tmpResp.text)
+    actorID = jsonDict["results"][0]["id"]
+
+    response2 = requests.get(get_info_endpoint + actorID)
+    jsonDict2 = json.loads(response.text)
+
+    response = {
+        "name": name,
+        "role": jsonDict2["role"],
+        "summary": jsonDict2["summary"],
+        "birthday": jsonDict2["birthDate"],
+        "known_for": jsonDict2["knownFor"],
+        "cast_movies": jsonDict2["castMovies"],
+        "image": jsonDict2["awards"],
+        "awards":jsonDict2["image"]
+    }
+
     return JsonResponse(response)
 
 def getwatchlist(request):
