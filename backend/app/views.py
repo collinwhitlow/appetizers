@@ -145,19 +145,19 @@ def getactorinfo(request):
 
     respArray = jsonDict2["castMovies"]
 
-    def make_comparator_dict(less_than):
-        def compareDict(x, y):
-            if less_than(x, y):
-                return -1
-            elif less_than(y, x):
-                return 1
-            else:
-                return 0
-        return compareDict
-    def lessThanDict(dict1, dict2):
-        return int(dict1["year"]) < int(dict2["year"])
+    # def make_comparator_dict(less_than):
+    #     def compareDict(x, y):
+    #         if less_than(x, y):
+    #             return -1
+    #         elif less_than(y, x):
+    #             return 1
+    #         else:
+    #             return 0
+    #     return compareDict
+    # def lessThanDict(dict1, dict2):
+    #     return int(dict1["year"]) < int(dict2["year"])
 
-    sortedDict = sorted(respArray, cmp=make_comparator_dict(lessThanDict), reverse=True)
+    # sortedDict = sorted(respArray, cmp=make_comparator_dict(lessThanDict), reverse=True)
 
     response = {
         "name": name,
@@ -165,7 +165,7 @@ def getactorinfo(request):
         "summary": jsonDict2["summary"],
         "birthday": jsonDict2["birthDate"],
         "known_for": jsonDict2["knownFor"],
-        "cast_movies": sortedDict,
+        "cast_movies": respArray,
         "image": jsonDict2["awards"],
         "awards":jsonDict2["image"]
     }

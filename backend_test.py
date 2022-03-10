@@ -34,8 +34,8 @@ import json
 # except requests.exceptions.RequestException:
 #     print(response.text)
 
-name = json.loads(response.text)["actor"]
-name = "Chadwich Boseman"
+# name = json.loads(response.text)["actor"]
+name = "Chadwick Boseman"
 api = "https://3.144.236.126/getactorinfo/"
 data = {"userid": "test_1_user", "actorName": name}
 response = requests.get(api, data=json.dumps(data), verify=False)

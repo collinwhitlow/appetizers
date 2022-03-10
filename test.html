@@ -1,11 +1,9 @@
-{"bounding_boxes": [[[61, 46], [407, 46], [407, 448], [61, 448]], [[993, 108], [1337, 108], [1337, 508], [993, 508]], [[510, 23], [888, 23], [888, 464], [510, 464]]], "userid": "test_1_user"}
-{"actor": "Chadwick Boseman", "confidence": 99.83271026611328, "userid": "test_1_user", "url": "https://3.144.236.126/media/test_1_user1646945977.3287528.png"}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="robots" content="NONE,NOARCHIVE">
-  <title>UnboundLocalError
+  <title>TypeError
           at /getactorinfo/</title>
   <style type="text/css">
     html * { padding:0; margin:0; }
@@ -99,9 +97,9 @@
 </head>
 <body>
 <div id="summary">
-  <h1>UnboundLocalError
+  <h1>TypeError
        at /getactorinfo/</h1>
-  <pre class="exception_value">local variable &#x27;response&#x27; referenced before assignment</pre>
+  <pre class="exception_value">&#x27;cmp&#x27; is an invalid keyword argument for sort()</pre>
   <table class="meta">
 
     <tr>
@@ -120,19 +118,19 @@
 
     <tr>
       <th>Exception Type:</th>
-      <td>UnboundLocalError</td>
+      <td>TypeError</td>
     </tr>
 
 
     <tr>
       <th>Exception Value:</th>
-      <td><pre>local variable &#x27;response&#x27; referenced before assignment</pre></td>
+      <td><pre>&#x27;cmp&#x27; is an invalid keyword argument for sort()</pre></td>
     </tr>
 
 
     <tr>
       <th>Exception Location:</th>
-      <td><span class="fname">/home/ubuntu/appetizers/backend/app/views.py</span>, line 144, in getactorinfo</td>
+      <td><span class="fname">/home/ubuntu/appetizers/backend/app/views.py</span>, line 160, in getactorinfo</td>
     </tr>
 
     <tr>
@@ -154,7 +152,7 @@
     </tr>
     <tr>
       <th>Server time:</th>
-      <td>Thu, 10 Mar 2022 20:59:41 +0000</td>
+      <td>Thu, 10 Mar 2022 21:01:42 +0000</td>
     </tr>
   </table>
 </div>
@@ -176,43 +174,43 @@
           
 
           
-            <div class="context" id="c140220118827520">
+            <div class="context" id="c139654604576576">
               
-                <ol start="40" class="pre-context" id="pre140220118827520">
+                <ol start="40" class="pre-context" id="pre139654604576576">
                 
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>                response = await sync_to_async(response_for_exception, thread_sensitive=False)(request, exc)</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>                response = await sync_to_async(response_for_exception, thread_sensitive=False)(request, exc)</pre></li>
                 
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>            return response</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>            return response</pre></li>
                 
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>        return inner</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>        return inner</pre></li>
                 
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>    else:</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>    else:</pre></li>
                 
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>        @wraps(get_response)</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>        @wraps(get_response)</pre></li>
                 
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>        def inner(request):</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>        def inner(request):</pre></li>
                 
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>            try:</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>            try:</pre></li>
                 
                 </ol>
               
               <ol start="47" class="context-line">
-                <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>                response = get_response(request)</pre> <span>â¦</span></li>
+                <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>                response = get_response(request)</pre> <span>â¦</span></li>
               </ol>
               
-                <ol start='48' class="post-context" id="post140220118827520">
+                <ol start='48' class="post-context" id="post139654604576576">
                   
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>            except Exception as exc:</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>            except Exception as exc:</pre></li>
                   
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>                response = response_for_exception(request, exc)</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>                response = response_for_exception(request, exc)</pre></li>
                   
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>            return response</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>            return response</pre></li>
                   
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre>        return inner</pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre>        return inner</pre></li>
                   
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140220118827520', 'post140220118827520')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576576', 'post139654604576576')"><pre></pre></li>
                   
               </ol>
               
@@ -224,7 +222,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140220118827520">
+            <table class="vars" id="v139654604576576">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -235,12 +233,12 @@
                 
                   <tr>
                     <td>exc</td>
-                    <td class="code"><pre>UnboundLocalError(&quot;local variable &#x27;response&#x27; referenced before assignment&quot;)</pre></td>
+                    <td class="code"><pre>TypeError(&quot;&#x27;cmp&#x27; is an invalid keyword argument for sort()&quot;)</pre></td>
                   </tr>
                 
                   <tr>
                     <td>get_response</td>
-                    <td class="code"><pre>&lt;bound method BaseHandler._get_response of &lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f879256aa90&gt;&gt;</pre></td>
+                    <td class="code"><pre>&lt;bound method BaseHandler._get_response of &lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f03e5a07a90&gt;&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -261,43 +259,43 @@
           
 
           
-            <div class="context" id="c140220118792064">
+            <div class="context" id="c139654604576512">
               
-                <ol start="174" class="pre-context" id="pre140220118792064">
+                <ol start="174" class="pre-context" id="pre139654604576512">
                 
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>        if response is None:</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>        if response is None:</pre></li>
                 
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>            wrapped_callback = self.make_view_atomic(callback)</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>            wrapped_callback = self.make_view_atomic(callback)</pre></li>
                 
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>            # If it is an asynchronous view, run it in a subthread.</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>            # If it is an asynchronous view, run it in a subthread.</pre></li>
                 
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>            if asyncio.iscoroutinefunction(wrapped_callback):</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>            if asyncio.iscoroutinefunction(wrapped_callback):</pre></li>
                 
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>                wrapped_callback = async_to_sync(wrapped_callback)</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>                wrapped_callback = async_to_sync(wrapped_callback)</pre></li>
                 
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>            try:</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>            try:</pre></li>
                 
                 </ol>
               
               <ol start="181" class="context-line">
-                <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>                response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre> <span>â¦</span></li>
+                <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>                response = wrapped_callback(request, *callback_args, **callback_kwargs)</pre> <span>â¦</span></li>
               </ol>
               
-                <ol start='182' class="post-context" id="post140220118792064">
+                <ol start='182' class="post-context" id="post139654604576512">
                   
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>            except Exception as e:</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>            except Exception as e:</pre></li>
                   
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>                response = self.process_exception_by_middleware(e, request)</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>                response = self.process_exception_by_middleware(e, request)</pre></li>
                   
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>                if response is None:</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>                if response is None:</pre></li>
                   
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>                    raise</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>                    raise</pre></li>
                   
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140220118792064', 'post140220118792064')"><pre>        # Complain if the view returned None (a common error).</pre></li>
+                  <li onclick="toggle('pre139654604576512', 'post139654604576512')"><pre>        # Complain if the view returned None (a common error).</pre></li>
                   
               </ol>
               
@@ -309,7 +307,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140220118792064">
+            <table class="vars" id="v139654604576512">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -320,7 +318,7 @@
                 
                   <tr>
                     <td>callback</td>
-                    <td class="code"><pre>&lt;function getactorinfo at 0x7f878bd1e430&gt;</pre></td>
+                    <td class="code"><pre>&lt;function getactorinfo at 0x7f03df1bb430&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -350,12 +348,12 @@
                 
                   <tr>
                     <td>self</td>
-                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f879256aa90&gt;</pre></td>
+                    <td class="code"><pre>&lt;django.core.handlers.wsgi.WSGIHandler object at 0x7f03e5a07a90&gt;</pre></td>
                   </tr>
                 
                   <tr>
                     <td>wrapped_callback</td>
-                    <td class="code"><pre>&lt;function getactorinfo at 0x7f878bd1e430&gt;</pre></td>
+                    <td class="code"><pre>&lt;function getactorinfo at 0x7f03df1bb430&gt;</pre></td>
                   </tr>
                 
               </tbody>
@@ -371,35 +369,35 @@
           
 
           
-            <div class="context" id="c140220118791040">
+            <div class="context" id="c139654604576448">
               
-                <ol start="47" class="pre-context" id="pre140220118791040">
+                <ol start="47" class="pre-context" id="pre139654604576448">
                 
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre></pre></li>
                 
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre>def csrf_exempt(view_func):</pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre>def csrf_exempt(view_func):</pre></li>
                 
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre>    &quot;&quot;&quot;Mark a view function as being exempt from the CSRF view protection.&quot;&quot;&quot;</pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre>    &quot;&quot;&quot;Mark a view function as being exempt from the CSRF view protection.&quot;&quot;&quot;</pre></li>
                 
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre>    # view_func.csrf_exempt = True would also work, but decorators are nicer</pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre>    # view_func.csrf_exempt = True would also work, but decorators are nicer</pre></li>
                 
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre>    # if they don&#x27;t have side effects, so return a new function.</pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre>    # if they don&#x27;t have side effects, so return a new function.</pre></li>
                 
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre>    def wrapped_view(*args, **kwargs):</pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre>    def wrapped_view(*args, **kwargs):</pre></li>
                 
                 </ol>
               
               <ol start="54" class="context-line">
-                <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre>        return view_func(*args, **kwargs)</pre> <span>â¦</span></li>
+                <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre>        return view_func(*args, **kwargs)</pre> <span>â¦</span></li>
               </ol>
               
-                <ol start='55' class="post-context" id="post140220118791040">
+                <ol start='55' class="post-context" id="post139654604576448">
                   
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre>    wrapped_view.csrf_exempt = True</pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre>    wrapped_view.csrf_exempt = True</pre></li>
                   
-                  <li onclick="toggle('pre140220118791040', 'post140220118791040')"><pre>    return wraps(view_func)(wrapped_view)</pre></li>
+                  <li onclick="toggle('pre139654604576448', 'post139654604576448')"><pre>    return wraps(view_func)(wrapped_view)</pre></li>
                   
               </ol>
               
@@ -411,7 +409,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140220118791040">
+            <table class="vars" id="v139654604576448">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -432,7 +430,7 @@
                 
                   <tr>
                     <td>view_func</td>
-                    <td class="code"><pre>&lt;function getactorinfo at 0x7f878bd1e3a0&gt;</pre></td>
+                    <td class="code"><pre>&lt;function getactorinfo at 0x7f03df1bb3a0&gt;</pre></td>
                   </tr>
                 
               </tbody>
@@ -444,47 +442,47 @@
         
         <li class="frame user">
           
-            <code class="fname">/home/ubuntu/appetizers/backend/app/views.py</code>, line 144, in getactorinfo
+            <code class="fname">/home/ubuntu/appetizers/backend/app/views.py</code>, line 160, in getactorinfo
           
 
           
-            <div class="context" id="c140220118793664">
+            <div class="context" id="c139654604576384">
               
-                <ol start="137" class="pre-context" id="pre140220118793664">
+                <ol start="153" class="pre-context" id="pre139654604576384">
                 
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>    get_info_endpoint = &quot;https://imdb-api.com/en/API/Name/&quot; + key + &quot;/&quot;</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>                return 1</pre></li>
                 
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>            else:</pre></li>
                 
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>    tmpResp = requests.get(findID_endpoint)</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>                return 0</pre></li>
                 
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>    jsonDict = json.loads(tmpResp.text)</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>        return compareDict</pre></li>
                 
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>    actorID = jsonDict[&quot;results&quot;][0][&quot;id&quot;]</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>    def lessThanDict(dict1, dict2):</pre></li>
                 
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>        return int(dict1[&quot;year&quot;]) &lt; int(dict2[&quot;year&quot;])</pre></li>
                 
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>    response2 = requests.get(get_info_endpoint + actorID)</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre></pre></li>
                 
                 </ol>
               
-              <ol start="144" class="context-line">
-                <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>    jsonDict2 = json.loads(response.text)</pre> <span>â¦</span></li>
+              <ol start="160" class="context-line">
+                <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>    sortedDict = sorted(respArray, cmp=make_comparator_dict(lessThanDict), reverse=True)</pre> <span>â¦</span></li>
               </ol>
               
-                <ol start='145' class="post-context" id="post140220118793664">
+                <ol start='161' class="post-context" id="post139654604576384">
                   
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre></pre></li>
                   
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>    respArray = jsonDict2[&quot;castMovies&quot;]</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>    response = {</pre></li>
                   
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre></pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>        &quot;name&quot;: name,</pre></li>
                   
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>    def make_comparator_dict(less_than):</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>        &quot;role&quot;: jsonDict2[&quot;role&quot;],</pre></li>
                   
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>        def compareDict(x, y):</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>        &quot;summary&quot;: jsonDict2[&quot;summary&quot;],</pre></li>
                   
-                  <li onclick="toggle('pre140220118793664', 'post140220118793664')"><pre>            if less_than(x, y):</pre></li>
+                  <li onclick="toggle('pre139654604576384', 'post139654604576384')"><pre>        &quot;birthday&quot;: jsonDict2[&quot;birthDate&quot;],</pre></li>
                   
               </ol>
               
@@ -496,7 +494,7 @@
               <details>
                 <summary class="commands">Local vars</summary>
             
-            <table class="vars" id="v140220118793664">
+            <table class="vars" id="v139654604576384">
               <thead>
                 <tr>
                   <th>Variable</th>
@@ -533,6 +531,104 @@
                   </tr>
                 
                   <tr>
+                    <td>jsonDict2</td>
+                    <td class="code"><pre>{&#x27;awards&#x27;: &#x27;Nominated for 1 Oscar. Another 56 wins &amp; 95 nominations.&#x27;,
+ &#x27;birthDate&#x27;: &#x27;1976-11-29&#x27;,
+ &#x27;castMovies&#x27;: [{&#x27;description&#x27;: &quot;(TV Series) Star Lord T&#x27;Challa / T&#x27;Challa / &quot;
+                                &#x27;Black Panther - What If... The Watcher Broke &#x27;
+                                &quot;His Oath? (2021) ... Star Lord T&#x27;Challa &quot;
+                                &#x27;(voice) - What If... Killmonger Rescued Tony &#x27;
+                                &quot;Stark? (2021) ... T&#x27;Challa / Black Panther &quot;
+                                &#x27;(voice) - What If... Zombies?! (2021) ... &#x27;
+                                &quot;T&#x27;Challa / Black Panther (voice) - What If... &quot;
+                                &quot;T&#x27;Challa Became a Star-Lord? (2021) ... Star &quot;
+                                &quot;Lord T&#x27;Challa (voice)&quot;,
+                 &#x27;id&#x27;: &#x27;tt10168312&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;What If...?&#x27;,
+                 &#x27;year&#x27;: &#x27;2021&#x27;},
+                {&#x27;description&#x27;: &#x27;Levee&#x27;,
+                 &#x27;id&#x27;: &#x27;tt10514222&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &quot;Ma Rainey&#x27;s Black Bottom&quot;,
+                 &#x27;year&#x27;: &#x27;2020&#x27;},
+                {&#x27;description&#x27;: &quot;Stormin&#x27; Norman&quot;,
+                 &#x27;id&#x27;: &#x27;tt9777644&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Da 5 Bloods&#x27;,
+                 &#x27;year&#x27;: &#x27;2020&#x27;},
+                {&#x27;description&#x27;: &#x27;Andre Davis&#x27;,
+                 &#x27;id&#x27;: &#x27;tt8688634&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;21 Bridges&#x27;,
+                 &#x27;year&#x27;: &#x27;2019&#x27;},
+                {&#x27;description&#x27;: &quot;T&#x27;Challa / Black Panther&quot;,
+                 &#x27;id&#x27;: &#x27;tt4154796&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Avengers: Endgame&#x27;,
+                 &#x27;year&#x27;: &#x27;2019&#x27;},
+                {&#x27;description&#x27;: &quot;T&#x27;Challa / Black Panther&quot;,
+                 &#x27;id&#x27;: &#x27;tt4154756&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Avengers: Infinity War&#x27;,
+                 &#x27;year&#x27;: &#x27;2018&#x27;},
+                {&#x27;description&#x27;: &quot;T&#x27;Challa / Black Panther&quot;,
+                 &#x27;id&#x27;: &#x27;tt1825683&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Black Panther&#x27;,
+                 &#x27;year&#x27;: &#x27;2018&#x27;},
+                {&#x27;description&#x27;: &#x27;Thurgood Marshall&#x27;,
+                 &#x27;id&#x27;: &#x27;tt5301662&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Marshall&#x27;,
+                 &#x27;year&#x27;: &#x27;2017&#x27;},
+                {&#x27;description&#x27;: &#x27;Jacob King&#x27;,
+                 &#x27;id&#x27;: &#x27;tt1712192&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Message from the King&#x27;,
+                 &#x27;year&#x27;: &#x27;2016&#x27;},
+                {&#x27;description&#x27;: &quot;T&#x27;Challa / Black Panther&quot;,
+                 &#x27;id&#x27;: &#x27;tt3498820&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Captain America: Civil War&#x27;,
+                 &#x27;year&#x27;: &#x27;2016&#x27;},
+                {&#x27;description&#x27;: &#x27;Thoth&#x27;,
+                 &#x27;id&#x27;: &#x27;tt2404233&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Gods of Egypt&#x27;,
+                 &#x27;year&#x27;: &#x27;2016&#x27;},
+                {&#x27;description&#x27;: &#x27;(Short) Musician&#x27;,
+                 &#x27;id&#x27;: &#x27;tt4679082&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;9 Kisses&#x27;,
+                 &#x27;year&#x27;: &#x27;2014&#x27;},
+                {&#x27;description&#x27;: &#x27;James Brown&#x27;,
+                 &#x27;id&#x27;: &#x27;tt2473602&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Get on Up&#x27;,
+                 &#x27;year&#x27;: &#x27;2014&#x27;},
+                {&#x27;description&#x27;: &#x27;Vontae Mack&#x27;,
+                 &#x27;id&#x27;: &#x27;tt2223990&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;Draft Day&#x27;,
+                 &#x27;year&#x27;: &#x27;2014/I&#x27;},
+                {&#x27;description&#x27;: &#x27;Jackie Robinson&#x27;,
+                 &#x27;id&#x27;: &#x27;tt0453562&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;42&#x27;,
+                 &#x27;year&#x27;: &#x27;2013&#x27;},
+                {&#x27;description&#x27;: &#x27;Lt. Samuel Drake&#x27;,
+                 &#x27;id&#x27;: &#x27;tt1727373&#x27;,
+                 &#x27;role&#x27;: &#x27;Actor&#x27;,
+                 &#x27;title&#x27;: &#x27;The Kill Hole&#x27;,
+                 &#x27;year&#x27;: &#x27;2012&#x27;},
+                {&#x27;description&#x27;: &#x27;(TV Series) Cameron James - Subject 9 (2011) &#x27;
+                                &#x27;... Cameron James&#x27;,
+                 &#x27;id&#x27;: &#x27;tt1119644&#x27;,
+        â¦ &lt;trimmed 53231 bytes string&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
                     <td>json_data</td>
                     <td class="code"><pre>{&#x27;actorName&#x27;: &#x27;Chadwick Boseman&#x27;, &#x27;userid&#x27;: &#x27;test_1_user&#x27;}</pre></td>
                   </tr>
@@ -543,6 +639,16 @@
                   </tr>
                 
                   <tr>
+                    <td>lessThanDict</td>
+                    <td class="code"><pre>&lt;function getactorinfo.&lt;locals&gt;.lessThanDict at 0x7f03df1eb940&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>make_comparator_dict</td>
+                    <td class="code"><pre>&lt;function getactorinfo.&lt;locals&gt;.make_comparator_dict at 0x7f03df1eb8b0&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
                     <td>name</td>
                     <td class="code"><pre>&#x27;Chadwick Boseman&#x27;</pre></td>
                   </tr>
@@ -550,6 +656,138 @@
                   <tr>
                     <td>request</td>
                     <td class="code"><pre>&lt;WSGIRequest: GET &#x27;/getactorinfo/&#x27;&gt;</pre></td>
+                  </tr>
+                
+                  <tr>
+                    <td>respArray</td>
+                    <td class="code"><pre>[{&#x27;description&#x27;: &quot;(TV Series) Star Lord T&#x27;Challa / T&#x27;Challa / Black Panther - &quot;
+                 &#x27;What If... The Watcher Broke His Oath? (2021) ... Star Lord &#x27;
+                 &quot;T&#x27;Challa (voice) - What If... Killmonger Rescued Tony Stark? &quot;
+                 &quot;(2021) ... T&#x27;Challa / Black Panther (voice) - What If... &quot;
+                 &quot;Zombies?! (2021) ... T&#x27;Challa / Black Panther (voice) - What &quot;
+                 &quot;If... T&#x27;Challa Became a Star-Lord? (2021) ... Star Lord &quot;
+                 &quot;T&#x27;Challa (voice)&quot;,
+  &#x27;id&#x27;: &#x27;tt10168312&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;What If...?&#x27;,
+  &#x27;year&#x27;: &#x27;2021&#x27;},
+ {&#x27;description&#x27;: &#x27;Levee&#x27;,
+  &#x27;id&#x27;: &#x27;tt10514222&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &quot;Ma Rainey&#x27;s Black Bottom&quot;,
+  &#x27;year&#x27;: &#x27;2020&#x27;},
+ {&#x27;description&#x27;: &quot;Stormin&#x27; Norman&quot;,
+  &#x27;id&#x27;: &#x27;tt9777644&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Da 5 Bloods&#x27;,
+  &#x27;year&#x27;: &#x27;2020&#x27;},
+ {&#x27;description&#x27;: &#x27;Andre Davis&#x27;,
+  &#x27;id&#x27;: &#x27;tt8688634&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;21 Bridges&#x27;,
+  &#x27;year&#x27;: &#x27;2019&#x27;},
+ {&#x27;description&#x27;: &quot;T&#x27;Challa / Black Panther&quot;,
+  &#x27;id&#x27;: &#x27;tt4154796&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Avengers: Endgame&#x27;,
+  &#x27;year&#x27;: &#x27;2019&#x27;},
+ {&#x27;description&#x27;: &quot;T&#x27;Challa / Black Panther&quot;,
+  &#x27;id&#x27;: &#x27;tt4154756&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Avengers: Infinity War&#x27;,
+  &#x27;year&#x27;: &#x27;2018&#x27;},
+ {&#x27;description&#x27;: &quot;T&#x27;Challa / Black Panther&quot;,
+  &#x27;id&#x27;: &#x27;tt1825683&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Black Panther&#x27;,
+  &#x27;year&#x27;: &#x27;2018&#x27;},
+ {&#x27;description&#x27;: &#x27;Thurgood Marshall&#x27;,
+  &#x27;id&#x27;: &#x27;tt5301662&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Marshall&#x27;,
+  &#x27;year&#x27;: &#x27;2017&#x27;},
+ {&#x27;description&#x27;: &#x27;Jacob King&#x27;,
+  &#x27;id&#x27;: &#x27;tt1712192&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Message from the King&#x27;,
+  &#x27;year&#x27;: &#x27;2016&#x27;},
+ {&#x27;description&#x27;: &quot;T&#x27;Challa / Black Panther&quot;,
+  &#x27;id&#x27;: &#x27;tt3498820&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Captain America: Civil War&#x27;,
+  &#x27;year&#x27;: &#x27;2016&#x27;},
+ {&#x27;description&#x27;: &#x27;Thoth&#x27;,
+  &#x27;id&#x27;: &#x27;tt2404233&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Gods of Egypt&#x27;,
+  &#x27;year&#x27;: &#x27;2016&#x27;},
+ {&#x27;description&#x27;: &#x27;(Short) Musician&#x27;,
+  &#x27;id&#x27;: &#x27;tt4679082&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;9 Kisses&#x27;,
+  &#x27;year&#x27;: &#x27;2014&#x27;},
+ {&#x27;description&#x27;: &#x27;James Brown&#x27;,
+  &#x27;id&#x27;: &#x27;tt2473602&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Get on Up&#x27;,
+  &#x27;year&#x27;: &#x27;2014&#x27;},
+ {&#x27;description&#x27;: &#x27;Vontae Mack&#x27;,
+  &#x27;id&#x27;: &#x27;tt2223990&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Draft Day&#x27;,
+  &#x27;year&#x27;: &#x27;2014/I&#x27;},
+ {&#x27;description&#x27;: &#x27;Jackie Robinson&#x27;,
+  &#x27;id&#x27;: &#x27;tt0453562&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;42&#x27;,
+  &#x27;year&#x27;: &#x27;2013&#x27;},
+ {&#x27;description&#x27;: &#x27;Lt. Samuel Drake&#x27;,
+  &#x27;id&#x27;: &#x27;tt1727373&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;The Kill Hole&#x27;,
+  &#x27;year&#x27;: &#x27;2012&#x27;},
+ {&#x27;description&#x27;: &#x27;(TV Series) Cameron James - Subject 9 (2011) ... Cameron &#x27;
+                 &#x27;James&#x27;,
+  &#x27;id&#x27;: &#x27;tt1119644&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Fringe&#x27;,
+  &#x27;year&#x27;: &#x27;2011&#x27;},
+ {&#x27;description&#x27;: &quot;(TV Series) Ralph &#x27;Flex&#x27; Beeman - For Blood or Money (2011) &quot;
+                 &quot;... Ralph &#x27;Flex&#x27; Beeman&quot;,
+  &#x27;id&#x27;: &#x27;tt1489428&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Justified&#x27;,
+  &#x27;year&#x27;: &#x27;2011&#x27;},
+ {&#x27;description&#x27;: &#x27;(TV Series) Tommy Westin - Beaten/Cover Letter (2011) ... &#x27;
+                 &#x27;Tommy Westin&#x27;,
+  &#x27;id&#x27;: &#x27;tt1578258&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Detroit 1-8-7&#x27;,
+  &#x27;year&#x27;: &#x27;2011&#x27;},
+ {&#x27;description&#x27;: &quot;(TV Series) Chuck Russell - Poof, You&#x27;re Dead (2011) ... &quot;
+                 &#x27;Chuck Russell&#x27;,
+  &#x27;id&#x27;: &#x27;tt1219024&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Castle&#x27;,
+  &#x27;year&#x27;: &#x27;2011&#x27;},
+ {&#x27;description&#x27;: &#x27;(TV Series) Michael Richmond - Honey (2010) ... Michael &#x27;
+                 &#x27;Richmond&#x27;,
+  &#x27;id&#x27;: &#x27;tt1552112&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;The Glades&#x27;,
+  &#x27;year&#x27;: &#x27;2010&#x27;},
+ {&#x27;description&#x27;: &#x27;(TV Series) Graham McNair - Shadows in the Cave (2010) ... &#x27;
+                 &#x27;Graham McNair - And Then There Was One (2010) ... Graham &#x27;
+                 &#x27;McNair - Seven Sacrifices (2010) ... Graham McNair - &#x27;
+                 &#x27;Identity (2010) ... Graham McNair - Static (2010) ... Graham &#x27;
+                 &#x27;McNair Show all 13 episodes&#x27;,
+  &#x27;id&#x27;: &#x27;tt1333050&#x27;,
+  &#x27;role&#x27;: &#x27;Actor&#x27;,
+  &#x27;title&#x27;: &#x27;Persons Unknown&#x27;,
+  &#x27;year&#x27;: &#x27;2010&#x27;},
+ {&#x27;description&#x27;: &#x27;(TV Series) Nathaniel Ray - Lucky (2009) ... Nathaniel Ray - &#x27;
+                 &#x27;The Gathering Storm (2009) ... Nathaniel Ray - With You I &#x27;
+                 &#x27;Will Leave (2009) ... Nathaniel Ray - Aftersâ¦ &lt;trimmed 34250 bytes string&gt;</pre></td>
                   </tr>
                 
                   <tr>
@@ -575,7 +813,7 @@
   <div id="pastebinTraceback" class="pastebin">
     <input type="hidden" name="language" value="PythonConsole">
     <input type="hidden" name="title"
-      value="UnboundLocalError at /getactorinfo/">
+      value="TypeError at /getactorinfo/">
     <input type="hidden" name="source" value="Django Dpaste Agent">
     <input type="hidden" name="poster" value="Django">
     <textarea name="content" id="traceback_area" cols="140" rows="25">
@@ -612,11 +850,11 @@ Traceback (most recent call last):
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/home/ubuntu/appetizers/backend/env/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
     return view_func(*args, **kwargs)
-  File "/home/ubuntu/appetizers/backend/app/views.py", line 144, in getactorinfo
-    jsonDict2 = json.loads(response.text)
+  File "/home/ubuntu/appetizers/backend/app/views.py", line 160, in getactorinfo
+    sortedDict = sorted(respArray, cmp=make_comparator_dict(lessThanDict), reverse=True)
 
-Exception Type: UnboundLocalError at /getactorinfo/
-Exception Value: local variable &#x27;response&#x27; referenced before assignment
+Exception Type: TypeError at /getactorinfo/
+Exception Value: &#x27;cmp&#x27; is an invalid keyword argument for sort()
 </textarea>
   <br><br>
   <input type="submit" value="Share this traceback on a public website">
@@ -767,7 +1005,7 @@ Exception Value: local variable &#x27;response&#x27; referenced before assignmen
       
         <tr>
           <td>wsgi.errors</td>
-          <td class="code"><pre>&lt;gunicorn.http.wsgi.WSGIErrorsWrapper object at 0x7f878a619bb0&gt;</pre></td>
+          <td class="code"><pre>&lt;gunicorn.http.wsgi.WSGIErrorsWrapper object at 0x7f03e3e32a90&gt;</pre></td>
         </tr>
       
         <tr>
@@ -777,7 +1015,7 @@ Exception Value: local variable &#x27;response&#x27; referenced before assignmen
       
         <tr>
           <td>wsgi.input</td>
-          <td class="code"><pre>&lt;gunicorn.http.body.Body object at 0x7f878a619c40&gt;</pre></td>
+          <td class="code"><pre>&lt;gunicorn.http.body.Body object at 0x7f03e64d6400&gt;</pre></td>
         </tr>
       
         <tr>
