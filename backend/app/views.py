@@ -141,7 +141,7 @@ def getactorinfo(request):
     actorID = jsonDict["results"][0]["id"]
 
     response2 = requests.get(get_info_endpoint + actorID)
-    jsonDict2 = json.loads(response.text)
+    jsonDict2 = json.loads(response2.text)
 
     respArray = jsonDict2["castMovies"]
 
