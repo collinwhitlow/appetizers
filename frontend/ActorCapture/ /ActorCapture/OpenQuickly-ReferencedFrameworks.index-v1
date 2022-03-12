@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Foundation</string>
+	<string>objc</string>
+	<string>CoreVideo</string>
+	<string>AppKit</string>
+	<string>Dispatch</string>
+	<string>Accelerate</string>
+	<string>CoreGraphics</string>
+	<string>mach</string>
+	<string>QuartzCore</string>
+	<string>SDWebImage</string>
+	<string>libkern</string>
+	<string>FoundationNetworking</string>
+	<string>SwiftUI</string>
+	<string>CoreServices</string>
+	<string>sys</string>
+	<string>UIKit</string>
+	<string>Combine</string>
+	<string>os</string>
+	<string>CoreImage</string>
+	<string>SystemConfiguration</string>
+	<string>WatchKit</string>
+	<string>MobileCoreServices</string>
+	<string>ImageIO</string>
+	<string>CommonCrypto</string>
+</array>
+</plist>

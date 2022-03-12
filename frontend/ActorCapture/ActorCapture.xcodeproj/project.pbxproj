@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		81CCFBE327DD480D00BF9383 /* ActorCaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBE227DD480D00BF9383 /* ActorCaptureApp.swift */; };
-		81CCFBE527DD480D00BF9383 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBE427DD480D00BF9383 /* ContentView.swift */; };
+		274D6D086916CB1F3DAE534D /* Pods_ActorCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */; };
+		81CCFBE327DD480D00BF9383 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBE227DD480D00BF9383 /* Capture.swift */; };
 		81CCFBE727DD480F00BF9383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE627DD480F00BF9383 /* Assets.xcassets */; };
 		81CCFBEA27DD480F00BF9383 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */; };
+		81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF027DD4CD500BF9383 /* Backend.swift */; };
+		81CCFBF327DD4D2900BF9383 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF227DD4D2900BF9383 /* Structs.swift */; };
+		81CCFBF527DD4F0200BF9383 /* ListRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF427DD4F0200BF9383 /* ListRows.swift */; };
+		81CCFBF727DD4FA000BF9383 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF627DD4FA000BF9383 /* History.swift */; };
+		81CCFBF927DD4FAC00BF9383 /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF827DD4FAC00BF9383 /* WatchList.swift */; };
+		81CCFBFB27DD4FCA00BF9383 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBFA27DD4FCA00BF9383 /* Actor.swift */; };
+		81CCFBFD27DD4FE900BF9383 /* MenuBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CDF83B6009E3910858D0930 /* Pods-ActorCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActorCapture.release.xcconfig"; path = "Target Support Files/Pods-ActorCapture/Pods-ActorCapture.release.xcconfig"; sourceTree = "<group>"; };
+		7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActorCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CCFBDF27DD480D00BF9383 /* ActorCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActorCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		81CCFBE227DD480D00BF9383 /* ActorCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorCaptureApp.swift; sourceTree = "<group>"; };
-		81CCFBE427DD480D00BF9383 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		81CCFBE227DD480D00BF9383 /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
 		81CCFBE627DD480F00BF9383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81CCFBF027DD4CD500BF9383 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
+		81CCFBF227DD4D2900BF9383 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		81CCFBF427DD4F0200BF9383 /* ListRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRows.swift; sourceTree = "<group>"; };
+		81CCFBF627DD4FA000BF9383 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		81CCFBF827DD4FAC00BF9383 /* WatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchList.swift; sourceTree = "<group>"; };
+		81CCFBFA27DD4FCA00BF9383 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBars.swift; sourceTree = "<group>"; };
+		CDF160E859AF2B97A55553A3 /* Pods-ActorCapture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActorCapture.debug.xcconfig"; path = "Target Support Files/Pods-ActorCapture/Pods-ActorCapture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +42,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274D6D086916CB1F3DAE534D /* Pods_ActorCapture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A49D3CE3B07C56573EC0F9E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDF160E859AF2B97A55553A3 /* Pods-ActorCapture.debug.xcconfig */,
+				3CDF83B6009E3910858D0930 /* Pods-ActorCapture.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3B3F905F789DF126CE074C9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		81CCFBD627DD480D00BF9383 = {
 			isa = PBXGroup;
 			children = (
 				81CCFBE127DD480D00BF9383 /* ActorCapture */,
 				81CCFBE027DD480D00BF9383 /* Products */,
+				0A49D3CE3B07C56573EC0F9E /* Pods */,
+				3B3F905F789DF126CE074C9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +87,16 @@
 		81CCFBE127DD480D00BF9383 /* ActorCapture */ = {
 			isa = PBXGroup;
 			children = (
-				81CCFBE227DD480D00BF9383 /* ActorCaptureApp.swift */,
-				81CCFBE427DD480D00BF9383 /* ContentView.swift */,
+				81CCFBE227DD480D00BF9383 /* Capture.swift */,
 				81CCFBE627DD480F00BF9383 /* Assets.xcassets */,
 				81CCFBE827DD480F00BF9383 /* Preview Content */,
+				81CCFBF027DD4CD500BF9383 /* Backend.swift */,
+				81CCFBF227DD4D2900BF9383 /* Structs.swift */,
+				81CCFBF427DD4F0200BF9383 /* ListRows.swift */,
+				81CCFBF627DD4FA000BF9383 /* History.swift */,
+				81CCFBF827DD4FAC00BF9383 /* WatchList.swift */,
+				81CCFBFA27DD4FCA00BF9383 /* Actor.swift */,
+				81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */,
 			);
 			path = ActorCapture;
 			sourceTree = "<group>";
@@ -74,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81CCFBED27DD480F00BF9383 /* Build configuration list for PBXNativeTarget "ActorCapture" */;
 			buildPhases = (
+				AD104733D8BBF36AD9DADAB6 /* [CP] Check Pods Manifest.lock */,
 				81CCFBDB27DD480D00BF9383 /* Sources */,
 				81CCFBDC27DD480D00BF9383 /* Frameworks */,
 				81CCFBDD27DD480D00BF9383 /* Resources */,
+				4A4B6741D429DFC6977BDFD4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +176,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4A4B6741D429DFC6977BDFD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ActorCapture/Pods-ActorCapture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ActorCapture/Pods-ActorCapture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ActorCapture/Pods-ActorCapture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD104733D8BBF36AD9DADAB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ActorCapture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		81CCFBDB27DD480D00BF9383 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81CCFBE527DD480D00BF9383 /* ContentView.swift in Sources */,
-				81CCFBE327DD480D00BF9383 /* ActorCaptureApp.swift in Sources */,
+				81CCFBF527DD4F0200BF9383 /* ListRows.swift in Sources */,
+				81CCFBF327DD4D2900BF9383 /* Structs.swift in Sources */,
+				81CCFBE327DD480D00BF9383 /* Capture.swift in Sources */,
+				81CCFBFB27DD4FCA00BF9383 /* Actor.swift in Sources */,
+				81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */,
+				81CCFBF727DD4FA000BF9383 /* History.swift in Sources */,
+				81CCFBFD27DD4FE900BF9383 /* MenuBars.swift in Sources */,
+				81CCFBF927DD4FAC00BF9383 /* WatchList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +355,7 @@
 		};
 		81CCFBEE27DD480F00BF9383 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDF160E859AF2B97A55553A3 /* Pods-ActorCapture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,6 +385,7 @@
 		};
 		81CCFBEF27DD480F00BF9383 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CDF83B6009E3910858D0930 /* Pods-ActorCapture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
