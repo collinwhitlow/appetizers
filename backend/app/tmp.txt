@@ -1,0 +1,336 @@
+    1  ls
+    2  sudo apt update
+    3  sudo apt install python3-pip python3-dev python3-venv libpq-dev postgresql postgresql-contrib nginx curl
+    4  sudo ln -s /usr/bin/python3 /usr/bin/python
+    5  sudo apt update
+    6  sudo apt upgrade
+    7  exit
+    8  sync
+    9  sudo reboot
+   10  sudo -u postgres psql
+   11  cd ~
+   12  ls
+   13  git clone git@github.com:collinwhitlow/appetizers.git appetizers
+   14  git clone git@github.com:collinwhitlow/appetizers.git
+   15  git clone https://github.com/collinwhitlow/appetizers.git
+   16  ls
+   17  python --version
+   18  cd ap
+   19  cd appetizers/
+   20  mkdir backend
+   21  cd backend/
+   22  lks
+   23  ls
+   24  python -m venv env
+   25  source env/bia
+   26  source env/bin/activate
+   27  ls
+   28  pip install django gunicorn psycopg2-binary
+   29  python -m django --version
+   30  django-admin startproject routing ~/appetizers/backend
+   31  ls
+   32  vi routing/settings.py
+   33  ./manage.py makemigrations
+   34  ./manage.py migrat
+   35  ./manage.py migrate
+   36  ./manage.py createsuperuser
+   37  ./manage.py collectstatic
+   38  sudo ufw allow 8000
+   39  ./manage.py runserver ec2-3-144-236-126.us-east-2.compute.amazonaws.com:8000
+   40  gunicorn --bind 0.0.0.0:8000 routing.wsgi
+   41  deactivate
+   42  sudo vi /etc/systemd/system/gunicorn.socket
+   43  sudo vi /etc/systemd/system/gunicorn.service
+   44  sudo systemctl start gunicorn.socket
+   45  sudo systemctl enable gunicorn.service
+   46  file /run/gunicorn.sock
+   47  curl --unix-socket /run/gunicorn.sock localhost
+   48  systemctl status gunicorn
+   49  sudo vi /etc/nginx/sites-available/chatter
+   50  sudo vi /etc/nginx/sites-available/backend
+   51  sudo ln -s /etc/nginx/sites-available/backend /etc/nginx/sites-enabled
+   52  sudo nginx -t
+   53  sudo systemctl restart nginx
+   54  sudo ufw allow 'Nginx Full'
+   55  cd /etc/ssl
+   56  sudo cp openssl.cnf selfsigned.cnf
+   57  ls
+   58  sudo vi selfsigned.cnf 
+   59  sudo openssl req -x509 -days 100 -nodes -newkey rsa:2048 -config selfsigned.cnf -keyout private/selfsigned.key -out certs/selfsigned.cert
+   60  sudo openssl x509 -text -in certs/selfsigned.cert -noout
+   61  cd /etc/nginx/sites-available
+   62  sudo vi backend
+   63  sudo nginx -t
+   64  sudo systemctl restart nginx
+   65  curl --insecure https://3.144.236.126/
+   66  cd ~/appetizers/backend/
+   67  ls
+   68  source env/bin/activate
+   69  cd /etc/nginx/sites-available
+   70  ls
+   71  cd ba
+   72  sudo vi backend 
+   73  cd ~/appetizers/backend/
+   74  sudo nginx -t
+   75  sudo systemctl restart nginx
+   76  ./manage.py startapp app
+   77  deactivate
+   78  ls
+   79  cd ../
+   80  ls
+   81  git add .
+   82  git commit -m "backend up"
+   83  git push
+   84  git status
+   85  exit
+   86  sudo -u postgres psql
+   87  ls
+   88  cd appetizers/
+   89  git pull
+   90  git status
+   91  sudo systemctl restart gunicorn
+   92  git pull
+   93  sudo systemctl restart gunicorn
+   94  git pull
+   95  sudo systemctl restart gunicorn
+   96  git pull
+   97  sudo systemctl restart gunicorn
+   98  git pull
+   99  sudo systemctl restart gunicorn
+  100  git pull
+  101  sudo systemctl restart gunicorn
+  102  sudo -u postgres psql
+  103  git pull
+  104  sudo systemctl restart gunicorn
+  105  git pull
+  106  sudo systemctl restart gunicorn
+  107  sudo -u postgres psql
+  108  sudo vi /etc/nginx/sites-enabled/backend 
+  109  mkdir ~/appetizers/backend/media
+  110  chmod a+rx ~ ~/appetizers/backend/ ~/appetizers/backend/media/
+  111  chmod a+rx ~ ~/appetizers ~/appetizers/backend ~/appetizers/backend/media
+  112  git pull
+  113  sudo systemctl restart gunicorn
+  114  git pull
+  115  sudo systemctl restart gunicorn
+  116  git pull
+  117  sudo systemctl restart gunicorn
+  118  git pull
+  119  sudo systemctl restart gunicorn
+  120  git pull
+  121  sudo systemctl restart gunicorn
+  122  git pull
+  123  sudo systemctl restart gunicorn
+  124  git pull
+  125  sudo systemctl restart gunicorn
+  126  git pull
+  127  sudo systemctl restart gunicorn
+  128  sudo -u postgres psql
+  129  vi backend/app/views.py 
+  130  sudo systemctl restart gunicorn
+  131  git add .
+  132  git commit -m "wierd"
+  133  git push
+  134  git pull
+  135  sudo systemctl restart gunicorn
+  136  exit
+  137  ls
+  138  cd appetizers/
+  139  git pull
+  140  pwd
+  141  ls
+  142  export GOOGLE_APPLICATION_CREDENTIALS="/home/ubuntu/appetizers/superb-garden-342817-a513aa1e0d3e.json"
+  143  printenv
+  144  exit
+  145  ls
+  146  cd appetizers/
+  147  printenv
+  148  pip install --upgrade google-cloud-vision
+  149  git pull
+  150  sudo systemctl restart gunicorn
+  151  pip install --upgrade google-cloud-vision
+  152  pip install google-cloud
+  153  pip install --upgrade google-cloud-vision
+  154  sudo systemctl restart gunicorn
+  155  pip install google
+  156  pip install google-cloud
+  157  pip install --upgrade google-cloud-vision
+  158  sudo systemctl restart gunicorn
+  159  pip install --upgrade google-api-python-client
+  160  pip install google-cloud
+  161  pip install google-cloud-vision
+  162  sudo systemctl restart gunicorn
+  163  gcloud
+  164  pip install install google-cloud-cli
+  165  pip install google-cloud-cli
+  166  sudo snap install google-cloud-cli
+  167  sudo python -m pip install google-cloud
+  168  exit
+  169  ls
+  170  cd appetizers/
+  171  ls
+  172  ls
+  173  pip install –upgrade google-api-python-client
+  174  pip install google-api-python-client
+  175  pip install google-cloud and pip install google-cloud-vision
+  176  pip install google-cloud
+  177  pip install google-cloud-vision
+  178  sudo systemctl restart gunicorn
+  179  pip install google-cloud-datastore
+  180  sudo systemctl restart gunicorn
+  181  pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+  182  sudo systemctl restart gunicorn
+  183  ls
+  184  source env/bin/activate
+  185  pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+  186  pip install google-cloud-datastore
+  187  pip install google-cloud-vision
+  188  pip install google-cloud
+  189  pip install google-api-python-client
+  190  sudo systemctl restart gunicorn
+  191  git pull
+  192  sudo systemctl restart gunicorn
+  193  git pull
+  194  sudo systemctl restart gunicorn
+  195  git pull
+  196  sudo systemctl restart gunicorn
+  197  git pull
+  198  sudo systemctl restart gunicorn
+  199  git pull
+  200  sudo systemctl restart gunicorn
+  201  git pull
+  202  sudo systemctl restart gunicorn
+  203  git pull
+  204  sudo systemctl restart gunicorn
+  205  pip install matplotlib
+  206  sudo systemctl restart gunicorn
+  207  git pull
+  208  sudo systemctl restart gunicorn
+  209  synnc
+  210  sync
+  211  sudo reboot
+  212  ls
+  213  cd appetizers/
+  214  sudo -u postgres psql
+  215  ls
+  216  git status
+  217  ls
+  218  cd backend/
+  219  ls
+  220  cd app
+  221  ls
+  222  git status
+  223  git staatus
+  224  git status
+  225  git pul
+  226  git pull
+  227  ls
+  228  sudo systemctl restart gunicorn
+  229  cd ~
+  230  ls
+  231  sudo -u postgres psql
+  232  exit
+  233  cd appetizers/
+  234  git pull
+  235  sudo systemctl restart gunicorn
+  236  git pull
+  237  sudo systemctl restart gunicorn
+  238  exit
+  239  ls
+  240  cd appetizers/
+  241  ls
+  242  cd backend/
+  243  git pull
+  244  source env/bin/activate
+  245  pip install boto3
+  246  vim ~/.aws/credentials
+  247  sudo vim ~/.aws/credentials
+  248  mkdir ~/.aws
+  249  sudo vim ~/.aws/credentials
+  250  sudo vim ~/.aws/config
+  251  cd appetizers/
+  252  git pull
+  253  sudo systemctl restart gunicorn
+  254  cd appetizers/
+  255  git pull
+  256  sudo systemctl restart gunicorn
+  257  git pull
+  258  cd appetizers/
+  259  git pull
+  260  sudo -u postgres psql
+  261  sudo systemctl restart gunicorn
+  262  cd appetizers/
+  263  git pull 
+  264  sudo systemctl restart gunicorn
+  265  cd appetizers/
+  266  git pull
+  267  sudo systemctl restart gunicorn
+  268  git pull
+  269  sudo systemctl restart gunicorn
+  270  git pull
+  271  sudo systemctl restart gunicorn
+  272  git pull 
+  273  sudo systemctl restart gunicorn
+  274  cd appetizers/
+  275  git pull 
+  276  sudo systemctl restart gunicorn
+  277  sudo -u postgres psql
+  278  exit
+  279  ls
+  280  cd appetizers/
+  281  git pull
+  282  sudo systemctl restart gunicorn
+  283  ls
+  284  sudo -u postgres psql
+  285  git pull
+  286  sudo systemctl restart gunicorn
+  287  sudo -u postgres psql
+  288  ls
+  289  cd /media/
+  290  ls
+  291  cd ..//
+  292  ls
+  293  cd media/
+  294  ls
+  295  cd ../
+  296  ls
+  297  cd home
+  298  ls
+  299  cd ubuntu/
+  300  ls
+  301  cd media
+  302  cd ~/appetizers/backend/media/
+  303  ls
+  304  rm *
+  305  ls
+  306  cd ../
+  307  ls
+  308  sudo -u postgres psql
+  309  git pull
+  310  exit
+  311  exit
+  312  sync
+  313  sudo reboot
+  314  sudo apt upgrade
+  315  sudo apt update
+  316  ls
+  317  cd appetizers/
+  318  git status
+  319  git pull
+  320  ls
+  321  git pull
+  322  sudo systemctl restart gunicorn
+  323  git pull
+  324  sudo systemctl restart gunicorn
+  325  git pull
+  326  sudo systemctl restart gunicorn
+  327  git pull
+  328  sudo systemctl restart gunicorn
+  329  exit
+  330  ls
+  331  cd appetizers/
+  332  cd backend/
+  333  source env/bin/activate
+  334  pip list command
+  335  history
+  336  history > tmp.txt
