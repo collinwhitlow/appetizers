@@ -62,7 +62,7 @@ def findactor(request):
 
     # loading form-encoded data
     if not request.FILES.get("image") or not request.POST.get("userid") or not request.POST.get("bounding_box"):
-        return JsonResponse({"error": "no image?"})
+        return HttpResponse(status=400)
     userid = request.POST["userid"]
     content = request.FILES["image"]
     bounds = json.loads(request.POST["bounding_box"]) # [[a b] [c d] [e f] [g h]]
@@ -130,6 +130,9 @@ def getactorinfo(request):
     if request.method != 'GET':
         return HttpResponse(status=404)
     json_data = json.loads(request.body)
+    if 'actorName' not in json_data:
+        return HttpResponse(status=404)
+
     name = json_data['actorName']
 
     key = "k_ek29gjuf"
