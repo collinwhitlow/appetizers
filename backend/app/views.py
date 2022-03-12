@@ -27,7 +27,7 @@ def findfaces(request):
         return HttpResponse(status=400)
 
     if not request.FILES.get("image") or not request.POST.get("userid"):
-        return JsonResponse({"error": "no image?"})
+        return HttpResponse(status=400)
 
     userid = request.POST["userid"]
 
