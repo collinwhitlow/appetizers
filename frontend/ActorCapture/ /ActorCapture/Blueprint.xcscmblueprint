@@ -1,0 +1,23 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D798E2AB8CA378FD5B9D408945389604F288179D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D798E2AB8CA378FD5B9D408945389604F288179D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FD21577B-3473-47B7-A3ED-4C5193C47EAD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D798E2AB8CA378FD5B9D408945389604F288179D" : "appetizers\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ActorCapture",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "frontend\/ActorCapture\/ActorCapture.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/collinwhitlow\/appetizers.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D798E2AB8CA378FD5B9D408945389604F288179D"
+    }
+  ]
+}

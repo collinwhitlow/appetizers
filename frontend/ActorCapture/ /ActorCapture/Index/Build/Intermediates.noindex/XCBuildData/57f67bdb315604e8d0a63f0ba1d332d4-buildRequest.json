@@ -1,0 +1,61 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : true,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "4258c49b5aa0fca209aeb2cc515b1cd183f23b63fa15ac92713547389eb5cd91"
+    }
+  ],
+  "containerPath" : "/Users/jackrallo/Desktop/EECS_441/appetizers/frontend/ActorCapture/ActorCapture.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "indexbuild",
+    "activeArchitecture" : "arm64e",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx12.1",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64e"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/jackrallo/Desktop/EECS_441/appetizers/frontend/ActorCapture/ /ActorCapture/Index/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/jackrallo/Desktop/EECS_441/appetizers/frontend/ActorCapture/ /ActorCapture/Index/Build/Products",
+      "derivedDataPath" : "/Users/jackrallo/Desktop/EECS_441/appetizers/frontend/ActorCapture/ ",
+      "indexDataStoreFolderPath" : "/Users/jackrallo/Desktop/EECS_441/appetizers/frontend/ActorCapture/ /ActorCapture/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/jackrallo/Desktop/EECS_441/appetizers/frontend/ActorCapture/ /ActorCapture/Index/PrecompiledHeaders",
+      "pchPath" : "/Users/jackrallo/Desktop/EECS_441/appetizers/frontend/ActorCapture/ /ActorCapture/Index/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "INDEX_ARENA_INFO_REGULAR_BUILD_PRODUCTS_DIR" : "/Users/jackrallo/Desktop/EECS_441/appetizers/frontend/ActorCapture/ /ActorCapture/Build/Products",
+          "ONLY_ACTIVE_ARCH" : "YES"
+        }
+      }
+    }
+  },
+  "qos" : "utility",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
