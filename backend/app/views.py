@@ -169,8 +169,8 @@ def getactorinfo(request):
         "birthday": jsonDict2["birthDate"],
         "known_for": jsonDict2["knownFor"],
         "cast_movies": respArray,
-        "image": jsonDict2["awards"],
-        "awards":jsonDict2["image"]
+        "image": jsonDict2["image"],
+        "awards":jsonDict2["awards"]
     }
 
 
