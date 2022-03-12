@@ -27,12 +27,22 @@ headers = {'Accept': 'text/plain'}
 
 files = {'image': open(image_file, 'rb')}
 
-data = {"userid": "test_1_user", "bounding_box": json.dumps(new_data["bounding_boxes"][2])}
+data = {"userid": "test_1_user", "bounding_box": json.dumps(new_data["bounding_boxes"][1])}
 response = requests.post(api, files=files, data=data, headers=headers, verify=False)
 try:
     print(response.text)
 except requests.exceptions.RequestException:
     print(response.text)
+
+name = json.loads(response.text)["actor"]
+# name = "Chadwick Boseman"
+api = "https://3.144.236.126/getactorinfo/"
+data = {"userid": "test_1_user", "actorName": name}
+response = requests.get(api, data=json.dumps(data), verify=False)
+print(response.text)
+
+
+
 
 # curl -X POST -d '{ "userid": "user1"}' --insecure https://3.144.236.126/findactor/ > /Users/tobycormack/Desktop/test.html    
 
