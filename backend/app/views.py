@@ -229,7 +229,12 @@ def deletehistory(request):
     userid = json_data['userid']
     actorName = json_data['actorName']
     cursor = connection.cursor()
-    cursor.execute('DELETE FROM history WHERE userid=%s AND actor=%s', (userid, actorName))
+    cursor.execute('SELECT * FROM history WHERE userid=%s AND actor=%s;', (userid,actorName))
+    rows = cursor.fetchall()
+    for row in rows:
+        import os
+        os.remove("../media/" + row[2])
+    cursor.execute('DELETE FROM history WHERE userid=%s AND actor=%s;', (userid, actorName))
     response = json_data
     return JsonResponse(response)
 
@@ -242,6 +247,6 @@ def deletewatchlist(request):
     userid = json_data['userid']
     movietitle = json_data['movietitle']
     cursor = connection.cursor()
-    cursor.execute('DELETE FROM watchlist WHERE userid=%s AND movietitle=%s', (userid, movietitle))
+    cursor.execute('DELETE FROM watchlist WHERE userid=%s AND movietitle=%s;', (userid, movietitle))
     response = json_data
     return JsonResponse(response)
