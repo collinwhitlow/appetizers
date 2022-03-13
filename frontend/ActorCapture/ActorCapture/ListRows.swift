@@ -7,21 +7,46 @@
 
 import SwiftUI
 
-struct ChattListRow: View {
-    var chatt: Chatt
+struct HistoryListRow: View {
+    var historyentry: HistoryEntry
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                if let username = chatt.username, let timestamp = chatt.timestamp {
-                    Text(username).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                if let actorname = historyentry.actorName, let imageURL = historyentry.imageUrl, let confidence = historyentry.confidence {
+                    Text(actorname).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                     Spacer()
-                    Text(timestamp).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                    Text(imageURL).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                    Spacer()
+                    Text(confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                 }
-            }
-            if let message = chatt.message {
-                Text(message).padding(EdgeInsets(top: 8, leading: 0, bottom: 6, trailing: 0))
             }
         }
     }
 }
+
+struct WatchListRow: View {
+    var watchlistentry: WatchListEntry
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                if let moviename = watchlistentry.movieName, let imageURL = watchlistentry.imageUrl {
+                    Text(moviename).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                    Spacer()
+                    Text(imageURL).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                }
+            }
+        }
+    }
+}
+
+//struct HistoryEntry {
+//    var actorName: String?
+//    @ChattPropWrapper var imageUrl: String?
+//}
+//
+//struct WatchListEntry {
+//    @ChattPropWrapper var imageUrl: String?
+//    var movieName: String?
+//}
