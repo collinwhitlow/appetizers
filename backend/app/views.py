@@ -232,8 +232,8 @@ def deletehistory(request):
     cursor.execute('SELECT * FROM history WHERE userid=%s AND actor=%s;', (userid,actorName))
     rows = cursor.fetchall()
     for row in rows:
-        import os
-        os.remove("../media/" + row[2])
+        str_tmp = row[2]
+        os.remove("../media/" + str_tmp[str_tmp.rfind("/")+1:len(str_tmp)])
     cursor.execute('DELETE FROM history WHERE userid=%s AND actor=%s;', (userid, actorName))
     response = json_data
     return JsonResponse(response)

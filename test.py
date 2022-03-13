@@ -20,3 +20,7 @@ movies = sorted(movies, key=cmp_to_key(compare), reverse=True)
 print()
 for i in range(15):
     print(movies[i]["year"])
+
+str = "https://3.144.236.126/media/backend_test_21647138003.791009.png"
+str = str[str.rfind("/")+1:len(str)]
+print(str)
