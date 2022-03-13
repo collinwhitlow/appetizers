@@ -1,3 +1,6 @@
+# all media from backend
+backend/media/*
+
 # macOS files
 .DS_Store
 .DS_Store?

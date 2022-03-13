@@ -26,7 +26,7 @@ final class Backend: ObservableObject  {
             return
         }
         var request = URLRequest(url: apiUrl)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.httpBody = jsonData
 
         do {
@@ -34,6 +34,7 @@ final class Backend: ObservableObject  {
                 
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                 print("gethistory: HTTP STATUS: \(httpStatus.statusCode)")
+                print(data)
                 return
             }
                 
