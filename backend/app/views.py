@@ -127,7 +127,7 @@ def findactor(request):
 
 @csrf_exempt
 def getactorinfo(request):
-    if request.method != 'GET':
+    if request.method != 'POST':
         return HttpResponse(status=404)
     json_data = json.loads(request.body)
     if 'actorName' not in json_data:
