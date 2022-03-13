@@ -210,8 +210,15 @@ def postwatchlist(request):
 def gethistory(request):
     if request.method != 'GET':
         return HttpResponse(status=404)
-    response = {}
-    response['chatts'] = ['Replace Me', 'DUMMY RESPONSE'] # **DUMMY response!**
+
+    json_data = json.loads(request.body)
+    userid = json_data['userid']
+
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM history WHERE userid=%s ORDER BY time ASC;', (userid,))
+    rows = cursor.fetchall()
+
+    response = rows
     return JsonResponse(response)
 
 
@@ -220,8 +227,9 @@ def deletehistory(request):
         return HttpResponse(status=404)
     json_data = json.loads(request.body)
     userid = json_data['userid']
+    actorName = json_data['actorName']
     cursor = connection.cursor()
-    cursor.execute('DELETE FROM history WHERE userid=?', (userid))
+    cursor.execute('DELETE FROM history WHERE userid=? AND actor=?', (userid, actorName))
     response = json_data
     return JsonResponse(response)
 
