@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		274D6D086916CB1F3DAE534D /* Pods_ActorCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */; };
-		81CCFBE327DD480D00BF9383 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBE227DD480D00BF9383 /* Capture.swift */; };
 		81CCFBE727DD480F00BF9383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE627DD480F00BF9383 /* Assets.xcassets */; };
 		81CCFBEA27DD480F00BF9383 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */; };
 		81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF027DD4CD500BF9383 /* Backend.swift */; };
@@ -18,13 +17,13 @@
 		81CCFBF927DD4FAC00BF9383 /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF827DD4FAC00BF9383 /* WatchList.swift */; };
 		81CCFBFB27DD4FCA00BF9383 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBFA27DD4FCA00BF9383 /* Actor.swift */; };
 		81CCFBFD27DD4FE900BF9383 /* MenuBars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */; };
+		AAFBCED427DE373B0086625A /* ActorCaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFBCED327DE373B0086625A /* ActorCaptureApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3CDF83B6009E3910858D0930 /* Pods-ActorCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActorCapture.release.xcconfig"; path = "Target Support Files/Pods-ActorCapture/Pods-ActorCapture.release.xcconfig"; sourceTree = "<group>"; };
 		7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActorCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CCFBDF27DD480D00BF9383 /* ActorCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActorCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		81CCFBE227DD480D00BF9383 /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
 		81CCFBE627DD480F00BF9383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		81CCFBF027DD4CD500BF9383 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		81CCFBF827DD4FAC00BF9383 /* WatchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchList.swift; sourceTree = "<group>"; };
 		81CCFBFA27DD4FCA00BF9383 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBars.swift; sourceTree = "<group>"; };
+		AAFBCED327DE373B0086625A /* ActorCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorCaptureApp.swift; sourceTree = "<group>"; };
 		CDF160E859AF2B97A55553A3 /* Pods-ActorCapture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActorCapture.debug.xcconfig"; path = "Target Support Files/Pods-ActorCapture/Pods-ActorCapture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,6 @@
 		81CCFBE127DD480D00BF9383 /* ActorCapture */ = {
 			isa = PBXGroup;
 			children = (
-				81CCFBE227DD480D00BF9383 /* Capture.swift */,
 				81CCFBE627DD480F00BF9383 /* Assets.xcassets */,
 				81CCFBE827DD480F00BF9383 /* Preview Content */,
 				81CCFBF027DD4CD500BF9383 /* Backend.swift */,
@@ -96,6 +95,7 @@
 				81CCFBF627DD4FA000BF9383 /* History.swift */,
 				81CCFBF827DD4FAC00BF9383 /* WatchList.swift */,
 				81CCFBFA27DD4FCA00BF9383 /* Actor.swift */,
+				AAFBCED327DE373B0086625A /* ActorCaptureApp.swift */,
 				81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */,
 			);
 			path = ActorCapture;
@@ -225,8 +225,8 @@
 			files = (
 				81CCFBF527DD4F0200BF9383 /* ListRows.swift in Sources */,
 				81CCFBF327DD4D2900BF9383 /* Structs.swift in Sources */,
-				81CCFBE327DD480D00BF9383 /* Capture.swift in Sources */,
 				81CCFBFB27DD4FCA00BF9383 /* Actor.swift in Sources */,
+				AAFBCED427DE373B0086625A /* ActorCaptureApp.swift in Sources */,
 				81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */,
 				81CCFBF727DD4FA000BF9383 /* History.swift in Sources */,
 				81CCFBFD27DD4FE900BF9383 /* MenuBars.swift in Sources */,
@@ -375,7 +375,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo.ActorCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.tojocorm.ActorCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -405,7 +405,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo.ActorCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.tojocorm.ActorCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

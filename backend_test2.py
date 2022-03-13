@@ -13,6 +13,8 @@ response = requests.post(api, files=files, data=data, headers=headers, verify=Fa
 json_resp = response.json()
 name = json.loads(response.text)["actor"]
 
+import pdb
+pdb.set_trace()
 api = "https://3.144.236.126/gethistory/"
 data = {"userid": "backend_test_2"}
 historyResponse = requests.get(api, data=json.dumps(data), verify=False)

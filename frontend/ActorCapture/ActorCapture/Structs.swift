@@ -10,6 +10,7 @@ import Foundation
 struct HistoryEntry {
     var actorName: String?
     @ChattPropWrapper var imageUrl: String?
+    var confidence: String?
 }
 
 struct WatchListEntry {
