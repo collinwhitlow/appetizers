@@ -218,7 +218,7 @@ def gethistory(request):
     cursor.execute('SELECT * FROM history WHERE userid=%s ORDER BY time ASC;', (userid,))
     rows = cursor.fetchall()
 
-    response = rows
+    response = {"rows": rows}
     return JsonResponse(response)
 
 

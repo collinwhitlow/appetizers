@@ -1,3 +1,4 @@
+from numpy import histogram
 import requests
 import base64
 import json
@@ -14,17 +15,17 @@ json_resp = response.json()
 api = "https://3.144.236.126/gethistory/"
 data = {"userid": "backend_test_2"}
 historyResponse = requests.get(api, data=json.dumps(data), verify=False)
-json_data = historyResponse.json()
-print(json_data)
+# json_data = historyResponse.json()
+print(historyResponse.text)
 
 
-name = json.loads(response.text)["actor"]
-api = "https://3.144.236.126/deletehistory/"
-data = {"userid": "backend_test_2", "actorName": name}
-response = requests.delete(api, data=json.dumps(data), verify=False)
+# name = json.loads(response.text)["actor"]
+# api = "https://3.144.236.126/deletehistory/"
+# data = {"userid": "backend_test_2", "actorName": name}
+# response = requests.delete(api, data=json.dumps(data), verify=False)
 
-api = "https://3.144.236.126/gethistory/"
-data = {"userid": "backend_test_2"}
-historyResponse = requests.get(api, data=json.dumps(data), verify=False)
-json_data = historyResponse.json()
-print(json_data)
+# api = "https://3.144.236.126/gethistory/"
+# data = {"userid": "backend_test_2"}
+# historyResponse = requests.get(api, data=json.dumps(data), verify=False)
+# json_data = historyResponse.json()
+# print(json_data)
