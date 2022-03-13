@@ -148,19 +148,19 @@ def getactorinfo(request):
 
     respArray = jsonDict2["castMovies"]
 
-    # def make_comparator_dict(less_than):
-    #     def compareDict(x, y):
-    #         if less_than(x, y):
-    #             return -1
-    #         elif less_than(y, x):
-    #             return 1
-    #         else:
-    #             return 0
-    #     return compareDict
-    # def lessThanDict(dict1, dict2):
-    #     return int(dict1["year"]) < int(dict2["year"])
+    from functools import cmp_to_key
 
-    # sortedDict = sorted(respArray, cmp=make_comparator_dict(lessThanDict), reverse=True)
+    def compare(dict1, dict2):
+        int1 = 0
+        int2 = 0
+        if len(dict1["year"][0:4]) == 4:
+            int1 = int(dict1["year"][0:4])
+        if len(dict2["year"][0:4]) == 4:
+            int2 = int(dict2["year"][0:4])
+            
+        return int1 - int2
+    respArray = sorted(respArray, key=cmp_to_key(compare), reverse=True)
+
 
     response = {
         "name": name,
@@ -168,7 +168,7 @@ def getactorinfo(request):
         "summary": jsonDict2["summary"],
         "birthday": jsonDict2["birthDate"],
         "known_for": jsonDict2["knownFor"],
-        "cast_movies": respArray,
+        "cast_movies": respArray[0:15],
         "image": jsonDict2["image"],
         "awards":jsonDict2["awards"]
     }
