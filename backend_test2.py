@@ -33,3 +33,28 @@ json_data = historyResponse.json()
 
 assert("rows" in json_data)
 assert(len(json_data["rows"]) == 0)
+
+api = 'https://3.144.236.126/postwatchlist/'
+movie = "testMovie"
+data = {"userid": "backend_test_2", "movietitle": movie}
+response = requests.post(api, data=json.dumps(data), verify=False)
+
+api = "https://3.144.236.126/getwatchlist/"
+data = {"userid": "backend_test_2"}
+historyResponse = requests.get(api, data=json.dumps(data), verify=False)
+json_data = historyResponse.json()
+
+assert("watchlist" in json_data)
+assert(json_data["watchlist"][0] == movie)
+
+api = "https://3.144.236.126/deletewatchlist/"
+data = {"userid": "backend_test_2", "movietitle": movie}
+response = requests.delete(api, data=json.dumps(data), verify=False)
+
+api = "https://3.144.236.126/getwatchlist/"
+data = {"userid": "backend_test_2"}
+historyResponse = requests.get(api, data=json.dumps(data), verify=False)
+json_data = historyResponse.json()
+
+assert("watchlist" in json_data)
+assert(len(json_data["watchlist"]) == 0)
