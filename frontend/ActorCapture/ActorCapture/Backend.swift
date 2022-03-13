@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 final class Backend: ObservableObject  {
     static let shared = Backend() // create one instance of the class to be shared
@@ -19,8 +20,14 @@ final class Backend: ObservableObject  {
             return
         }
         
+        let jsonObj = ["userid": "test_1_user"]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
+            print("getHistory: jsonData serialization error")
+            return
+        }
         var request = URLRequest(url: apiUrl)
         request.httpMethod = "GET"
+        request.httpBody = jsonData
 
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
@@ -51,63 +58,33 @@ final class Backend: ObservableObject  {
         }
     }
     func deleteHistory(_ history: HistoryEntry) async {
-        let jsonObj = ["chatterID": ChatterID.shared.id,
-                       "message": chatt.message]
+        let jsonObj = ["userid": await UIDevice.current.identifierForVendor?.uuidString,
+                       "actorName": history.actorName]
         guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
-            print("postChatt: jsonData serialization error")
+            print("deleteHistory: jsonData serialization error")
             return
         }
                 
-        guard let apiUrl = URL(string: serverUrl+"postauth/") else {
-            print("postChatt: Bad URL")
+        guard let apiUrl = URL(string: serverUrl+"deletehistory/") else {
+            print("deleteHistory: Bad URL")
             return
         }
         
         var request = URLRequest(url: apiUrl)
-        request.httpMethod = "POST"
+        request.httpMethod = "DELETE"
         request.httpBody = jsonData
 
         do {
             let (_, response) = try await URLSession.shared.data(for: request)
 
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                print("postChatt: HTTP STATUS: \(httpStatus.statusCode)")
+                print("deleteHistory: HTTP STATUS: \(httpStatus.statusCode)")
                 return
             } else {
-                await getChatts()
+                await getHistory()
             }
         } catch {
-            print("postChatt: NETWORKING ERROR")
-        }
-    }
-    func getWatchlist(_ history: HistoryEntry) async {
-        let jsonObj = ["chatterID": ChatterID.shared.id,
-                       "message": chatt.message]
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
-            print("postChatt: jsonData serialization error")
-            return
-        }
-                
-        guard let apiUrl = URL(string: serverUrl+"postauth/") else {
-            print("postChatt: Bad URL")
-            return
-        }
-        
-        var request = URLRequest(url: apiUrl)
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
-
-        do {
-            let (_, response) = try await URLSession.shared.data(for: request)
-
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                print("postChatt: HTTP STATUS: \(httpStatus.statusCode)")
-                return
-            } else {
-                await getChatts()
-            }
-        } catch {
-            print("postChatt: NETWORKING ERROR")
+            print("deleteHistory: NETWORKING ERROR")
         }
     }
 }

@@ -6,42 +6,30 @@ struct HistoryView: View {
 
     var body: some View {
         NavigationView {
-            List(store.chatts.indices, id: \.self) {
-                ChattListRow(chatt: store.chatts[$0])
+            List(store.history.indices, id: \.self) {
+                HistoryListRow(historyentry: store.history[$0])
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
             }
             .listStyle(.plain)
             .refreshable {
-                await store.getChatts()
+                await store.getHistory()
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Chatter")
-                }
-                ToolbarItem(placement:.navigationBarTrailing) {
-                    Button(action: {
-                        if ChatterID.shared.expiration == Date(timeIntervalSince1970: 0.0) { // upon first launch
-                            ChatterID.shared.open()
-                        }
-                        isPresenting.toggle()
-                    }) {
-                        Image(systemName: "square.and.pencil")
-                    }.sheet(isPresented: $isPresenting) {
-                        PostView(isPresented: $isPresenting)
-                    }
+                    Text("HELLO")
                 }
             }
             .task {
-                await store.getChatts()
+                await store.getHistory()
             }
         }
     }
 }
 
-struct MainView_Previews: PreviewProvider {
+struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        HistoryView()
     }
 }
