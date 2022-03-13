@@ -176,8 +176,9 @@ def getactorinfo(request):
 
     return JsonResponse(response)
 
+@csrf_exempt
 def getwatchlist(request):
-    if request.method != 'GET':
+    if request.method != 'POST':
         return HttpResponse(status=404)
 
     json_data = json.loads(request.body)
