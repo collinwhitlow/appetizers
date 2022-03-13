@@ -161,14 +161,14 @@ def getactorinfo(request):
         return int1 - int2
     respArray = sorted(respArray, key=cmp_to_key(compare), reverse=True)
 
-
+    end_of_cast_movies = min(15, len(respArray))
     response = {
         "name": name,
         "role": jsonDict2["role"],
         "summary": jsonDict2["summary"],
         "birthday": jsonDict2["birthDate"],
         "known_for": jsonDict2["knownFor"],
-        "cast_movies": respArray[0:15],
+        "cast_movies": respArray[0:end_of_cast_movies],
         "image": jsonDict2["image"],
         "awards":jsonDict2["awards"]
     }
