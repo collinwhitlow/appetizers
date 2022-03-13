@@ -221,7 +221,7 @@ def gethistory(request):
     response = {"rows": rows}
     return JsonResponse(response)
 
-
+@csrf_exempt
 def deletehistory(request):
     if request.method != 'DELETE':
         return HttpResponse(status=404)
@@ -233,6 +233,7 @@ def deletehistory(request):
     response = json_data
     return JsonResponse(response)
 
+@csrf_exempt
 def deletewatchlist(request):
     if request.method != 'DELETE':
         return HttpResponse(status=404)

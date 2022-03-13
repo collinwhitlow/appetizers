@@ -11,21 +11,25 @@ files = {'image': open(image_file, 'rb')}
 data = {"userid": "backend_test_2", "bounding_box": json.dumps([[993, 108], [1337, 108], [1337, 508], [993, 508]])}
 response = requests.post(api, files=files, data=data, headers=headers, verify=False)
 json_resp = response.json()
+name = json.loads(response.text)["actor"]
 
 api = "https://3.144.236.126/gethistory/"
 data = {"userid": "backend_test_2"}
 historyResponse = requests.get(api, data=json.dumps(data), verify=False)
-# json_data = historyResponse.json()
-print(historyResponse.text)
+json_data = historyResponse.json()
 
+assert("rows" in json_data)
+assert(json_data["rows"][0][1] == name)
 
-# name = json.loads(response.text)["actor"]
-# api = "https://3.144.236.126/deletehistory/"
-# data = {"userid": "backend_test_2", "actorName": name}
-# response = requests.delete(api, data=json.dumps(data), verify=False)
+api = "https://3.144.236.126/deletehistory/"
+data = {"userid": "backend_test_2", "actorName": name}
+response = requests.delete(api, data=json.dumps(data), verify=False)
+print(response.text)
 
-# api = "https://3.144.236.126/gethistory/"
-# data = {"userid": "backend_test_2"}
-# historyResponse = requests.get(api, data=json.dumps(data), verify=False)
-# json_data = historyResponse.json()
-# print(json_data)
+api = "https://3.144.236.126/gethistory/"
+data = {"userid": "backend_test_2"}
+historyResponse = requests.get(api, data=json.dumps(data), verify=False)
+json_data = historyResponse.json()
+
+assert("rows" in json_data)
+assert(len(json_data["rows"]) == 0)
