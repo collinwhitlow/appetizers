@@ -233,7 +233,7 @@ def deletehistory(request):
     rows = cursor.fetchall()
     for row in rows:
         str_tmp = row[2]
-        os.remove("../media/" + str_tmp[str_tmp.rfind("/")+1:len(str_tmp)])
+        os.remove("/home/ubuntu/appetizers/backend/media/" + str_tmp[str_tmp.rfind("/")+1:len(str_tmp)])
     cursor.execute('DELETE FROM history WHERE userid=%s AND actor=%s;', (userid, actorName))
     response = json_data
     return JsonResponse(response)
