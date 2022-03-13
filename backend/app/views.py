@@ -206,9 +206,9 @@ def postwatchlist(request):
     return JsonResponse({})
 
 
-
+@csrf_exempt
 def gethistory(request):
-    if request.method != 'GET':
+    if request.method != 'POST':
         return HttpResponse(status=404)
 
     json_data = json.loads(request.body)
