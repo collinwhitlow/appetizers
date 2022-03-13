@@ -34,7 +34,6 @@ final class Backend: ObservableObject  {
                 
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                 print("gethistory: HTTP STATUS: \(httpStatus.statusCode)")
-                print(data)
                 return
             }
                 
