@@ -29,8 +29,8 @@ key = "k_ek29gjuf"
 # print(tmpResp.text)
 
 
-api = 'https://3.144.236.126/postwatchlist/'
+api = 'https://3.144.236.126/getwatchlist/'
 movie = "La la land"
-data = {"userid": "user_1", "movietitle": movie, "imageURL": ""}
+data = {"userid": "user_1"} # , "movietitle": movie, "imageURL": ""}
 response = requests.post(api, data=json.dumps(data), verify=False)
 print(response.text)
