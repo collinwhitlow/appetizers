@@ -22,8 +22,15 @@ key = "k_ek29gjuf"
 # awards = jsonD2["awards"]
 # print(response2.text)
 
-title_endpoint =  "https://imdb-api.com/en/API/Title/" + key + "/tt1667889"
-title_endpoint2 = "https://imdb-api.com/en/API/SearchTitle/" + key + "/inception"
-tmpResp = requests.get(title_endpoint2)
-jsonDict = json.loads(tmpResp.text)
-print(tmpResp.text)
+# title_endpoint =  "https://imdb-api.com/en/API/Title/" + key + "/tt1667889"
+# title_endpoint2 = "https://imdb-api.com/en/API/SearchTitle/" + key + "/inception"
+# tmpResp = requests.get(title_endpoint2)
+# jsonDict = json.loads(tmpResp.text)
+# print(tmpResp.text)
+
+
+api = 'https://3.144.236.126/postwatchlist/'
+movie = "Inception"
+data = {"userid": "user_1", "movietitle": movie, "imageURL": ""}
+response = requests.post(api, data=json.dumps(data), verify=False)
+print(response.text)

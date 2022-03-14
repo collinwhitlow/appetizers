@@ -217,7 +217,7 @@ def postwatchlist(request):
         tmpResp = requests.get(title_endpoint)
         jsonDict = json.loads(tmpResp.text)
         if len(jsonDict["results"]) > 0:
-            imageURL = jsonDict["results"][0]
+            imageURL = jsonDict["results"][0]["image"]
 
     cursor = connection.cursor()
     cursor.execute('INSERT INTO watchlist (userid, movietitle, imageurl) VALUES ' '(%s, %s, %s);', (userid, movietitle, imageURL))
