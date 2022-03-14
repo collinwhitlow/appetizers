@@ -191,12 +191,10 @@ def getwatchlist(request):
     userid = json_data['userid']
 
     cursor = connection.cursor()
-    cursor.execute('SELECT movietitle FROM watchlist WHERE userid=%s ORDER BY movietitle ASC;', (userid,))
+    cursor.execute('SELECT movietitle, imageurl FROM watchlist WHERE userid=%s ORDER BY movietitle ASC;', (userid,))
     rows = cursor.fetchall()
 
-    response = {'watchlist': []}
-    for row in rows:
-        response['watchlist'].append(row[0])
+    response = {'watchlist': rows}
  
     return JsonResponse(response)
 

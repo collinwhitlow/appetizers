@@ -30,7 +30,7 @@ key = "k_ek29gjuf"
 
 
 api = 'https://3.144.236.126/postwatchlist/'
-movie = "Inception"
+movie = "La la land"
 data = {"userid": "user_1", "movietitle": movie, "imageURL": ""}
 response = requests.post(api, data=json.dumps(data), verify=False)
 print(response.text)
