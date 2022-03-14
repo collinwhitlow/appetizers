@@ -4,7 +4,7 @@ import SwiftUI
 struct ActorCaptureApp: App {
     var body: some Scene {
         WindowGroup {
-            HistoryView()
+            WatchListView()
         }
     }
 }

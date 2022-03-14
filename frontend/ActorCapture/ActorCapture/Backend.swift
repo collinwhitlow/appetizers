@@ -9,9 +9,11 @@ final class Backend: ObservableObject  {
     @Published private(set) var watchlist = [WatchListEntry]()
 
     private let nFieldsHist = 5
-    private let nFieldsWatch = Mirror(reflecting: WatchListEntry()).children.count
+    private let nFieldsWatch = 2
 
     private let serverUrl = "https://3.144.236.126/"
+    
+    private let userid = "user_1"
 
     @MainActor
     func getHistory() async {
@@ -20,7 +22,7 @@ final class Backend: ObservableObject  {
             return
         }
         
-        let jsonObj = ["userid": "test_1_user"]
+        let jsonObj = ["userid": userid]
         guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
             print("getHistory: jsonData serialization error")
             return
@@ -58,7 +60,7 @@ final class Backend: ObservableObject  {
         }
     }
     func deleteHistory(_ history: HistoryEntry) async {
-        let jsonObj = ["userid": await UIDevice.current.identifierForVendor?.uuidString,
+        let jsonObj = ["userid": userid,
                        "actorName": history.actorName]
         guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
             print("deleteHistory: jsonData serialization error")
@@ -85,6 +87,52 @@ final class Backend: ObservableObject  {
             }
         } catch {
             print("deleteHistory: NETWORKING ERROR")
+        }
+    }
+    
+    
+    
+    @MainActor
+    func getWatchlist() async {
+        guard let apiUrl = URL(string: serverUrl+"getwatchlist/") else {
+            print("getwatchlist: Bad URL")
+            return
+        }
+        
+        let jsonObj = ["userid": userid]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
+            print("getwatchlist: jsonData serialization error")
+            return
+        }
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+                
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("getwatchlist: HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+                
+            guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                print("getwatchlist: failed JSON deserialization")
+                return
+            }
+            let watchlistReceived = jsonObj["watchlist"] as? [[String?]] ?? []
+            
+            self.watchlist = [WatchListEntry]()
+            for watchlistentry in watchlistReceived {
+                if watchlistentry.count == self.nFieldsWatch {
+                    self.watchlist.append(WatchListEntry(imageUrl: watchlistentry[1],
+                                                         movieName: watchlistentry[0]))
+                } else {
+                    print("getwatchlist: Received unexpected number of fields: \(watchlistentry.count) instead of \(self.nFieldsWatch).")
+                }
+            }
+        } catch {
+            print("getwatchlist: NETWORKING ERROR")
         }
     }
 }

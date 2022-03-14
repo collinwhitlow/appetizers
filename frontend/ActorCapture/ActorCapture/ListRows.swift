@@ -40,14 +40,26 @@ struct HistoryListRow: View {
 
 struct WatchListRow: View {
     var watchlistentry: WatchListEntry
-
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                if let moviename = watchlistentry.movieName, let imageURL = watchlistentry.imageUrl {
-                    Text(moviename).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
-                    Spacer()
-                    Text(imageURL).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+        HStack (spacing: 0){
+            if let movieName = watchlistentry.movieName, let imageURL = watchlistentry.imageUrl {
+                AsyncImage(url: URL(string: imageURL)!,
+                           content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                    .frame(maxWidth:300, maxHeight: 130, alignment: .leading)
+                                    .padding()
+                                    },
+                            placeholder: {
+                                ProgressView()
+                            }
+                ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                VStack (spacing: 1){
+                    Text(movieName)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 21, weight: .heavy, design: .default))
                 }
             }
         }
