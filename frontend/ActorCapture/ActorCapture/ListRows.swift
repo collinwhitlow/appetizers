@@ -11,15 +11,26 @@ struct HistoryListRow: View {
     var historyentry: HistoryEntry
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                if let actorname = historyentry.actorName, let imageURL = historyentry.imageUrl, let confidence = historyentry.confidence {
-                    Text(actorname).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
-                    Spacer()
-                    Text(imageURL).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
-                    Spacer()
-                    Text(confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+        HStack {
+            if let actorname = historyentry.actorName, let imageURL = historyentry.imageUrl {
+                VStack(alignment: .leading) {
+                    Text(actorname).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 20))
+                    if let confidence = historyentry.confidence {
+                        Text("Confidence: " + confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                    }
                 }
+                Spacer()
+                AsyncImage(url: URL(string: imageURL)!,
+                           content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth:430, maxHeight: 130)
+                                    .clipShape(Circle())
+                                    },
+                            placeholder: {
+                                ProgressView()
+                            }
+                ).padding(EdgeInsets(top: 8, leading: 150, bottom: 0, trailing: 10))
             }
         }
     }
