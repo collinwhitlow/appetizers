@@ -211,6 +211,14 @@ def postwatchlist(request):
     userid = json_data['userid']
     movietitle = json_data['movietitle']
     imageURL = json_data["imageURL"]
+    if imageURL == "":
+        key = "k_ek29gjuf"
+        title_endpoint = "https://imdb-api.com/en/API/SearchTitle/" + key + "/" + movietitle
+        tmpResp = requests.get(title_endpoint)
+        jsonDict = json.loads(tmpResp.text)
+        if len(jsonDict["results"]) > 0:
+            imageURL = jsonDict["results"][0]
+
     cursor = connection.cursor()
     cursor.execute('INSERT INTO watchlist (userid, movietitle, imageurl) VALUES ' '(%s, %s, %s);', (userid, movietitle, imageURL))
     return JsonResponse({})
