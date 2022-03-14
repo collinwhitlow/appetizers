@@ -13,24 +13,27 @@ struct HistoryListRow: View {
     var body: some View {
         HStack {
             if let actorname = historyentry.actorName, let imageURL = historyentry.imageUrl {
-                VStack(alignment: .leading) {
-                    Text(actorname).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 20))
+                AsyncImage(url: URL(string: imageURL)!,
+                           content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(Circle())
+                                    .frame(maxWidth:430, maxHeight: 130, alignment: .leading)
+                                    .padding()
+                                    },
+                            placeholder: {
+                                ProgressView()
+                            }
+                )
+                VStack {
+                    Text(actorname)
+                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
+                        .font(.system(size: 23, weight: .heavy, design: .default))
                     if let confidence = historyentry.confidence {
                         Text("Confidence: " + confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                     }
                 }
                 Spacer()
-                AsyncImage(url: URL(string: imageURL)!,
-                           content: { image in
-                                image.resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth:430, maxHeight: 130)
-                                    .clipShape(Circle())
-                                    },
-                            placeholder: {
-                                ProgressView()
-                            }
-                ).padding(EdgeInsets(top: 8, leading: 150, bottom: 0, trailing: 10))
             }
         }
     }

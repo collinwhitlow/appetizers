@@ -27,7 +27,7 @@ headers = {'Accept': 'text/plain'}
 
 files = {'image': open(image_file, 'rb')}
 
-data = {"userid": "test_1_user", "bounding_box": json.dumps(new_data["bounding_boxes"][1])}
+data = {"userid": "test_1_user", "bounding_box": json.dumps(new_data["bounding_boxes"][2])}
 response = requests.post(api, files=files, data=data, headers=headers, verify=False)
 try:
     print(response.text)
