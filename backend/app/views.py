@@ -7,6 +7,8 @@ from django.db import connection
 from django.views.decorators.csrf import csrf_exempt
 import json
 import base64
+from matplotlib import image
+from numpy import imag
 import requests
 
 import os, time
@@ -184,6 +186,8 @@ def getwatchlist(request):
         return HttpResponse(status=404)
 
     json_data = json.loads(request.body)
+    if 'userid' not in json_data :
+        return HttpResponse(status=404)
     userid = json_data['userid']
 
     cursor = connection.cursor()
@@ -202,10 +206,13 @@ def postwatchlist(request):
         return HttpResponse(status=404)
 
     json_data = json.loads(request.body)
+    if 'userid' not in json_data or 'movietitle' not in json_data or 'imageURL' not in json_data :
+        return HttpResponse(status=404)
     userid = json_data['userid']
     movietitle = json_data['movietitle']
+    imageURL = json_data["imageURL"]
     cursor = connection.cursor()
-    cursor.execute('INSERT INTO watchlist (userid, movietitle) VALUES ' '(%s, %s);', (userid, movietitle))
+    cursor.execute('INSERT INTO watchlist (userid, movietitle, imageurl) VALUES ' '(%s, %s, %s);', (userid, movietitle, imageURL))
     return JsonResponse({})
 
 
@@ -215,6 +222,8 @@ def gethistory(request):
         return HttpResponse(status=404)
 
     json_data = json.loads(request.body)
+    if 'userid' not in json_data :
+        return HttpResponse(status=404)
     userid = json_data['userid']
 
     cursor = connection.cursor()
@@ -229,6 +238,8 @@ def deletehistory(request):
     if request.method != 'DELETE':
         return HttpResponse(status=404)
     json_data = json.loads(request.body)
+    if 'userid' not in json_data or 'actorName' not in json_data :
+        return HttpResponse(status=404)
     userid = json_data['userid']
     actorName = json_data['actorName']
     cursor = connection.cursor()
@@ -247,6 +258,9 @@ def deletewatchlist(request):
         return HttpResponse(status=404)
 
     json_data = json.loads(request.body)
+    if 'userid' not in json_data or 'movietitle' not in json_data :
+        return HttpResponse(status=404)
+    
     userid = json_data['userid']
     movietitle = json_data['movietitle']
     cursor = connection.cursor()
