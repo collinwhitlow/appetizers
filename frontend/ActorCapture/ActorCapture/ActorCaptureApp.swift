@@ -5,10 +5,10 @@ import UIKit
 struct ActorCaptureApp: App {
     @ObservedObject var store = Backend.shared
     
+    
     var body: some Scene {
         WindowGroup {
-            MenuTop()
-            CaptureView()
+            MenuBottom()
         }
     }
 }

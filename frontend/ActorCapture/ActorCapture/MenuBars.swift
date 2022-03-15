@@ -6,23 +6,33 @@
 //
 
 import SwiftUI
-
-struct MenuTop: View {
-    var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text("Actor Capture").padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)).font(.system(size: 30))
-            }
-        }
-    }
-}
+import UIKit
 
 struct MenuBottom: View {
+    @State var selection = 2
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                // SOME SET THREE BUTTONS
+        NavigationView {
+            TabView(selection: $selection) {
+                Text("WatchList Tab")
+                    .tabItem {
+                        Image(systemName: "heart.fill")
+                        Text("Watchlist")
+                }.tag(1)
+                CaptureView()
+                    .tabItem {
+                        Image(systemName: "camera.fill")
+                        Text("Capture")
+                }.tag(2)
+                Text("History Tab")
+                    .tabItem {
+                        Image(systemName: "mappin.circle.fill")
+                        Text("History")
+                }.tag(3)
             }
+            .navigationTitle("ActorCapture")
+            .navigationBarTitleDisplayMode(.inline)
+            
         }
     }
 }
