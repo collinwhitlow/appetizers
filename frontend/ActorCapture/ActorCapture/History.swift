@@ -18,7 +18,7 @@ struct HistoryView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("HELLO")
+                    Text("Your History")
                 }
 //                Button(action: {
 //                    isPresenting.toggle()

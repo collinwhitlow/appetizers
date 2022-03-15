@@ -18,7 +18,7 @@ struct WatchListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("HELLO WATCHLIST")
+                    Text("Your Watchlist")
                 }
             }
             .task {

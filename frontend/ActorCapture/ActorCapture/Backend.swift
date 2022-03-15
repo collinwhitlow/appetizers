@@ -16,7 +16,7 @@ final class Backend: ObservableObject  {
 
     private let serverUrl = "https://3.144.236.126/"
     
-    private let userid = "test_1_user"
+    private let userid = UIDevice.current.identifierForVendor?.uuidString
 
     @MainActor
     func getHistory() async {
@@ -93,6 +93,37 @@ final class Backend: ObservableObject  {
         }
     }
     
+    func deleteWatchlist(_ watchlist: WatchListEntry) async {
+        let jsonObj = ["userid": userid,
+                       "movietitle": watchlist.movieName]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
+            print("deleteWatchlist: jsonData serialization error")
+            return
+        }
+                
+        guard let apiUrl = URL(string: serverUrl+"deletewatchlist/") else {
+            print("deleteWatchlist: Bad URL")
+            return
+        }
+        
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "DELETE"
+        request.httpBody = jsonData
+
+        do {
+            let (_, response) = try await URLSession.shared.data(for: request)
+
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("deleteWatchlist: HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            } else {
+                await getWatchlist()
+            }
+        } catch {
+            print("deleteWatchlist: NETWORKING ERROR")
+        }
+    }
+    
     
     @MainActor
     func getWatchlist() async {
@@ -146,7 +177,7 @@ final class Backend: ObservableObject  {
         }
         
         AF.upload(multipartFormData: { mpFD in
-            if let id = self.userid.data(using: .utf8) {
+            if let id = self.userid?.data(using: .utf8) {
                 mpFD.append(id, withName: "userid")
             }
             if let jpegImage = image.jpegData(compressionQuality: 1) {

@@ -12,28 +12,11 @@ import SwiftUI
 struct ActorView: View {
     @ObservedObject var store = Backend.shared
     @Binding var isPresented: Bool
-    @State private var isPresenting = false
+    var actorName: String
 
     var body: some View {
         NavigationView {
-            List(store.history.indices, id: \.self) {
-                HistoryListRow(historyentry: store.history[$0])
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
-            }
-            .listStyle(.plain)
-            .refreshable {
-                await store.getHistory()
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("HELLO")
-                }
-            }
-            .task {
-                await store.getHistory()
-            }
+            Text("You get to implement this View! actorname: " + actorName)
         }
     }
 }

@@ -9,8 +9,9 @@ import SwiftUI
 
 struct HistoryListRow: View {
     var historyentry: HistoryEntry
-//    @Binding var isPresented: Bool
-    
+    @State private var isPresenting = false
+    @ObservedObject var store = Backend.shared
+
     var body: some View {
         HStack (spacing: 0){
             if let actorname = historyentry.actorName, let imageURL = historyentry.imageUrl {
@@ -33,14 +34,21 @@ struct HistoryListRow: View {
                     if let confidence = historyentry.confidence {
                         Text("Confidence: " + confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                     }
+                    HStack (spacing: 40) {
+                        Button(action: { Task {
+                            await store.deleteHistory(historyentry)
+                        }}) {
+                            Image(systemName: "trash")
+                        }.buttonStyle(BorderlessButtonStyle())
+                        Button(action: {
+                            isPresenting.toggle()
+                        }) {
+                            Image(systemName: "info.circle")
+                        }.sheet(isPresented: $isPresenting) {
+                            ActorView(isPresented: $isPresenting, actorName: actorname)
+                        }.buttonStyle(BorderlessButtonStyle())
+                    }
                 }
-                Button(action: {
-//                  isPresenting.toggle()
-                }) {
-                    Image(systemName: "info.circle")
-                }/*.sheet(isPresented: $isPresenting) {
-                    ActorView()
-                }*/
             }
         }
     }
@@ -48,7 +56,8 @@ struct HistoryListRow: View {
 
 struct WatchListRow: View {
     var watchlistentry: WatchListEntry
-    
+    @ObservedObject var store = Backend.shared
+
     var body: some View {
         HStack (spacing: 0){
             if let movieName = watchlistentry.movieName, let imageURL = watchlistentry.imageUrl {
@@ -68,6 +77,14 @@ struct WatchListRow: View {
                     Text(movieName)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
+                    HStack (spacing: 40) {
+                        Button(action: { Task {
+                            await store.deleteWatchlist(watchlistentry)
+                        }}) {
+                            Image(systemName: "trash")
+                        }.buttonStyle(BorderlessButtonStyle())
+                    }
+
                 }
             }
         }
