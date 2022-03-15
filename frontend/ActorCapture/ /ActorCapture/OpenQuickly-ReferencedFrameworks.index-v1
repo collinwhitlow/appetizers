@@ -3,9 +3,9 @@
 <plist version="1.0">
 <array>
 	<string>Foundation</string>
-	<string>CommonCrypto</string>
-	<string>CoreVideo</string>
+	<string>objc</string>
 	<string>AppKit</string>
+	<string>CoreVideo</string>
 	<string>Dispatch</string>
 	<string>CoreGraphics</string>
 	<string>Accelerate</string>
@@ -17,15 +17,15 @@
 	<string>FoundationNetworking</string>
 	<string>SwiftUI</string>
 	<string>CoreServices</string>
-	<string>sys</string>
 	<string>UIKit</string>
 	<string>Combine</string>
 	<string>os</string>
+	<string>sys</string>
 	<string>CoreImage</string>
 	<string>SystemConfiguration</string>
 	<string>WatchKit</string>
 	<string>MobileCoreServices</string>
 	<string>ImageIO</string>
-	<string>objc</string>
+	<string>CommonCrypto</string>
 </array>
 </plist>

@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>50EFCF22-7C79-415A-974D-91D3ED2E0B57</key>
+		<key>1DAB172C-0FE1-4DD8-8A79-26072D0EC792</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,13 +15,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>50EFCF22-7C79-415A-974D-91D3ED2E0B57.xcactivitylog</string>
+			<string>1DAB172C-0FE1-4DD8-8A79-26072D0EC792.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>E</string>
+				<string>S</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>ActorCapture project</string>
@@ -32,15 +32,15 @@
 			<key>signature</key>
 			<string>Build ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>669062483.46150899</real>
+			<real>669065909.90604997</real>
 			<key>timeStoppedRecording</key>
-			<real>669062484.03371096</real>
+			<real>669065909.98260999</real>
 			<key>title</key>
 			<string>Build ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>50EFCF22-7C79-415A-974D-91D3ED2E0B57</string>
+			<string>1DAB172C-0FE1-4DD8-8A79-26072D0EC792</string>
 		</dict>
-		<key>677A75B1-F9D7-416E-BF37-7020B5E71F84</key>
+		<key>206B2741-EA9B-4E1F-9ACF-B008D3EAEE1B</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -49,13 +49,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>677A75B1-F9D7-416E-BF37-7020B5E71F84.xcactivitylog</string>
+			<string>206B2741-EA9B-4E1F-9ACF-B008D3EAEE1B.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>E</string>
+				<string>S</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>ActorCapture project</string>
@@ -64,17 +64,17 @@
 			<key>schemeIdentifier-sharedScheme</key>
 			<integer>1</integer>
 			<key>signature</key>
-			<string>Build for Previews ActorCapture</string>
+			<string>Build ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>669062434.60872602</real>
+			<real>669065608.81844604</real>
 			<key>timeStoppedRecording</key>
-			<real>669062437.94747496</real>
+			<real>669065610.29037702</real>
 			<key>title</key>
-			<string>Build for Previews ActorCapture</string>
+			<string>Build ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>677A75B1-F9D7-416E-BF37-7020B5E71F84</string>
+			<string>206B2741-EA9B-4E1F-9ACF-B008D3EAEE1B</string>
 		</dict>
-		<key>FFF5F962-C7EB-4531-8754-1C3247C3133D</key>
+		<key>3DAD7106-3478-4DBA-AACC-608817669BF2</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -83,13 +83,13 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>FFF5F962-C7EB-4531-8754-1C3247C3133D.xcactivitylog</string>
+			<string>3DAD7106-3478-4DBA-AACC-608817669BF2.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>E</string>
+				<string>S</string>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>ActorCapture project</string>
@@ -100,13 +100,387 @@
 			<key>signature</key>
 			<string>Build ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>669062601.44317806</real>
+			<real>669065892.98011994</real>
 			<key>timeStoppedRecording</key>
-			<real>669062604.92833495</real>
+			<real>669065894.63862598</real>
 			<key>title</key>
 			<string>Build ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>FFF5F962-C7EB-4531-8754-1C3247C3133D</string>
+			<string>3DAD7106-3478-4DBA-AACC-608817669BF2</string>
+		</dict>
+		<key>6733056B-9460-40E6-A01A-58BCBDF6EBF4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6733056B-9460-40E6-A01A-58BCBDF6EBF4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669064315.190413</real>
+			<key>timeStoppedRecording</key>
+			<real>669064330.15635896</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>6733056B-9460-40E6-A01A-58BCBDF6EBF4</string>
+		</dict>
+		<key>6EEBF19F-EB6D-487D-9F78-237E1AA85F60</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6EEBF19F-EB6D-487D-9F78-237E1AA85F60.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669065703.22989094</real>
+			<key>timeStoppedRecording</key>
+			<real>669065703.30627596</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>6EEBF19F-EB6D-487D-9F78-237E1AA85F60</string>
+		</dict>
+		<key>9F5AD90C-AE6C-4099-92DC-58BE89F8E154</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9F5AD90C-AE6C-4099-92DC-58BE89F8E154.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Clean ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669064144.94905496</real>
+			<key>timeStoppedRecording</key>
+			<real>669064145.68206501</real>
+			<key>title</key>
+			<string>Clean ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>9F5AD90C-AE6C-4099-92DC-58BE89F8E154</string>
+		</dict>
+		<key>AE81668E-C1C0-4261-B169-E9287709C350</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>AE81668E-C1C0-4261-B169-E9287709C350.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669065210.88002896</real>
+			<key>timeStoppedRecording</key>
+			<real>669065212.59635997</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>AE81668E-C1C0-4261-B169-E9287709C350</string>
+		</dict>
+		<key>C3E1B9DE-0009-4CDC-B3E7-0679B83CEBB1</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C3E1B9DE-0009-4CDC-B3E7-0679B83CEBB1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669064885.75772798</real>
+			<key>timeStoppedRecording</key>
+			<real>669064887.23558402</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>C3E1B9DE-0009-4CDC-B3E7-0679B83CEBB1</string>
+		</dict>
+		<key>D0D677B2-762F-448B-B916-74F6AEC1F446</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D0D677B2-762F-448B-B916-74F6AEC1F446.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669064504.11795795</real>
+			<key>timeStoppedRecording</key>
+			<real>669064505.88020098</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>D0D677B2-762F-448B-B916-74F6AEC1F446</string>
+		</dict>
+		<key>D2520019-E020-4612-B81B-FBE644368204</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D2520019-E020-4612-B81B-FBE644368204.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669065407.30234003</real>
+			<key>timeStoppedRecording</key>
+			<real>669065408.75455999</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>D2520019-E020-4612-B81B-FBE644368204</string>
+		</dict>
+		<key>DFA9CDF0-4F75-485A-8C8B-0F00569D36AD</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>DFA9CDF0-4F75-485A-8C8B-0F00569D36AD.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669065720.95954096</real>
+			<key>timeStoppedRecording</key>
+			<real>669065722.40046096</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>DFA9CDF0-4F75-485A-8C8B-0F00569D36AD</string>
+		</dict>
+		<key>E5AA1363-7B71-4B5B-BF38-BFEEF14B4C35</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>E5AA1363-7B71-4B5B-BF38-BFEEF14B4C35.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669065302.68022704</real>
+			<key>timeStoppedRecording</key>
+			<real>669065304.15931594</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>E5AA1363-7B71-4B5B-BF38-BFEEF14B4C35</string>
+		</dict>
+		<key>ED29CEA2-C4BC-439F-BD31-55944CB508AD</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>ED29CEA2-C4BC-439F-BD31-55944CB508AD.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669064938.77682304</real>
+			<key>timeStoppedRecording</key>
+			<real>669064940.28878796</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>ED29CEA2-C4BC-439F-BD31-55944CB508AD</string>
+		</dict>
+		<key>FBCCA2F9-F5C8-434C-AEC8-AD7F647D16B7</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>FBCCA2F9-F5C8-434C-AEC8-AD7F647D16B7.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669065687.31372595</real>
+			<key>timeStoppedRecording</key>
+			<real>669065688.75976598</real>
+			<key>title</key>
+			<string>Build ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>FBCCA2F9-F5C8-434C-AEC8-AD7F647D16B7</string>
 		</dict>
 	</dict>
 </dict>

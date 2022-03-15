@@ -11,7 +11,7 @@ import UIKit
 
 struct CaptureView: View {
     
-    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @State private var sourceType: UIImagePickerController.SourceType?
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     @State private var showingAlert = false
@@ -44,9 +44,10 @@ struct CaptureView: View {
                 Button() {
                     self.sourceType = .camera
                     self.isImagePickerDisplay.toggle()
+                    NSLog("CAMERA")
                 } label: {
                     Image(systemName: "camera.fill")
-                        .scaleEffect(3)//.padding(.trailing, 80)
+                        .scaleEffect(3)
                 }
                 
                 Button() {
@@ -79,7 +80,7 @@ struct CaptureView: View {
             Spacer()
         }
         .sheet(isPresented: self.$isImagePickerDisplay) {
-            ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.sourceType)
+            ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.$sourceType)
         }
     }
 }
