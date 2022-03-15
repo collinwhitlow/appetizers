@@ -34,13 +34,13 @@ struct HistoryListRow: View {
                         Text("Confidence: " + confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                     }
                 }
-//                Button(action: {
+                Button(action: {
 //                  isPresenting.toggle()
-//                }) {
-//                    Image(systemName: "info.circle")
-//                }.sheet(isPresented: $isPresenting) {
-//                    ActorView()
-//                }
+                }) {
+                    Image(systemName: "info.circle")
+                }/*.sheet(isPresented: $isPresenting) {
+                    ActorView()
+                }*/
             }
         }
     }

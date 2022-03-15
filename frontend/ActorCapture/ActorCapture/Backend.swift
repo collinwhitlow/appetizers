@@ -140,14 +140,14 @@ final class Backend: ObservableObject  {
     
     @MainActor
     func findFaces(_ image: UIImage) {
-        guard let apiUrl = URL(string: serverUrl+"findFaces/") else {
+        guard let apiUrl = URL(string: serverUrl+"findfaces/") else {
             print("findFaces: Bad URL")
             return
         }
         
         AF.upload(multipartFormData: { mpFD in
             if let id = self.userid.data(using: .utf8) {
-                mpFD.append(id, withName: "username")
+                mpFD.append(id, withName: "userid")
             }
             if let jpegImage = image.jpegData(compressionQuality: 1) {
                 mpFD.append(jpegImage, withName: "image", fileName: "actorImage", mimeType: "image/jpeg")
@@ -156,16 +156,17 @@ final class Backend: ObservableObject  {
             switch (response.result) {
             case .success:
                 guard let data = response.data, response.error == nil else {
-                    print("getChatts: NETWORKING ERROR")
+                    print("findFaces: NETWORKING ERROR")
                     return
                 }
                 if let httpStatus = response.response, httpStatus.statusCode != 200 {
-                    print("getChatts: HTTP STATUS: \(httpStatus.statusCode)")
+                    print("findFaces: HTTP STATUS: \(httpStatus.statusCode)")
+                    print("RESPONSE!!!!", response.response)
                     return
                 }
                 
                 guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
-                    print("getChatts: failed JSON deserialization")
+                    print("findFaces: failed JSON deserialization")
                     return
                 }
                 let recBoundingBoxes = jsonObj["bounding_boxes"] as? [[[Int]]] ?? nil
