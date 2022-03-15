@@ -16,7 +16,7 @@ final class Backend: ObservableObject  {
 
     private let serverUrl = "https://3.144.236.126/"
     
-    private let userid = "user_1"
+    private let userid = "test_1_user"
 
     @MainActor
     func getHistory() async {
