@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HistoryListRow: View {
     var historyentry: HistoryEntry
+//    @Binding var isPresented: Bool
     
     var body: some View {
         HStack (spacing: 0){
@@ -33,6 +34,13 @@ struct HistoryListRow: View {
                         Text("Confidence: " + confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                     }
                 }
+//                Button(action: {
+//                  isPresenting.toggle()
+//                }) {
+//                    Image(systemName: "info.circle")
+//                }.sheet(isPresented: $isPresenting) {
+//                    ActorView()
+//                }
             }
         }
     }

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct HistoryView: View {
     @ObservedObject var store = Backend.shared
-    @State private var isPresenting = false
+//    @State private var isPresenting = false
 
     var body: some View {
         NavigationView {
@@ -20,6 +20,13 @@ struct HistoryView: View {
                 ToolbarItem(placement: .principal) {
                     Text("HELLO")
                 }
+//                Button(action: {
+//                    isPresenting.toggle()
+//                }) {
+//                    Image(systemName: "square.and.pencil")
+//                }/*.sheet(isPresented: $isPresenting) {
+//                    ActorView(isPresented: $isPresenting)
+//                }*/
             }
             .task {
                 await store.getHistory()
