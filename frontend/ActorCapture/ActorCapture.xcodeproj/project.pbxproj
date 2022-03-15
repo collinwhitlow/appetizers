@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		274D6D086916CB1F3DAE534D /* Pods_ActorCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */; };
 		819315A027E048CA00A30DE1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193159F27E048CA00A30DE1 /* ImagePicker.swift */; };
+		819315A227E0F3E000A30DE1 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819315A127E0F3E000A30DE1 /* Capture.swift */; };
 		81CCFBE727DD480F00BF9383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE627DD480F00BF9383 /* Assets.xcassets */; };
 		81CCFBEA27DD480F00BF9383 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */; };
 		81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF027DD4CD500BF9383 /* Backend.swift */; };
@@ -25,6 +26,7 @@
 		3CDF83B6009E3910858D0930 /* Pods-ActorCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActorCapture.release.xcconfig"; path = "Target Support Files/Pods-ActorCapture/Pods-ActorCapture.release.xcconfig"; sourceTree = "<group>"; };
 		7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActorCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8193159F27E048CA00A30DE1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		819315A127E0F3E000A30DE1 /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
 		81CCFBDF27DD480D00BF9383 /* ActorCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActorCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CCFBE627DD480F00BF9383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				AAFBCED327DE373B0086625A /* ActorCaptureApp.swift */,
 				8193159F27E048CA00A30DE1 /* ImagePicker.swift */,
 				81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */,
+				819315A127E0F3E000A30DE1 /* Capture.swift */,
 			);
 			path = ActorCapture;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */,
 				81CCFBF727DD4FA000BF9383 /* History.swift in Sources */,
 				81CCFBFD27DD4FE900BF9383 /* MenuBars.swift in Sources */,
+				819315A227E0F3E000A30DE1 /* Capture.swift in Sources */,
 				81CCFBF927DD4FAC00BF9383 /* WatchList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,7 +384,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.dkhain.ActorCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo.ActorCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -411,7 +415,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.dkhain.ActorCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo.ActorCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

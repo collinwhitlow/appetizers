@@ -16,6 +16,7 @@ struct MenuTop: View {
         }
     }
 }
+
 struct MenuBottom: View {
     var body: some View {
         VStack(alignment: .leading) {

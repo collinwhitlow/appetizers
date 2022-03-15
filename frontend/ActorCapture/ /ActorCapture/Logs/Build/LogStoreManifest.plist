@@ -1264,6 +1264,40 @@
 			<key>uniqueIdentifier</key>
 			<string>9CDE6DF0-6DED-40DA-92D2-6ED778BA9068</string>
 		</dict>
+		<key>9E5E9D5D-14B8-40C0-B8CD-32799C235C16</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>9E5E9D5D-14B8-40C0-B8CD-32799C235C16.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669053968.98085594</real>
+			<key>timeStoppedRecording</key>
+			<real>669053970.17832005</real>
+			<key>title</key>
+			<string>Build for Previews ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>9E5E9D5D-14B8-40C0-B8CD-32799C235C16</string>
+		</dict>
 		<key>ACBD9845-11DB-4B07-BE1F-6CD87F8C4D0C</key>
 		<dict>
 			<key>className</key>
@@ -1705,6 +1739,40 @@
 			<string>Build ActorCapture</string>
 			<key>uniqueIdentifier</key>
 			<string>C831DE9B-A3CF-453B-B6B0-A8FB8B52DD02</string>
+		</dict>
+		<key>CD3FABC0-8F01-4ECB-8D58-AE62A5FF0528</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>CD3FABC0-8F01-4ECB-8D58-AE62A5FF0528.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build for Previews ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>669053979.92520499</real>
+			<key>timeStoppedRecording</key>
+			<real>669053983.11721301</real>
+			<key>title</key>
+			<string>Build for Previews ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>CD3FABC0-8F01-4ECB-8D58-AE62A5FF0528</string>
 		</dict>
 		<key>CD8465C5-8A81-4732-9853-8930E4BDC932</key>
 		<dict>
