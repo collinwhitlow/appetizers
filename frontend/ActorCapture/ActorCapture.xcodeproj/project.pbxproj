@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		274D6D086916CB1F3DAE534D /* Pods_ActorCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */; };
+		819315A027E048CA00A30DE1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193159F27E048CA00A30DE1 /* ImagePicker.swift */; };
 		81CCFBE727DD480F00BF9383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE627DD480F00BF9383 /* Assets.xcassets */; };
 		81CCFBEA27DD480F00BF9383 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */; };
 		81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF027DD4CD500BF9383 /* Backend.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		3CDF83B6009E3910858D0930 /* Pods-ActorCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActorCapture.release.xcconfig"; path = "Target Support Files/Pods-ActorCapture/Pods-ActorCapture.release.xcconfig"; sourceTree = "<group>"; };
 		7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActorCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8193159F27E048CA00A30DE1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		81CCFBDF27DD480D00BF9383 /* ActorCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActorCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CCFBE627DD480F00BF9383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				81CCFBF827DD4FAC00BF9383 /* WatchList.swift */,
 				81CCFBFA27DD4FCA00BF9383 /* Actor.swift */,
 				AAFBCED327DE373B0086625A /* ActorCaptureApp.swift */,
+				8193159F27E048CA00A30DE1 /* ImagePicker.swift */,
 				81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */,
 			);
 			path = ActorCapture;
@@ -226,6 +229,7 @@
 				81CCFBF527DD4F0200BF9383 /* ListRows.swift in Sources */,
 				81CCFBF327DD4D2900BF9383 /* Structs.swift in Sources */,
 				81CCFBFB27DD4FCA00BF9383 /* Actor.swift in Sources */,
+				819315A027E048CA00A30DE1 /* ImagePicker.swift in Sources */,
 				AAFBCED427DE373B0086625A /* ActorCaptureApp.swift in Sources */,
 				81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */,
 				81CCFBF727DD4FA000BF9383 /* History.swift in Sources */,
@@ -365,6 +369,7 @@
 				DEVELOPMENT_TEAM = J7648TRL4B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "ActorCapture wants to use the camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -395,6 +400,7 @@
 				DEVELOPMENT_TEAM = J7648TRL4B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "ActorCapture wants to use the camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

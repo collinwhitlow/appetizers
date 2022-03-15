@@ -1,5 +1,7 @@
 import Foundation
 import UIKit
+import Alamofire
+import SwiftUI
 
 final class Backend: ObservableObject  {
     static let shared = Backend() // create one instance of the class to be shared
@@ -7,6 +9,7 @@ final class Backend: ObservableObject  {
                                      // instances can be created
     @Published private(set) var history = [HistoryEntry]()
     @Published private(set) var watchlist = [WatchListEntry]()
+    @Published private var bounding_boxes: [[[Int]]]?
 
     private let nFieldsHist = 5
     private let nFieldsWatch = 2
@@ -91,7 +94,6 @@ final class Backend: ObservableObject  {
     }
     
     
-    
     @MainActor
     func getWatchlist() async {
         guard let apiUrl = URL(string: serverUrl+"getwatchlist/") else {
@@ -133,6 +135,47 @@ final class Backend: ObservableObject  {
             }
         } catch {
             print("getwatchlist: NETWORKING ERROR")
+        }
+    }
+    
+    @MainActor
+    func findFaces(_ image: UIImage) {
+        guard let apiUrl = URL(string: serverUrl+"findFaces/") else {
+            print("findFaces: Bad URL")
+            return
+        }
+        
+        AF.upload(multipartFormData: { mpFD in
+            if let id = self.userid.data(using: .utf8) {
+                mpFD.append(id, withName: "username")
+            }
+            if let jpegImage = image.jpegData(compressionQuality: 1) {
+                mpFD.append(jpegImage, withName: "image", fileName: "actorImage", mimeType: "image/jpeg")
+            }
+        }, to: apiUrl, method: .post).response { response in
+            switch (response.result) {
+            case .success:
+                guard let data = response.data, response.error == nil else {
+                    print("getChatts: NETWORKING ERROR")
+                    return
+                }
+                if let httpStatus = response.response, httpStatus.statusCode != 200 {
+                    print("getChatts: HTTP STATUS: \(httpStatus.statusCode)")
+                    return
+                }
+                
+                guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                    print("getChatts: failed JSON deserialization")
+                    return
+                }
+                let recBoundingBoxes = jsonObj["bounding_boxes"] as? [[[Int]]] ?? nil
+                self.bounding_boxes = recBoundingBoxes
+                
+                print("Find Faces Returned Successfully!")
+                print(jsonObj)
+            case .failure:
+                print("Find Faces Failed!")
+           }
         }
     }
 }
