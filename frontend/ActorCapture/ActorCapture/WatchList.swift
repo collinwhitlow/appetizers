@@ -15,7 +15,7 @@ struct WatchListView: View {
             .refreshable {
                 await store.getWatchlist()
             }
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline) 
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Your Watchlist")

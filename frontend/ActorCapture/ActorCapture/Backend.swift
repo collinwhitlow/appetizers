@@ -9,6 +9,7 @@ final class Backend: ObservableObject  {
                                      // instances can be created
     @Published private(set) var history = [HistoryEntry]()
     @Published private(set) var watchlist = [WatchListEntry]()
+    @Published private(set) var actorinfo = [MoreInfoEntry]()
     @Published private var bounding_boxes: [[[Int]]]?
 
     private let nFieldsHist = 5
@@ -17,7 +18,82 @@ final class Backend: ObservableObject  {
     private let serverUrl = "https://3.144.236.126/"
     
     private let userid = UIDevice.current.identifierForVendor?.uuidString
+    
+    func addWatchlist(_ moreInfo: MoreInfoEntry) async {
+        guard let apiUrl = URL(string: serverUrl+"postwatchlist/") else {
+            print("postwatchlist: Bad URL")
+            return
+        }
+        
+        let jsonObj = ["userid": userid, "movietitle": moreInfo.movieName, "imageURL" : moreInfo.imageUrl, ]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
+            print("postwatchlist: jsonData serialization error")
+            return
+        }
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        do {
+            let (_, response) = try await URLSession.shared.data(for: request)
 
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("postwatchlist: HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+        } catch {
+            print("postwatchlist: NETWORKING ERROR")
+        }
+        
+        
+    }
+    
+    @MainActor
+    func getactorinfo(actorName: String) async {
+        guard let apiUrl = URL(string: serverUrl+"getactorinfo/") else {
+            print("getactorinfo: Bad URL")
+            return
+        }
+        
+        let jsonObj = ["actorName": actorName]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
+            print("getactorinfo: jsonData serialization error")
+            return
+        }
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+                
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("getactorinfo: HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+                
+            guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                print("getactorinfo: failed JSON deserialization")
+                return
+            }
+            let historyReceived = jsonObj["rows"] as? [[String?]] ?? []
+            
+            self.actorinfo = [MoreInfoEntry]()
+            for infoentry in historyReceived {
+                if infoentry.count == self.nFieldsHist {
+                    self.actorinfo.append(MoreInfoEntry(imageUrl: infoentry[6], characterName: infoentry[1], movieName: infoentry[0]))
+                } else {
+                    print("getactorinfo: Received unexpected number of fields: \(infoentry.count) instead of \(self.nFieldsHist).")
+                }
+            }
+        } catch {
+            print("getactorinfo: NETWORKING ERROR")
+        }
+    }
+    
+    
+    
+    
+    
     @MainActor
     func getHistory() async {
         guard let apiUrl = URL(string: serverUrl+"gethistory/") else {

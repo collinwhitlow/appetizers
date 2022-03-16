@@ -25,6 +25,7 @@ struct MoreInfoEntry {
 }
 
 
+
 @propertyWrapper
 struct ChattPropWrapper {
     private var _value: String?
