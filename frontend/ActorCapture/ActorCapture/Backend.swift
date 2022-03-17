@@ -291,7 +291,12 @@ final class Backend: ObservableObject  {
                     return
                 }
                 let recBoundingBoxes = jsonObj["bounding_boxes"]! as? [[[Int]]] ?? nil
-                //todo if nil - skip all of the above
+                if recBoundingBoxes == []{
+                    print("alan has swine flu")
+                    self.waiting_for_find_faces = false
+                    self.reset_capture()
+                    return
+                }
                 let temp_boxes = NSMutableArray(array: recBoundingBoxes!)
                 let boxes = temp_boxes as NSArray as? [[[Int]]]
                 
@@ -322,5 +327,33 @@ final class Backend: ObservableObject  {
                 print("Find Faces Failed!")
            }
         }
+    }
+    
+    @MainActor
+    func findActor(_ image: UIImage){
+        guard let apiUrl = URL(string: serverUrl+"findactor/") else {
+            print("findFaces: Bad URL")
+            return
+        }
+        
+        AF.upload(multipartFormData: { mpFD in
+            if let id = self.userid?.data(using: .utf8) {
+                mpFD.append(id, withName: "userid")
+            }
+            if let box = try? JSONSerialization.data(withJSONObject: self.bounding_boxes![self.box_index!], options: []){
+                mpFD.append(box, withName: "bounding_box")
+            }
+            if let jpegImage = image.jpegData(compressionQuality: 1) {
+                mpFD.append(jpegImage, withName: "image", fileName: "actorImage", mimeType: "image/jpeg")
+            }
+        }, to: apiUrl, method: .post).response { response in
+            switch (response.result) {
+            case .success:
+                print("Find Actor Returned Successfully!")
+            case .failure:
+                print("Find Actor Failed!")
+           }
+        }
+
     }
 }

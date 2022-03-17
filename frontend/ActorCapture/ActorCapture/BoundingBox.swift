@@ -14,7 +14,7 @@ import SwiftUI
 
 
 
-var magenta = UIColor(rgb: 0xFF00FF)
+//var magenta = UIColor(rgb: 0xFF00FF)
 var arr: [[Int]] = [[0,0], [100,100], [200, 200]]
 
 struct BoundingBox: View{
