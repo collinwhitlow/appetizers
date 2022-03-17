@@ -9,7 +9,12 @@ final class Backend: ObservableObject  {
                                      // instances can be created
     @Published private(set) var history = [HistoryEntry]()
     @Published private(set) var watchlist = [WatchListEntry]()
-    @Published private var bounding_boxes: [[[Int]]]?
+    @Published private(set) var actorinfo = [MoreInfoEntry]()
+    @Published private(set) var bounding_boxes: [[[Int]]]?
+    @Published private(set) var bounding_boxes_indices: [Int] = []
+    @Published private(set) var waiting_for_find_faces = false
+    @Published private(set) var scalingFactor: CGFloat = 0
+    @Published private(set) var box_index : Int?
 
     private let nFieldsHist = 5
     private let nFieldsWatch = 2
@@ -17,7 +22,78 @@ final class Backend: ObservableObject  {
     private let serverUrl = "https://3.144.236.126/"
     
     private let userid = UIDevice.current.identifierForVendor?.uuidString
+    
+    func addWatchlist(_ moreInfo: MoreInfoEntry) async {
+        guard let apiUrl = URL(string: serverUrl+"postwatchlist/") else {
+            print("postwatchlist: Bad URL")
+            return
+        }
+        
+        let jsonObj = ["userid": userid, "movietitle": moreInfo.movieName, "imageURL" : moreInfo.imageUrl, ]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
+            print("postwatchlist: jsonData serialization error")
+            return
+        }
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        do {
+            let (_, response) = try await URLSession.shared.data(for: request)
 
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("postwatchlist: HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+        } catch {
+            print("postwatchlist: NETWORKING ERROR")
+        }
+        
+        
+    }
+    
+    @MainActor
+    func getactorinfo(actorName: String) async {
+        guard let apiUrl = URL(string: serverUrl+"getactorinfo/") else {
+            print("getactorinfo: Bad URL")
+            return
+        }
+        
+        let jsonObj = ["actorName": actorName]
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
+            print("getactorinfo: jsonData serialization error")
+            return
+        }
+        var request = URLRequest(url: apiUrl)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+                
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("getactorinfo: HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+                
+            guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                print("getactorinfo: failed JSON deserialization")
+                return
+            }
+            let historyReceived = jsonObj["rows"] as? [[String?]] ?? []
+            
+            self.actorinfo = [MoreInfoEntry]()
+            for infoentry in historyReceived {
+                if infoentry.count == self.nFieldsHist {
+                    self.actorinfo.append(MoreInfoEntry(imageUrl: infoentry[6], characterName: infoentry[1], movieName: infoentry[0]))
+                } else {
+                    print("getactorinfo: Received unexpected number of fields: \(infoentry.count) instead of \(self.nFieldsHist).")
+                }
+            }
+        } catch {
+            print("getactorinfo: NETWORKING ERROR")
+        }
+    }
+    
     @MainActor
     func getHistory() async {
         guard let apiUrl = URL(string: serverUrl+"gethistory/") else {
@@ -169,6 +245,21 @@ final class Backend: ObservableObject  {
         }
     }
     
+    func reset_capture() {
+        self.bounding_boxes = nil
+        self.bounding_boxes_indices = []
+        self.scalingFactor = 0
+        self.box_index = nil
+    }
+    
+    func set_box_index(_ ind: Int){
+        self.box_index = ind
+    }
+    
+    func set_waiting_for_find_faces(_ b: Bool) {
+        self.waiting_for_find_faces = b
+    }
+    
     @MainActor
     func findFaces(_ image: UIImage) {
         guard let apiUrl = URL(string: serverUrl+"findfaces/") else {
@@ -192,7 +283,6 @@ final class Backend: ObservableObject  {
                 }
                 if let httpStatus = response.response, httpStatus.statusCode != 200 {
                     print("findFaces: HTTP STATUS: \(httpStatus.statusCode)")
-                    print("RESPONSE!!!!", response.response)
                     return
                 }
                 
@@ -200,11 +290,34 @@ final class Backend: ObservableObject  {
                     print("findFaces: failed JSON deserialization")
                     return
                 }
-                let recBoundingBoxes = jsonObj["bounding_boxes"] as? [[[Int]]] ?? nil
-                self.bounding_boxes = recBoundingBoxes
+                let recBoundingBoxes = jsonObj["bounding_boxes"]! as? [[[Int]]] ?? nil
+                //todo if nil - skip all of the above
+                let temp_boxes = NSMutableArray(array: recBoundingBoxes!)
+                let boxes = temp_boxes as NSArray as? [[[Int]]]
+                
+                var new_array: [[[Int]]] = []
+                
+                self.scalingFactor = CGFloat(300)/CGFloat(image.size.height)
+                
+                for var box in boxes! {
+                    let top_left = box[0]
+                    let bottom_right = box[2]
+                    
+                    let x_center = (bottom_right[0] + top_left[0])/2
+                    let y_center = (top_left[1] + bottom_right[1])/2
+                    
+                    box.append([x_center, y_center])
+                    
+                    new_array.append(box)
+                }
+                
+                for i in 0...(new_array.count-1) {
+                    self.bounding_boxes_indices.append(i)
+                }
+                self.bounding_boxes = new_array
+                self.waiting_for_find_faces = false
                 
                 print("Find Faces Returned Successfully!")
-                print(jsonObj)
             case .failure:
                 print("Find Faces Failed!")
            }

@@ -45,7 +45,7 @@ struct HistoryListRow: View {
                         }) {
                             Image(systemName: "info.circle")
                         }.sheet(isPresented: $isPresenting) {
-                            ActorView(isPresented: $isPresenting, actorName: actorname)
+                            ActorView(isPresented: $isPresenting, actorName: actorname, confidence: historyentry.confidence, actorUrl: historyentry.imageUrl!, history_or_capture: "history")
                         }.buttonStyle(BorderlessButtonStyle())
                     }
                 }
@@ -90,6 +90,106 @@ struct WatchListRow: View {
         }
     }
 }
+
+struct movieInfoRow: View {
+    var infoEntry: MoreInfoEntry
+    @ObservedObject var store = Backend.shared
+
+    var body: some View {
+        HStack (spacing: 0){
+            if let movieName = infoEntry.movieName, let imageURL = infoEntry.imageUrl, let role = infoEntry.characterName {
+                AsyncImage(url: URL(string: imageURL)!,
+                           content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                    .frame(maxWidth:300, maxHeight: 130, alignment: .leading)
+                                    .padding()
+                                    },
+                            placeholder: {
+                                ProgressView()
+                            }
+                ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                VStack (spacing: 1){
+                    Text(movieName)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 21, weight: .heavy, design: .default))
+                    Text("as")
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 21, weight: .heavy, design: .default))
+                    Text(role)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 21, weight: .heavy, design: .default))
+                    HStack (spacing: 40) {
+                        Button(action: { Task {
+                            await store.addWatchlist(infoEntry)
+                        }}) {
+                            Image(systemName: "shuffle")
+                        }.buttonStyle(BorderlessButtonStyle())
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+struct actorInfoRow: View {
+    var actorName: String
+    var infoEntry: MoreInfoEntry
+    var confidence: String
+    @State private var isPresenting = false
+    var actorUrl: String
+    var history_or_capture: String
+    @ObservedObject var store = Backend.shared
+
+    var body: some View {
+        HStack (spacing: 0){
+            if let actorname = actorName, let actorUrl = actorUrl {
+                AsyncImage(url: URL(string: actorUrl)!,
+                           content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(Circle())
+                                    .frame(maxWidth:300, maxHeight: 130, alignment: .leading)
+                                    .padding()
+                                    },
+                            placeholder: {
+                                ProgressView()
+                            }
+                ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                VStack (spacing: 1){
+                    Text(actorname)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 21, weight: .heavy, design: .default))
+                    if let confidence = confidence { // get confidence level
+                        Text("Confidence: " + confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                    }
+                    HStack (spacing: 40) {
+                        
+                        Button(action: {
+                            isPresenting.toggle()
+                        }) {
+                            Image(systemName: "back")
+                        }.sheet(isPresented: $isPresenting) {
+                            // either history or capture
+                            if(history_or_capture == "history"){
+                                HistoryView()
+                            }
+                            else{
+                                // CaptureView()
+                            }
+                            
+                        }.buttonStyle(BorderlessButtonStyle())
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
 
 //struct HistoryEntry {
 //    var actorName: String?

@@ -17,7 +17,7 @@ struct MenuBottom: View {
 //                Text("WatchList Tab")
                 WatchListView()
                     .tabItem {
-                        Image(systemName: "heart.fill")
+                        Image(systemName: "list.and.film")
                         Text("Watchlist")
                 }.tag(1)
                 CaptureView()
@@ -28,7 +28,7 @@ struct MenuBottom: View {
 //                Text("History Tab")
                 HistoryView()
                     .tabItem {
-                        Image(systemName: "mappin.circle.fill")
+                        Image(systemName: "bookmark.square.fill")
                         Text("History")
                 }.tag(3)
             }

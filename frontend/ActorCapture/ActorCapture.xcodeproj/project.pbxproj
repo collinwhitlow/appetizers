@@ -10,6 +10,7 @@
 		274D6D086916CB1F3DAE534D /* Pods_ActorCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */; };
 		819315A027E048CA00A30DE1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193159F27E048CA00A30DE1 /* ImagePicker.swift */; };
 		819315A227E0F3E000A30DE1 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819315A127E0F3E000A30DE1 /* Capture.swift */; };
+		81A1758E27E2A8F500404EB0 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A1758D27E2A8F500404EB0 /* BoundingBox.swift */; };
 		81CCFBE727DD480F00BF9383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE627DD480F00BF9383 /* Assets.xcassets */; };
 		81CCFBEA27DD480F00BF9383 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */; };
 		81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCFBF027DD4CD500BF9383 /* Backend.swift */; };
@@ -28,6 +29,7 @@
 		8193159F27E048CA00A30DE1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		819315A127E0F3E000A30DE1 /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
 		819315A327E114E900A30DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		81A1758D27E2A8F500404EB0 /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 		81CCFBDF27DD480D00BF9383 /* ActorCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActorCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CCFBE627DD480F00BF9383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81CCFBE927DD480F00BF9383 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				8193159F27E048CA00A30DE1 /* ImagePicker.swift */,
 				81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */,
 				819315A127E0F3E000A30DE1 /* Capture.swift */,
+				81A1758D27E2A8F500404EB0 /* BoundingBox.swift */,
 			);
 			path = ActorCapture;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				81CCFBF527DD4F0200BF9383 /* ListRows.swift in Sources */,
 				81CCFBF327DD4D2900BF9383 /* Structs.swift in Sources */,
 				81CCFBFB27DD4FCA00BF9383 /* Actor.swift in Sources */,
+				81A1758E27E2A8F500404EB0 /* BoundingBox.swift in Sources */,
 				819315A027E048CA00A30DE1 /* ImagePicker.swift in Sources */,
 				AAFBCED427DE373B0086625A /* ActorCaptureApp.swift in Sources */,
 				81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */,
@@ -372,7 +376,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ActorCapture/Preview Content\"";
-				DEVELOPMENT_TEAM = 8DG9KS99YT;
+				DEVELOPMENT_TEAM = J7648TRL4B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ActorCapture/Info.plist;
@@ -387,7 +391,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.tojocorm.ActorCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo.ActorCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -404,7 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ActorCapture/Preview Content\"";
-				DEVELOPMENT_TEAM = 8DG9KS99YT;
+				DEVELOPMENT_TEAM = J7648TRL4B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ActorCapture/Info.plist;
@@ -419,7 +423,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.tojocorm.ActorCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo.ActorCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

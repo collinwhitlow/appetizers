@@ -15,19 +15,16 @@ struct ImagePickerView: UIViewControllerRepresentable {
     @Binding var sourceType: UIImagePickerController.SourceType?
         
     func makeUIViewController(context: Context) -> UIImagePickerController {
-        NSLog(self.sourceType == .photoLibrary ? "PHOTO" : "BRO WHAT THE FUCK")
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = self.sourceType!
-        imagePicker.delegate = context.coordinator 
+        imagePicker.delegate = context.coordinator
+        imagePicker.allowsEditing = true
         return imagePicker
     }
 
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-        NSLog("is this supposed to do anything")
-    }
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
     
     func makeCoordinator() -> Coordinator {
-        NSLog("coordinator")
         return Coordinator(picker: self)
     }
 }
@@ -35,15 +32,24 @@ struct ImagePickerView: UIViewControllerRepresentable {
 
 class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     var picker: ImagePickerView
+    @ObservedObject var store = Backend.shared
     
     init(picker: ImagePickerView) {
         self.picker = picker
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        NSLog("here")
-        guard let selectedImage = info[.originalImage] as? UIImage else { return }
+        //print(info)
+        var selectedImage: UIImage!
+        if let img = info[.editedImage] as? UIImage {
+            selectedImage = img
+        }
+        else if let img = info[.originalImage] as? UIImage {
+            selectedImage = img
+        }
+        else { return }
         self.picker.selectedImage = selectedImage
+        store.reset_capture()
         self.picker.isPresented.wrappedValue.dismiss()
     }
 }
