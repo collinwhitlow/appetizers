@@ -209,7 +209,7 @@ struct ActorInfoCapture: View {
                 }
             }.padding(.top, 10)
         }.sheet(isPresented: self.$is_more_info_presenting) {
-            //Actor()
+            ActorView(isPresented: $is_more_info_presenting, actorName: store.resultPage.actorName!, confidence: store.resultPage.confidence, actorUrl: store.resultPage.imageUrl!, history_or_capture: "capture")
         }
     }
     //TODO - add sheet for more info
