@@ -17,6 +17,7 @@ struct ActorView: View {
     var actorUrl: String
     
     var history_or_capture: String
+    
     var body: some View {
         
         NavigationView {
@@ -65,6 +66,10 @@ struct ActorView: View {
                         ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 150, alignment: .topLeading)
 
                     }
+                    
+                    
+                    
+                        
                 }
                 
                 
@@ -79,6 +84,9 @@ struct ActorView: View {
             .navigationBarTitleDisplayMode(.inline)
 
             .task {
+                await store.getactorinfo(actorName: actorName)
+            }
+            .refreshable {
                 await store.getactorinfo(actorName: actorName)
             }
                 
