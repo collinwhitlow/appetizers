@@ -126,7 +126,7 @@ def findactor(request):
     cursor.execute('INSERT INTO history (userid, actor, imageurl, confidence) VALUES '
                    '(%s, %s, %s, %s);', (userid, actorName, imageurl, str(confidence)))
 
-    response = {"actor": actorName, "confidence": confidence, "userid": userid, "url": imageurl}
+    response = {"actor": actorName, "confidence": str(confidence), "userid": userid, "url": imageurl}
     return JsonResponse(response)
 
 @csrf_exempt
