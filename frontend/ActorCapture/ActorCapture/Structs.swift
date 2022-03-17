@@ -26,6 +26,12 @@ struct MoreInfoEntry {
     var movieName: String?
 }
 
+struct ResultPage {
+    @ChattPropWrapper var imageUrl: String?
+    var actorName: String?
+    var confidence: String?
+}
+
 
 
 @propertyWrapper

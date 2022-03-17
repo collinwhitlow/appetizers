@@ -15,6 +15,10 @@ final class Backend: ObservableObject  {
     @Published private(set) var waiting_for_find_faces = false
     @Published private(set) var scalingFactor: CGFloat = 0
     @Published private(set) var box_index : Int?
+    @Published private(set) var resultPage = ResultPage()
+    @Published private(set) var waiting_for_find_actor = false
+    @Published public var found_actor = false
+    @Published public var found_faces = false
 
     private let nFieldsHist = 5
     private let nFieldsWatch = 2
@@ -261,6 +265,14 @@ final class Backend: ObservableObject  {
         self.waiting_for_find_faces = b
     }
     
+    func set_waiting_for_find_actor(_ b: Bool) {
+        self.waiting_for_find_actor = b
+    }
+    
+    func set_found_actor(_ b: Bool) {
+        self.found_actor = false
+    }
+    
     @MainActor
     func findFaces(_ image: UIImage) {
         guard let apiUrl = URL(string: serverUrl+"findfaces/") else {
@@ -322,6 +334,7 @@ final class Backend: ObservableObject  {
                 }
                 self.bounding_boxes = new_array
                 self.waiting_for_find_faces = false
+                self.found_faces = true
                 
                 print("Find Faces Returned Successfully!")
             case .failure:
@@ -331,7 +344,7 @@ final class Backend: ObservableObject  {
     }
     
     @MainActor
-    func findActor(_ image: UIImage){
+    func findActor(_ image: UIImage) {
         guard let apiUrl = URL(string: serverUrl+"findactor/") else {
             print("findFaces: Bad URL")
             return
@@ -350,6 +363,36 @@ final class Backend: ObservableObject  {
         }, to: apiUrl, method: .post).response { response in
             switch (response.result) {
             case .success:
+                guard let data = response.data, response.error == nil else {
+                    print("findFaces: NETWORKING ERROR")
+                    return
+                }
+                if let httpStatus = response.response, httpStatus.statusCode != 200 {
+                    print("findFaces: HTTP STATUS: \(httpStatus.statusCode)")
+                    return
+                }
+                
+                guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                    print("findFaces: failed JSON deserialization")
+                    return
+                }
+                let actorName = jsonObj["actor"]! as? String ?? nil
+                let actorConfidence = jsonObj["confidence"]! as? String ?? nil
+                let actorImage = jsonObj["url"]! as? String ?? nil
+                print(jsonObj)
+                
+                // No response
+                if actorName == nil || actorConfidence == nil || actorImage == nil || actorName == "" {
+                    self.waiting_for_find_actor = false
+                    return
+                }
+                
+                self.resultPage.actorName = actorName!
+                self.resultPage.confidence = actorConfidence!
+                self.resultPage.imageUrl = actorImage!
+                self.waiting_for_find_actor = false
+                self.found_actor = true
+                
                 print("Find Actor Returned Successfully!")
             case .failure:
                 print("Find Actor Failed!")

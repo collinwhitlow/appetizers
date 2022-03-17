@@ -11,7 +11,52 @@ import UIKit
 import CoreGraphics
 
 struct CaptureView: View {
+    @ObservedObject var store = Backend.shared
     
+    var body: some View {
+        if !store.found_actor {
+            ImageCapture()
+        } else {
+            ActorInfoCapture()
+        }
+    }
+}
+
+struct BoundingBoxes: View {
+    //@Binding var box_index: Int?
+    @ObservedObject var store = Backend.shared
+    
+    var body: some View {
+        ForEach(store.bounding_boxes_indices, id: \.self) { index in
+            Button(action: {
+                store.waiting_for_find_actor ? nil : store.set_box_index(index)
+            }) {
+                Rectangle()
+                    .stroke(index == store.box_index ? Color.green : Color.purple, lineWidth: 3)
+                    .frame(width: self.find_width(index), height: self.find_height(index))
+            }.frame(width: self.find_width(index), height: self.find_height(index))
+             .position(x: find_x_pos(index) , y: find_y_pos(index))
+        }
+    }
+    
+    func find_width(_ index: Int) -> CGFloat{
+        return (CGFloat(store.bounding_boxes![index][2][0]) - CGFloat(store.bounding_boxes![index][0][0])) * store.scalingFactor
+    }
+    
+    func find_height(_ index: Int) -> CGFloat {
+        return (CGFloat(store.bounding_boxes![index][2][1]) - CGFloat(store.bounding_boxes![index][0][1])) * store.scalingFactor
+    }
+    
+    func find_x_pos(_ index: Int) -> CGFloat {
+        return CGFloat(store.bounding_boxes![index][4][0]) * store.scalingFactor
+    }
+    
+     func find_y_pos(_ index: Int) -> CGFloat {
+         CGFloat(store.bounding_boxes![index][4][1]) * store.scalingFactor
+    }
+}
+
+struct ImageCapture: View {
     @State private var sourceType: UIImagePickerController.SourceType?
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
@@ -38,7 +83,7 @@ struct CaptureView: View {
                         .clipShape(Rectangle())
                         .frame(width: 300, height: 300)
                         .clipped()
-                        .opacity(store.waiting_for_find_faces == true ? 0.3 : 1)
+                        .opacity(store.waiting_for_find_faces ? 0.3 : 1)
                 } else {
                     Image(uiImage: selectedImage!)
                         .resizable()
@@ -49,6 +94,7 @@ struct CaptureView: View {
                         .overlay(
                             BoundingBoxes()
                         )
+                        .opacity(store.waiting_for_find_actor ? 0.3 : 1)
                 }
             } else {
                 Image(systemName: "person.crop.rectangle.fill")
@@ -73,7 +119,7 @@ struct CaptureView: View {
                     Image(systemName: "photo.fill")
                         .scaleEffect(3)
                 }
-                if selectedImage == nil || (store.bounding_boxes != nil && store.box_index == nil) || store.waiting_for_find_faces {
+                if selectedImage == nil || (store.bounding_boxes != nil && store.box_index == nil) || store.waiting_for_find_faces || store.waiting_for_find_actor {
                     Button() {
                         self.showingAlert = true
                     } label: {
@@ -90,12 +136,17 @@ struct CaptureView: View {
                             store.set_waiting_for_find_faces(true)
                             self.store.findFaces(selectedImage!)
                         } else {
-                            
+                            store.set_waiting_for_find_actor(true)
+                            self.store.findActor(selectedImage!)
                         }
                     } label: {
                         Image(systemName: "arrow.right.square.fill")
                             .scaleEffect(3)
-                    }
+                    }/*.alert("Can't Find Name For Selected Face", isPresented: $cantFindActorFace) {
+                        Button("OK", role: .cancel) {}
+                    }.alert("Can't Find Any Faces", isPresented: $cantFindFace) {
+                        Button("OK", role: .cancel) {}
+                    }*/
                 }
             }.padding(.top, 10)
             Spacer()
@@ -106,31 +157,64 @@ struct CaptureView: View {
     }
 }
 
-struct BoundingBoxes: View {
-    //@Binding var box_index: Int?
+struct ActorInfoCapture: View {
     @ObservedObject var store = Backend.shared
+    @State var is_more_info_presenting = false
     
     var body: some View {
-        ForEach(store.bounding_boxes_indices, id: \.self) { index in
-            Button(action: {
-                store.set_box_index(index)
-            }) {
-                Rectangle()
-                    .stroke(index == store.box_index ? Color.green : Color.purple, lineWidth: 3)
-                    .frame(width: self.find_width(index), height: self.find_height(index))
-            }.frame(width: self.find_width(index), height: self.find_height(index))
-             .position(x: CGFloat(store.bounding_boxes![index][4][0]) * store.scalingFactor , y: CGFloat(store.bounding_boxes![index][4][1]) * store.scalingFactor)
+        VStack (alignment: .center, spacing: 50) {
+            Text(store.resultPage.actorName!)
+                .padding(.leading, 30)
+                .padding(.trailing, 30)
+                .font(.system(size: 40, weight: .bold, design: .monospaced))
+                .multilineTextAlignment(.center)
+                .frame(alignment: .top)
+            Divider()
+            if let imageUrl = store.resultPage.imageUrl! {
+                AsyncImage(url: URL(string: imageUrl)!,
+                           content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(Rectangle())
+                                    .frame(width:100, height: 100)
+                                    .padding()
+                                    },
+                           placeholder: {
+                               ProgressView()
+                           })
+            }
+            Divider()
+            Text("Confidence: " + String(store.resultPage.confidence!))
+                .padding(.leading, 30)
+                .padding(.trailing, 30)
+                .font(.system(size: 20, weight: .bold, design: .monospaced))
+                .multilineTextAlignment(.center)
+                .frame(alignment: .center)
+
+            Divider()
+            HStack(alignment: .center, spacing: 80) {
+                Button() {
+                    store.set_found_actor(false)
+                } label: {
+                    Image(systemName: "arrow.left.square.fill")
+                        .scaleEffect(3)
+                }
+                
+                Button() {
+                    self.is_more_info_presenting.toggle()
+                } label: {
+                    Image(systemName: "info")
+                        .scaleEffect(3)
+                        .foregroundColor(Color.blue)
+                }
+            }.padding(.top, 10)
+        }.sheet(isPresented: self.$is_more_info_presenting) {
+            //Actor()
         }
     }
-    
-    func find_width(_ index: Int) -> CGFloat{
-        return (CGFloat(store.bounding_boxes![index][2][0]) - CGFloat(store.bounding_boxes![index][0][0])) * store.scalingFactor
-    }
-    
-    func find_height(_ index: Int) -> CGFloat {
-        return (CGFloat(store.bounding_boxes![index][2][1]) - CGFloat(store.bounding_boxes![index][0][1])) * store.scalingFactor
-    }
+    //TODO - add sheet for more info
 }
+
 
 struct CaptureView_Previews: PreviewProvider {
     static var previews: some View {
