@@ -10,7 +10,7 @@ headers = {'Accept': 'text/plain'}
 
 files = {'image': open(image_file, 'rb')}
 
-data = {"userid": "959B4E3F-22E2-4B00-8EC8-8522BF375D03"}
+data = {"userid": "0DDA2BB2-B75A-47C6-AD68-0E4ADEF2FF83"}
 response = requests.post(api, files=files, data=data, headers=headers, verify=False)
 try:
     print(response.text)                
@@ -27,7 +27,7 @@ headers = {'Accept': 'text/plain'}
 
 files = {'image': open(image_file, 'rb')}
 
-data = {"userid": "959B4E3F-22E2-4B00-8EC8-8522BF375D03", "bounding_box": json.dumps(new_data["bounding_boxes"][1])}
+data = {"userid": "0DDA2BB2-B75A-47C6-AD68-0E4ADEF2FF83", "bounding_box": json.dumps(new_data["bounding_boxes"][0])}
 response = requests.post(api, files=files, data=data, headers=headers, verify=False)
 try:
     print(response.text)
@@ -37,7 +37,7 @@ except requests.exceptions.RequestException:
 name = json.loads(response.text)["actor"]
 # name = "Chadwick Boseman"
 api = "https://3.144.236.126/getactorinfo/"
-data = {"userid": "959B4E3F-22E2-4B00-8EC8-8522BF375D03", "actorName": name}
+data = {"userid": "0DDA2BB2-B75A-47C6-AD68-0E4ADEF2FF83", "actorName": name}
 response = requests.post(api, data=json.dumps(data), verify=False)
 print(response.text)
 
