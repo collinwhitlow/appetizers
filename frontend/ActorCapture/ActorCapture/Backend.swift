@@ -315,7 +315,14 @@ final class Backend: ObservableObject  {
                 
                 var new_array: [[[Int]]] = []
                 
-                self.scalingFactor = CGFloat(300)/CGFloat(image.size.height)
+                if image.size.height == image.size.width {
+                    self.scalingFactor = CGFloat(300)/CGFloat(image.size.height)
+                }
+                else if image.size.height < image.size.width {
+                    self.scalingFactor = CGFloat(300)/CGFloat(image.size.height)
+                } else {
+                    self.scalingFactor = CGFloat(300)/CGFloat(image.size.width)
+                }
                 
                 for var box in boxes! {
                     let top_left = box[0]
