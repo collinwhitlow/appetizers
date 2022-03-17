@@ -91,10 +91,21 @@ struct WatchListRow: View {
     }
 }
 
+final class PlayerUIState: ObservableObject {
+    @Published var recDisabled = false
+    func disable_add() {
+        recDisabled = true
+    }
+    func gette() -> Bool{
+        return recDisabled
+    }
+    
+}
+
 struct movieInfoRow: View {
     var infoEntry: MoreInfoEntry
     @ObservedObject var store = Backend.shared
-
+    @StateObject var playerUIState = PlayerUIState()
     var body: some View {
         HStack (spacing: 0){
             if let movieName = infoEntry.movieName, let imageURL = infoEntry.imageUrl, let role = infoEntry.characterName {
@@ -122,10 +133,14 @@ struct movieInfoRow: View {
                         .font(.system(size: 21, weight: .heavy, design: .default))
                     HStack (spacing: 40) {
                         Button(action: { Task {
+                            playerUIState.disable_add()
                             await store.addWatchlist(infoEntry)
+                
+                            
                         }}) {
-                            Image(systemName: "shuffle")
+                            Image(systemName: "plus.circle")
                         }.buttonStyle(BorderlessButtonStyle())
+                            .disabled(playerUIState.gette())
                     }
 
                 }

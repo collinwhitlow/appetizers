@@ -53,6 +53,7 @@ final class Backend: ObservableObject  {
     
     @MainActor
     func getactorinfo(actorName: String) async {
+        
         guard let apiUrl = URL(string: serverUrl+"getactorinfo/") else {
             print("getactorinfo: Bad URL")
             return
@@ -68,26 +69,26 @@ final class Backend: ObservableObject  {
         request.httpBody = jsonData
 
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let data2 : [String: Any] = [
+                "known_for": [
+                              ["id": "tt0369735", "title": "Monster-in-Law", "fullTitle": "Monster-in-Law (2005)", "year": "2005", "role": "Ruby", "image": "https://imdb-api.com/images/original/MV5BYTcwYjA1NGItM2YyYy00MmE4LTkxMzItYWNiZWRkNDFjNmE5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_Ratio0.6852_AL_.jpg"],
+                              ["id": "tt1667889", "title": "Ice Age 4: Continental Drift", "fullTitle": "Ice Age 4: Continental Drift (2012)", "year": "2012", "role": "Granny", "image": "https://imdb-api.com/images/original/MV5BMTM3NDM5MzY5Ml5BMl5BanBnXkFtZTcwNjExMDUwOA@@._V1_Ratio0.6852_AL_.jpg"],
+                              ["id": "tt4651520", "title": "Bad Moms", "fullTitle": "Bad Moms (2016)", "year": "2016", "role": "Dr. Karl", "image": "https://imdb-api.com/images/original/MV5BMjIwNzE5MTgwNl5BMl5BanBnXkFtZTgwNjM4OTA0OTE@._V1_Ratio0.6852_AL_.jpg"],
+                              ["id": "tt0413099", "title": "Evan Almighty", "fullTitle": "Evan Almighty (2007)", "year": "2007", "role": "Rita", "image": "https://imdb-api.com/images/original/MV5BMTUxMTEzODYxMV5BMl5BanBnXkFtZTcwNzQ4ODU0MQ@@._V1_Ratio0.6852_AL_.jpg"]],
+                "cast_movies": [
+                                ["id": "tt14831458", "role": "Actress", "title": "Tiny Tina's Wonderlands", "year": "2022", "description": "(Video Game) (post-production) Frette (voice)"],
+                                ["id": "tt18257758", "role": "Actress", "title": "Alabama Jackson", "year": "2022", "description": "(TV Series) Harriet Tubman (voice)"],
+                                ["id": "tt14403322", "role": "Actress", "title": "Pandemica", "year": "2021", "description": "(TV Mini Series) (voice)"]],
                 
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                print("getactorinfo: HTTP STATUS: \(httpStatus.statusCode)")
-                return
-            }
-                
-            guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
-                print("getactorinfo: failed JSON deserialization")
-                return
-            }
-            let historyReceived = jsonObj["rows"] as? [[String?]] ?? []
-            
+            ]
             self.actorinfo = [MoreInfoEntry]()
-            for infoentry in historyReceived {
-                if infoentry.count == self.nFieldsHist {
-                    self.actorinfo.append(MoreInfoEntry(imageUrl: infoentry[6], characterName: infoentry[1], movieName: infoentry[0]))
-                } else {
-                    print("getactorinfo: Received unexpected number of fields: \(infoentry.count) instead of \(self.nFieldsHist).")
+            if let whole_dict = data2["known_for"] as? [[String:String]] {
+                for dict in whole_dict{
+                    //print(dict["id"]!)
+                    self.actorinfo.append(MoreInfoEntry(imageUrl: dict["image"]!, characterName: dict["role"],movieName: dict["fullTitle"]))
                 }
+            }else{
+                print("getactorinfo failed 1")
             }
         } catch {
             print("getactorinfo: NETWORKING ERROR")

@@ -15,14 +15,61 @@ struct ActorView: View {
     var actorName: String
     var confidence: String?
     var actorUrl: String
+    
     var history_or_capture: String
     var body: some View {
+        
         NavigationView {
-            List(0..<1) {
-                actorInfoRow(actorName: actorName, infoEntry: store.actorinfo[$0], confidence: confidence!, actorUrl: actorUrl, history_or_capture: history_or_capture)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
-            }
+            VStack(spacing: 0){
+                VStack (spacing: 0){
+                    VStack (spacing: 0){
+                        if let actorname = actorName, let actorUrl = actorUrl {
+                        Text(actorname)
+                            .frame(alignment: .center)
+                            .font(.system(size: 19, weight: .heavy, design: .default))
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        if let confidence = confidence { // get confidence level
+                            Text("Confidence: " + confidence).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 16))
+                        }
+                        //HStack (spacing: 40) {
+                            
+                        //    Button(action: {
+                        //        isPresented.toggle()
+                        //    }) {
+                        //        Image(systemName: "square.and.pencil")
+                        //    }.sheet(isPresented: $isPresented) {
+                                // either history or capture
+                        //        if(history_or_capture == "history"){
+                                    //HistoryView()
+                        //        }
+                        //        else{
+                                    // CaptureView()
+                        //        }
+                                
+                        //    }.buttonStyle(BorderlessButtonStyle())
+                        //}
+                    }
+                    }
+                    if let actorname = actorName, let actorUrl = actorUrl {
+                        AsyncImage(url: URL(string: actorUrl)!,
+                                   content: { image in
+                                        image.resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .clipShape(Circle())
+                                            .frame(maxWidth:300, maxHeight: 130, alignment: .center)
+                                            
+                                            },
+                                    placeholder: {
+                                        ProgressView()
+                                    }
+                        ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 150, alignment: .topLeading)
+
+                    }
+                }
+                
+                
+                
+                
             List(store.actorinfo.indices, id: \.self) {
                 movieInfoRow(infoEntry: store.actorinfo[$0])
                     .listRowSeparator(.hidden)
@@ -33,6 +80,8 @@ struct ActorView: View {
 
             .task {
                 await store.getactorinfo(actorName: actorName)
+            }
+                
             }
         }
     }
