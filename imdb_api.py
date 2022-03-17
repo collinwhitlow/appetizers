@@ -1,8 +1,9 @@
+
+
 import requests
 import base64
 import json
 
-key = "k_ek29gjuf"
 # findID_endpoint = "https://imdb-api.com/en/API/SearchName/" + key + "/"
 # get_info_endpoint = "https://imdb-api.com/en/API/Name/" + key + "/"
 
@@ -29,8 +30,8 @@ key = "k_ek29gjuf"
 # print(tmpResp.text)
 
 
-api = 'https://3.144.236.126/postwatchlist/'
-movie = "Finding Not Nemo"
-data = {"userid": "0DDA2BB2-B75A-47C6-AD68-0E4ADEF2FF83", "movietitle": movie, "imageURL": "https://www.imdb.com/title/tt0266543/mediaviewer/rm3313243136/"}
+api = 'https://3.144.236.126/getactorinfo/'
+movie = "Finding Nemo"
+data = {"actorName": "Chris Pratt"}
 response = requests.post(api, data=json.dumps(data), verify=False)
 print(response.text)
