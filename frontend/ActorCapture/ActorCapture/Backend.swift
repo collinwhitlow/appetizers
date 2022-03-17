@@ -73,7 +73,19 @@ final class Backend: ObservableObject  {
         request.httpBody = jsonData
 
         do {
-            let data2 : [String: Any] = [
+            let (data, response) = try await URLSession.shared.data(for: request)
+                
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("gethistory: HTTP STATUS: \(httpStatus.statusCode)")
+                return
+            }
+                
+            guard let data2 = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
+                print("gethistory: failed JSON deserialization")
+                return
+            }
+             
+            let data3 : [String: Any] = [
                 "known_for": [
                               ["id": "tt0369735", "title": "Monster-in-Law", "fullTitle": "Monster-in-Law (2005)", "year": "2005", "role": "Ruby", "image": "https://imdb-api.com/images/original/MV5BYTcwYjA1NGItM2YyYy00MmE4LTkxMzItYWNiZWRkNDFjNmE5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_Ratio0.6852_AL_.jpg"],
                               ["id": "tt1667889", "title": "Ice Age 4: Continental Drift", "fullTitle": "Ice Age 4: Continental Drift (2012)", "year": "2012", "role": "Granny", "image": "https://imdb-api.com/images/original/MV5BMTM3NDM5MzY5Ml5BMl5BanBnXkFtZTcwNjExMDUwOA@@._V1_Ratio0.6852_AL_.jpg"],
