@@ -10,15 +10,18 @@ final class Backend: ObservableObject  {
     @Published private(set) var history = [HistoryEntry]()
     @Published private(set) var watchlist = [WatchListEntry]()
     @Published private(set) var actorinfo = [MoreInfoEntry]()
+    
     @Published private(set) var bounding_boxes: [[[Int]]]?
     @Published private(set) var bounding_boxes_indices: [Int] = []
     @Published private(set) var waiting_for_find_faces = false
     @Published private(set) var scalingFactor: CGFloat = 0
-    @Published private(set) var box_index : Int?
     @Published private(set) var resultPage = ResultPage()
     @Published private(set) var waiting_for_find_actor = false
+    @Published private(set) var box_index = -1
+    
     @Published public var found_actor = false
-    @Published public var found_faces = false
+    @Published public var cant_find_actor = false
+    @Published public var cant_find_faces = false
 
     private let nFieldsHist = 5
     private let nFieldsWatch = 2
@@ -266,13 +269,10 @@ final class Backend: ObservableObject  {
         self.bounding_boxes = nil
         self.bounding_boxes_indices = []
         self.scalingFactor = 0
-        self.box_index = nil
+        self.found_actor = false
+        self.box_index = -1
     }
-    
-    func set_box_index(_ ind: Int){
-        self.box_index = ind
-    }
-    
+
     func set_waiting_for_find_faces(_ b: Bool) {
         self.waiting_for_find_faces = b
     }
@@ -282,13 +282,14 @@ final class Backend: ObservableObject  {
     }
     
     func set_found_actor(_ b: Bool) {
-        self.found_actor = false
+        self.found_actor = b
     }
     
     @MainActor
     func findFaces(_ image: UIImage) {
         guard let apiUrl = URL(string: serverUrl+"findfaces/") else {
             print("findFaces: Bad URL")
+            self.cant_find_faces = true
             return
         }
         
@@ -320,6 +321,7 @@ final class Backend: ObservableObject  {
                     print("alan has swine flu")
                     self.waiting_for_find_faces = false
                     self.reset_capture()
+                    self.cant_find_faces = true
                     return
                 }
                 let temp_boxes = NSMutableArray(array: recBoundingBoxes!)
@@ -353,19 +355,21 @@ final class Backend: ObservableObject  {
                 }
                 self.bounding_boxes = new_array
                 self.waiting_for_find_faces = false
-                self.found_faces = true
+                self.cant_find_faces = false
                 
                 print("Find Faces Returned Successfully!")
             case .failure:
+                self.cant_find_faces = true
                 print("Find Faces Failed!")
            }
         }
     }
     
     @MainActor
-    func findActor(_ image: UIImage) {
+    func findActor(_ image: UIImage, _ box_index: Int) {
         guard let apiUrl = URL(string: serverUrl+"findactor/") else {
             print("findFaces: Bad URL")
+            self.cant_find_actor = true
             return
         }
         
@@ -373,7 +377,7 @@ final class Backend: ObservableObject  {
             if let id = self.userid?.data(using: .utf8) {
                 mpFD.append(id, withName: "userid")
             }
-            if let box = try? JSONSerialization.data(withJSONObject: self.bounding_boxes![self.box_index!], options: []){
+            if let box = try? JSONSerialization.data(withJSONObject: self.bounding_boxes![box_index], options: []){
                 mpFD.append(box, withName: "bounding_box")
             }
             if let jpegImage = image.jpegData(compressionQuality: 1) {
@@ -403,6 +407,7 @@ final class Backend: ObservableObject  {
                 // No response
                 if actorName == nil || actorConfidence == nil || actorImage == nil || actorName == "" {
                     self.waiting_for_find_actor = false
+                    self.cant_find_actor = true
                     return
                 }
                 
@@ -411,9 +416,12 @@ final class Backend: ObservableObject  {
                 self.resultPage.imageUrl = actorImage!
                 self.waiting_for_find_actor = false
                 self.found_actor = true
+                self.box_index = box_index
+                self.cant_find_actor = false
                 
                 print("Find Actor Returned Successfully!")
             case .failure:
+                self.cant_find_actor = true
                 print("Find Actor Failed!")
            }
         }

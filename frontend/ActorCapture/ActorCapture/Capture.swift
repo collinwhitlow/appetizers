@@ -12,10 +12,12 @@ import CoreGraphics
 
 struct CaptureView: View {
     @ObservedObject var store = Backend.shared
+    @State private var selectedImage: UIImage?
+    @State private var box_index : Int?
     
     var body: some View {
         if !store.found_actor {
-            ImageCapture()
+            ImageCapture(selectedImage: self.$selectedImage, box_index: self.$box_index)
         } else {
             ActorInfoCapture()
         }
@@ -25,14 +27,17 @@ struct CaptureView: View {
 struct BoundingBoxes: View {
     //@Binding var box_index: Int?
     @ObservedObject var store = Backend.shared
+    @Binding var box_index: Int?
     
     var body: some View {
         ForEach(store.bounding_boxes_indices, id: \.self) { index in
             Button(action: {
-                store.waiting_for_find_actor ? nil : store.set_box_index(index)
+                if store.waiting_for_find_actor == true {} else {
+                    self.box_index = index
+                }
             }) {
                 Rectangle()
-                    .stroke(index == store.box_index ? Color.green : Color.purple, lineWidth: 3)
+                    .stroke(index == self.box_index ? Color.green : Color.purple, lineWidth: 3)
                     .frame(width: self.find_width(index), height: self.find_height(index))
             }.frame(width: self.find_width(index), height: self.find_height(index))
              .position(x: find_x_pos(index) , y: find_y_pos(index))
@@ -57,14 +62,16 @@ struct BoundingBoxes: View {
 }
 
 struct ImageCapture: View {
+    @ObservedObject var store = Backend.shared
+    
+    @Binding var selectedImage: UIImage?
+    @Binding var box_index: Int?
+    
     @State private var sourceType: UIImagePickerController.SourceType?
-    @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     @State private var showingAlert = false
     //@State private var box_index : Int?
     @State private var is_presenting_actor = false
-    
-    @ObservedObject var store = Backend.shared
     
     var body: some View {
         VStack (alignment: .center, spacing: 50) {
@@ -84,6 +91,11 @@ struct ImageCapture: View {
                         .frame(width: 300, height: 300)
                         .clipped()
                         .opacity(store.waiting_for_find_faces ? 0.3 : 1)
+                        .overlay(
+                            ActivityIndicator(isAnimating: store.waiting_for_find_faces)
+                                .padding()
+                                .scaleEffect(2)
+                        )
                 } else {
                     Image(uiImage: selectedImage!)
                         .resizable()
@@ -91,10 +103,15 @@ struct ImageCapture: View {
                         .clipShape(Rectangle())
                         .frame(width: 300, height: 300)
                         .clipped()
-                        .overlay(
-                            BoundingBoxes()
-                        )
                         .opacity(store.waiting_for_find_actor ? 0.3 : 1)
+                        .overlay(
+                            BoundingBoxes(box_index: self.$box_index)
+                        )
+                        .overlay(
+                            ActivityIndicator(isAnimating: store.waiting_for_find_actor)
+                                .padding()
+                                .scaleEffect(2)
+                        )
                 }
             } else {
                 Image(systemName: "person.crop.rectangle.fill")
@@ -119,7 +136,7 @@ struct ImageCapture: View {
                     Image(systemName: "photo.fill")
                         .scaleEffect(3)
                 }
-                if selectedImage == nil || (store.bounding_boxes != nil && store.box_index == nil) || store.waiting_for_find_faces || store.waiting_for_find_actor {
+                if selectedImage == nil || (store.bounding_boxes != nil && self.box_index == nil) || store.waiting_for_find_faces || store.waiting_for_find_actor {
                     Button() {
                         self.showingAlert = true
                     } label: {
@@ -136,23 +153,27 @@ struct ImageCapture: View {
                             store.set_waiting_for_find_faces(true)
                             self.store.findFaces(selectedImage!)
                         } else {
-                            store.set_waiting_for_find_actor(true)
-                            self.store.findActor(selectedImage!)
+                            if self.box_index != store.box_index {
+                                store.set_waiting_for_find_actor(true)
+                                self.store.findActor(selectedImage!, self.box_index!)
+                            } else {
+                                store.set_found_actor(true)
+                            }
                         }
                     } label: {
                         Image(systemName: "arrow.right.square.fill")
                             .scaleEffect(3)
-                    }/*.alert("Can't Find Name For Selected Face", isPresented: $cantFindActorFace) {
+                    }.alert("Can't Find Any Faces", isPresented: $store.cant_find_faces) {
                         Button("OK", role: .cancel) {}
-                    }.alert("Can't Find Any Faces", isPresented: $cantFindFace) {
+                    }.alert("Can't Find Name For Selected Face", isPresented: $store.cant_find_actor) {
                         Button("OK", role: .cancel) {}
-                    }*/
+                    }
                 }
             }.padding(.top, 10)
             Spacer()
         }
         .sheet(isPresented: self.$isImagePickerDisplay) {
-            ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.$sourceType)
+            ImagePickerView(selectedImage: self.$selectedImage, sourceType: self.$sourceType, box_index: self.$box_index)
         }
     }
 }
@@ -213,6 +234,19 @@ struct ActorInfoCapture: View {
         }
     }
     //TODO - add sheet for more info
+}
+
+struct ActivityIndicator: UIViewRepresentable {
+    
+    typealias UIView = UIActivityIndicatorView
+    var isAnimating: Bool
+    fileprivate var configuration = { (indicator: UIView) in }
+
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIView { UIView() }
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<Self>) {
+        isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
+        configuration(uiView)
+    }
 }
 
 
