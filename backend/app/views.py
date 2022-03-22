@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from pathlib import Path
+import random
 
 # Create your views here.
 from django.http import JsonResponse, HttpResponse
@@ -121,12 +122,12 @@ def findactor(request):
         confidence = api_response["CelebrityFaces"][0]["MatchConfidence"]
 
     confidence = round(confidence,1)
-
+    id = random.getrandbits(64)
     cursor = connection.cursor()
-    cursor.execute('INSERT INTO history (userid, actor, imageurl, confidence) VALUES '
-                   '(%s, %s, %s, %s);', (userid, actorName, imageurl, str(confidence)))
+    cursor.execute('INSERT INTO history (userid, actor, imageurl, confidence, uid) VALUES '
+                   '(%s, %s, %s, %s);', (userid, actorName, imageurl, str(confidence), str(id)))
 
-    response = {"actor": actorName, "confidence": str(confidence), "userid": userid, "url": imageurl}
+    response = {"actor": actorName, "confidence": str(confidence), "userid": userid, "url": imageurl, "uid": str(id)}
     return JsonResponse(response)
 
 @csrf_exempt
@@ -191,7 +192,7 @@ def getwatchlist(request):
     userid = json_data['userid']
 
     cursor = connection.cursor()
-    cursor.execute('SELECT movietitle, imageurl FROM watchlist WHERE userid=%s ORDER BY movietitle ASC;', (userid,))
+    cursor.execute('SELECT movietitle, imageurl, uid FROM watchlist WHERE userid=%s ORDER BY movietitle ASC;', (userid,))
     rows = cursor.fetchall()
 
     response = {'watchlist': rows}
@@ -217,8 +218,9 @@ def postwatchlist(request):
         if len(jsonDict["results"]) > 0:
             imageURL = jsonDict["results"][0]["image"]
 
+    id = random.getrandbits(64)
     cursor = connection.cursor()
-    cursor.execute('INSERT INTO watchlist (userid, movietitle, imageurl) VALUES ' '(%s, %s, %s);', (userid, movietitle, imageURL))
+    cursor.execute('INSERT INTO watchlist (userid, movietitle, imageurl, uid) VALUES ' '(%s, %s, %s);', (userid, movietitle, imageURL, str(id)))
     return JsonResponse({})
 
 
@@ -244,17 +246,17 @@ def deletehistory(request):
     if request.method != 'DELETE':
         return HttpResponse(status=404)
     json_data = json.loads(request.body)
-    if 'userid' not in json_data or 'actorName' not in json_data :
+    if 'userid' not in json_data or 'uid' not in json_data :
         return HttpResponse(status=404)
     userid = json_data['userid']
-    actorName = json_data['actorName']
+    uid = json_data['uid']
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM history WHERE userid=%s AND actor=%s;', (userid,actorName))
+    cursor.execute('SELECT * FROM history WHERE userid=%s AND uid=%s;', (userid,uid))
     rows = cursor.fetchall()
     for row in rows:
         str_tmp = row[2]
         os.remove("/home/ubuntu/appetizers/backend/media/" + str_tmp[str_tmp.rfind("/")+1:len(str_tmp)])
-    cursor.execute('DELETE FROM history WHERE userid=%s AND actor=%s;', (userid, actorName))
+    cursor.execute('DELETE FROM history WHERE userid=%s AND uid=%s;', (userid, uid))
     response = json_data
     return JsonResponse(response)
 
@@ -264,12 +266,12 @@ def deletewatchlist(request):
         return HttpResponse(status=404)
 
     json_data = json.loads(request.body)
-    if 'userid' not in json_data or 'movietitle' not in json_data :
+    if 'userid' not in json_data or 'uid' not in json_data :
         return HttpResponse(status=404)
     
     userid = json_data['userid']
-    movietitle = json_data['movietitle']
+    uid = json_data['uid']
     cursor = connection.cursor()
-    cursor.execute('DELETE FROM watchlist WHERE userid=%s AND movietitle=%s;', (userid, movietitle))
+    cursor.execute('DELETE FROM watchlist WHERE userid=%s AND uid=%s;', (userid, uid))
     response = json_data
     return JsonResponse(response)
