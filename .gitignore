@@ -1,6 +1,7 @@
 # all media from backend
 backend/media/*
-/Users/tobycormack/Desktop/SuperSenior/second/441/appetizers/frontend/ActorCapture/ /*
+/frontend/ActorCapture/ /*
+/frontend/ActorCapture/ActorCapture.xcodeproj/project.pbxproj
 # macOS files
 .DS_Store
 .DS_Store?
