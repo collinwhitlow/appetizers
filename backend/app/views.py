@@ -125,7 +125,7 @@ def findactor(request):
     id = random.getrandbits(64)
     cursor = connection.cursor()
     cursor.execute('INSERT INTO history (userid, actor, imageurl, confidence, uid) VALUES '
-                   '(%s, %s, %s, %s);', (userid, actorName, imageurl, str(confidence), str(id)))
+                   '(%s, %s, %s, %s, %s);', (userid, actorName, imageurl, str(confidence), str(id)))
 
     response = {"actor": actorName, "confidence": str(confidence), "userid": userid, "url": imageurl, "uid": str(id)}
     return JsonResponse(response)

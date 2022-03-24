@@ -12,10 +12,7 @@ files = {'image': open(image_file, 'rb')}
 
 data = {"userid": "0DDA2BB2-B75A-47C6-AD68-0E4ADEF2FF83"}
 response = requests.post(api, files=files, data=data, headers=headers, verify=False)
-try:
-    print(response.text)                
-except requests.exceptions.RequestException:
-    print(response.text)
+
 
 # curl -X POST -d '{ "userid": "user1"}' --insecure https://3.144.236.126/findactor/ > /Users/tobycormack/Desktop/test.html
 
@@ -34,12 +31,12 @@ try:
 except requests.exceptions.RequestException:
     print(response.text)
 
-name = json.loads(response.text)["actor"]
-# name = "Chadwick Boseman"
-api = "https://3.144.236.126/getactorinfo/"
-data = {"userid": "0DDA2BB2-B75A-47C6-AD68-0E4ADEF2FF83", "actorName": name}
-response = requests.post(api, data=json.dumps(data), verify=False)
-print(response.text)
+# name = json.loads(response.text)["actor"]
+# # name = "Chadwick Boseman"
+# api = "https://3.144.236.126/getactorinfo/"
+# data = {"userid": "0DDA2BB2-B75A-47C6-AD68-0E4ADEF2FF83", "actorName": name}
+# response = requests.post(api, data=json.dumps(data), verify=False)
+# print(response.text)
 
 
 

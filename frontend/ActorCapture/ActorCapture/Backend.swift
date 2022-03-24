@@ -149,7 +149,8 @@ final class Backend: ObservableObject  {
                 if historyentry.count == self.nFieldsHist {
                     self.history.append(HistoryEntry(actorName: historyentry[1],
                                                     imageUrl: historyentry[2],
-                                                    confidence: historyentry[4]))
+                                                    confidence: historyentry[4],
+                                                    uid: historyentry[5]))
                 } else {
                     print("getHistory: Received unexpected number of fields: \(historyentry.count) instead of \(self.nFieldsHist).")
                 }
@@ -160,7 +161,7 @@ final class Backend: ObservableObject  {
     }
     func deleteHistory(_ history: HistoryEntry) async {
         let jsonObj = ["userid": userid,
-                       "actorName": history.actorName]
+                       "uid": history.uid]
         guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
             print("deleteHistory: jsonData serialization error")
             return
@@ -191,7 +192,7 @@ final class Backend: ObservableObject  {
     
     func deleteWatchlist(_ watchlist: WatchListEntry) async {
         let jsonObj = ["userid": userid,
-                       "movietitle": watchlist.movieName]
+                       "uid": watchlist.uid]
         guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
             print("deleteWatchlist: jsonData serialization error")
             return
@@ -255,7 +256,8 @@ final class Backend: ObservableObject  {
             for watchlistentry in watchlistReceived {
                 if watchlistentry.count == self.nFieldsWatch {
                     self.watchlist.append(WatchListEntry(imageUrl: watchlistentry[1],
-                                                         movieName: watchlistentry[0]))
+                                                         movieName: watchlistentry[0],
+                                                         uid: watchlistentry[2]))
                 } else {
                     print("getwatchlist: Received unexpected number of fields: \(watchlistentry.count) instead of \(self.nFieldsWatch).")
                 }
@@ -309,6 +311,7 @@ final class Backend: ObservableObject  {
                 }
                 if let httpStatus = response.response, httpStatus.statusCode != 200 {
                     print("findFaces: HTTP STATUS: \(httpStatus.statusCode)")
+                    print(response.data)
                     return
                 }
                 
@@ -368,7 +371,7 @@ final class Backend: ObservableObject  {
     @MainActor
     func findActor(_ image: UIImage, _ box_index: Int) {
         guard let apiUrl = URL(string: serverUrl+"findactor/") else {
-            print("findFaces: Bad URL")
+            print("findActor: Bad URL")
             self.cant_find_actor = true
             return
         }
@@ -387,16 +390,17 @@ final class Backend: ObservableObject  {
             switch (response.result) {
             case .success:
                 guard let data = response.data, response.error == nil else {
-                    print("findFaces: NETWORKING ERROR")
+                    print("findActor: NETWORKING ERROR")
                     return
                 }
                 if let httpStatus = response.response, httpStatus.statusCode != 200 {
-                    print("findFaces: HTTP STATUS: \(httpStatus.statusCode)")
+                    print("findActor: HTTP STATUS: \(httpStatus.statusCode)")
+                    print(response.data)
                     return
                 }
                 
                 guard let jsonObj = try? JSONSerialization.jsonObject(with: data) as? [String:Any] else {
-                    print("findFaces: failed JSON deserialization")
+                    print("findActor: failed JSON deserialization")
                     return
                 }
                 let actorName = jsonObj["actor"]! as? String ?? nil

@@ -13,11 +13,13 @@ struct HistoryEntry {
     var actorName: String?
     @ChattPropWrapper var imageUrl: String?
     var confidence: String?
+    var uid: String?
 }
 
 struct WatchListEntry {
     @ChattPropWrapper var imageUrl: String?
     var movieName: String?
+    var uid: String?
 }
 
 struct MoreInfoEntry {
