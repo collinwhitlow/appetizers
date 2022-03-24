@@ -105,6 +105,9 @@ def findactor(request):
     confidence = 0
     if len(api_response["CelebrityFaces"]) == 0:
         actorName = ""
+        response = {"actor": actorName, "confidence": "0", "userid": userid, "url": "", "uid": ""}
+        os.remove(filename_full)
+        return JsonResponse(response)
     elif len(api_response["CelebrityFaces"]) > 1:
         max_conf = 0
         max_ind = -1

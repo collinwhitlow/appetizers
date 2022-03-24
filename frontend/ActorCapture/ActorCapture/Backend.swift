@@ -23,8 +23,8 @@ final class Backend: ObservableObject  {
     @Published public var cant_find_actor = false
     @Published public var cant_find_faces = false
 
-    private let nFieldsHist = 5
-    private let nFieldsWatch = 2
+    private let nFieldsHist = 6
+    private let nFieldsWatch = 3
 
     private let serverUrl = "https://3.144.236.126/"
     
