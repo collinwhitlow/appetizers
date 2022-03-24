@@ -220,7 +220,7 @@ def postwatchlist(request):
 
     id = random.getrandbits(64)
     cursor = connection.cursor()
-    cursor.execute('INSERT INTO watchlist (userid, movietitle, imageurl, uid) VALUES ' '(%s, %s, %s);', (userid, movietitle, imageURL, str(id)))
+    cursor.execute('INSERT INTO watchlist (userid, movietitle, imageurl, uid) VALUES ' '(%s, %s, %s, %s);', (userid, movietitle, imageURL, str(id)))
     return JsonResponse({})
 
 
