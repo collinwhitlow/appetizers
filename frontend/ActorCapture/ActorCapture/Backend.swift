@@ -10,6 +10,7 @@ final class Backend: ObservableObject  {
     @Published private(set) var history = [HistoryEntry]()
     @Published private(set) var watchlist = [WatchListEntry]()
     @Published private(set) var actorinfo = [MoreInfoEntry]()
+    @Published private(set) var movieNameSet : Set<String>?
     
     @Published private(set) var bounding_boxes: [[[Int]]]?
     @Published private(set) var bounding_boxes_indices: [Int] = []
@@ -51,6 +52,8 @@ final class Backend: ObservableObject  {
                 print("postwatchlist: HTTP STATUS: \(httpStatus.statusCode)")
                 return
             }
+            
+            self.movieNameSet?.insert(moreInfo.movieName!)
         } catch {
             print("postwatchlist: NETWORKING ERROR")
         }
@@ -224,6 +227,7 @@ final class Backend: ObservableObject  {
     
     @MainActor
     func getWatchlist() async {
+        self.movieNameSet = []
         guard let apiUrl = URL(string: serverUrl+"getwatchlist/") else {
             print("getwatchlist: Bad URL")
             return
@@ -258,10 +262,12 @@ final class Backend: ObservableObject  {
                     self.watchlist.append(WatchListEntry(imageUrl: watchlistentry[1],
                                                          movieName: watchlistentry[0],
                                                          uid: watchlistentry[2]))
+                    self.movieNameSet?.insert(watchlistentry[0]!)
                 } else {
                     print("getwatchlist: Received unexpected number of fields: \(watchlistentry.count) instead of \(self.nFieldsWatch).")
                 }
             }
+            print(movieNameSet)
         } catch {
             print("getwatchlist: NETWORKING ERROR")
         }

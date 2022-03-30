@@ -25,31 +25,14 @@ struct ActorView: View {
                 VStack (spacing: 0){
                     VStack (spacing: 0){
                         if let actorname = actorName, let actorUrl = actorUrl {
-                        Text(actorname)
-                            .frame(alignment: .center)
-                            .font(.system(size: 19, weight: .heavy, design: .default))
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                        if let confidence = confidence { // get confidence level
-                            Text("Confidence: " + confidence).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 16))
+                            Text(actorname)
+                                .frame(alignment: .center)
+                                .font(.system(size: 19, weight: .heavy, design: .default))
+                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                            if let confidence = confidence { // get confidence level
+                                Text("Confidence: " + confidence).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 16))
+                            }
                         }
-                        //HStack (spacing: 40) {
-                            
-                        //    Button(action: {
-                        //        isPresented.toggle()
-                        //    }) {
-                        //        Image(systemName: "square.and.pencil")
-                        //    }.sheet(isPresented: $isPresented) {
-                                // either history or capture
-                        //        if(history_or_capture == "history"){
-                                    //HistoryView()
-                        //        }
-                        //        else{
-                                    // CaptureView()
-                        //        }
-                                
-                        //    }.buttonStyle(BorderlessButtonStyle())
-                        //}
-                    }
                     }
                     if let actorname = actorName, let actorUrl = actorUrl {
                         AsyncImage(url: URL(string: actorUrl)!,
@@ -64,40 +47,24 @@ struct ActorView: View {
                                         ProgressView()
                                     }
                         ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 150, alignment: .topLeading)
-
                     }
-                    
-                    
-                    
-                        
                 }
-                
-                
-                
-                
-            List(store.actorinfo.indices, id: \.self) {
-                movieInfoRow(infoEntry: store.actorinfo[$0])
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
-            }
-            .listStyle(.plain)
-            .navigationBarTitleDisplayMode(.inline)
+                List(store.actorinfo.indices, id: \.self) {
+                    movieInfoRow(infoEntry: store.actorinfo[$0])
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
+                }
+                .listStyle(.plain)
+                .navigationBarTitleDisplayMode(.inline)
 
-            .task {
-                await store.getactorinfo(actorName: actorName)
-            }
-            .refreshable {
-                await store.getactorinfo(actorName: actorName)
-            }
+                .task {
+                    await store.getactorinfo(actorName: actorName)
+                }
+                .refreshable {
+                    await store.getactorinfo(actorName: actorName)
+                }
                 
             }
         }
     }
-    
-    
-    //struct ActorView_Previews: PreviewProvider {
-    //    static var previews: some View {
-    //        ActorView(isPresented: false, actorID: "nm0000664", actorName: "Morgan Freeman")
-    //    }
-    //}
 }

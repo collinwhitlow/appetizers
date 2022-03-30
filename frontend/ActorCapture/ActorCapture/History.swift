@@ -20,13 +20,6 @@ struct HistoryView: View {
                 ToolbarItem(placement: .principal) {
                     Text("Your History")
                 }
-//                Button(action: {
-//                    isPresenting.toggle()
-//                }) {
-//                    Image(systemName: "square.and.pencil")
-//                }/*.sheet(isPresented: $isPresenting) {
-//                    ActorView(isPresented: $isPresenting)
-//                }*/
             }
             .task {
                 await store.getHistory()

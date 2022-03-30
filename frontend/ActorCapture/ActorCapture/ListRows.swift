@@ -135,12 +135,10 @@ struct movieInfoRow: View {
                         Button(action: { Task {
                             playerUIState.disable_add()
                             await store.addWatchlist(infoEntry)
-                
-                            
                         }}) {
                             Image(systemName: "plus.circle")
                         }.buttonStyle(BorderlessButtonStyle())
-                            .disabled(playerUIState.gette())
+                            .disabled(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true)
                     }
 
                 }
