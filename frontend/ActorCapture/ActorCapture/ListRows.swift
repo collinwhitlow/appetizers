@@ -25,7 +25,7 @@ struct HistoryListRow: View {
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .clipShape(Circle())
-                                    .frame(maxWidth:300, maxHeight: 130, alignment: .leading)
+                                    .frame(width: 100, height: 100, alignment: .leading)
                                     },
                             placeholder: {
                                 ProgressView()
@@ -58,7 +58,7 @@ struct HistoryListRow: View {
                     }
                 }.frame(width: UIScreen.main.bounds.size.width - 150, alignment: .center)
             }
-        }
+        }.padding(.top, 10).padding(.bottom, 10)
     }
 }
 
