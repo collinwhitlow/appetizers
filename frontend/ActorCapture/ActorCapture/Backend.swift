@@ -57,8 +57,6 @@ final class Backend: ObservableObject  {
         } catch {
             print("postwatchlist: NETWORKING ERROR")
         }
-        
-        
     }
     
     @MainActor
@@ -91,18 +89,6 @@ final class Backend: ObservableObject  {
                 return
             }
              
-            let data3 : [String: Any] = [
-                "known_for": [
-                              ["id": "tt0369735", "title": "Monster-in-Law", "fullTitle": "Monster-in-Law (2005)", "year": "2005", "role": "Ruby", "image": "https://imdb-api.com/images/original/MV5BYTcwYjA1NGItM2YyYy00MmE4LTkxMzItYWNiZWRkNDFjNmE5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_Ratio0.6852_AL_.jpg"],
-                              ["id": "tt1667889", "title": "Ice Age 4: Continental Drift", "fullTitle": "Ice Age 4: Continental Drift (2012)", "year": "2012", "role": "Granny", "image": "https://imdb-api.com/images/original/MV5BMTM3NDM5MzY5Ml5BMl5BanBnXkFtZTcwNjExMDUwOA@@._V1_Ratio0.6852_AL_.jpg"],
-                              ["id": "tt4651520", "title": "Bad Moms", "fullTitle": "Bad Moms (2016)", "year": "2016", "role": "Dr. Karl", "image": "https://imdb-api.com/images/original/MV5BMjIwNzE5MTgwNl5BMl5BanBnXkFtZTgwNjM4OTA0OTE@._V1_Ratio0.6852_AL_.jpg"],
-                              ["id": "tt0413099", "title": "Evan Almighty", "fullTitle": "Evan Almighty (2007)", "year": "2007", "role": "Rita", "image": "https://imdb-api.com/images/original/MV5BMTUxMTEzODYxMV5BMl5BanBnXkFtZTcwNzQ4ODU0MQ@@._V1_Ratio0.6852_AL_.jpg"]],
-                "cast_movies": [
-                                ["id": "tt14831458", "role": "Actress", "title": "Tiny Tina's Wonderlands", "year": "2022", "description": "(Video Game) (post-production) Frette (voice)"],
-                                ["id": "tt18257758", "role": "Actress", "title": "Alabama Jackson", "year": "2022", "description": "(TV Series) Harriet Tubman (voice)"],
-                                ["id": "tt14403322", "role": "Actress", "title": "Pandemica", "year": "2021", "description": "(TV Mini Series) (voice)"]],
-                
-            ]
             self.actorinfo = [MoreInfoEntry]()
             if let whole_dict = data2["known_for"] as? [[String:String]] {
                 for dict in whole_dict{
@@ -315,7 +301,6 @@ final class Backend: ObservableObject  {
                 }
                 if let httpStatus = response.response, httpStatus.statusCode != 200 {
                     print("findFaces: HTTP STATUS: \(httpStatus.statusCode)")
-                    print(response.data)
                     return
                 }
                 
@@ -399,7 +384,6 @@ final class Backend: ObservableObject  {
                 }
                 if let httpStatus = response.response, httpStatus.statusCode != 200 {
                     print("findActor: HTTP STATUS: \(httpStatus.statusCode)")
-                    print(response.data)
                     return
                 }
                 
@@ -433,6 +417,5 @@ final class Backend: ObservableObject  {
                 print("Find Actor Failed!")
            }
         }
-
     }
 }

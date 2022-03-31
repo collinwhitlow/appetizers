@@ -24,6 +24,11 @@ struct HistoryView: View {
             .task {
                 await store.getHistory()
             }
+            .overlay(Group {
+                if store.history.isEmpty {
+                    Text("No History to Display")
+                }
+            })
         }
     }
 }

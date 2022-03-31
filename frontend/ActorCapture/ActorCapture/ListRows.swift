@@ -26,13 +26,12 @@ struct HistoryListRow: View {
                                     .aspectRatio(contentMode: .fit)
                                     .clipShape(Circle())
                                     .frame(maxWidth:300, maxHeight: 130, alignment: .leading)
-                                    .padding()
                                     },
                             placeholder: {
                                 ProgressView()
                             }
                 ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                VStack (spacing: 1){
+                VStack (spacing: 3){
                     Text(actorname)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
@@ -42,7 +41,7 @@ struct HistoryListRow: View {
                         .lineLimit(self.correctLineLimit())
 
                     if let confidence = historyentry.confidence {
-                        Text("Confidence: " + confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
+                        Text("Confidence: " + confidence + "%").padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                     }
                     HStack (spacing: 40) {
                         Button(action: { Task {
@@ -83,7 +82,7 @@ struct WatchListRow: View {
                                 ProgressView()
                             }
                 ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                VStack (spacing: 1){
+                VStack (spacing: 3){
                     Text(movieName)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))

@@ -24,17 +24,17 @@ struct ActorView: View {
             VStack(spacing: 0){
                 VStack (spacing: 0){
                     VStack (spacing: 0){
-                        if let actorname = actorName, let actorUrl = actorUrl {
+                        if let actorname = actorName {
                             Text(actorname)
                                 .frame(alignment: .center)
                                 .font(.system(size: 19, weight: .heavy, design: .default))
                                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                             if let confidence = confidence { // get confidence level
-                                Text("Confidence: " + confidence).padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 16))
+                                Text("Confidence: " + confidence + "%").padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 16))
                             }
                         }
                     }
-                    if let actorname = actorName, let actorUrl = actorUrl {
+                    if let actorUrl = actorUrl {
                         AsyncImage(url: URL(string: actorUrl)!,
                                    content: { image in
                                         image.resizable()

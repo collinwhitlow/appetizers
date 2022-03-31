@@ -15,7 +15,7 @@ struct WatchListView: View {
             .refreshable {
                 await store.getWatchlist()
             }
-            .navigationBarTitleDisplayMode(.inline) 
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("Your Watchlist")
@@ -24,6 +24,11 @@ struct WatchListView: View {
             .task {
                 await store.getWatchlist()
             }
+            .overlay(Group {
+                if store.watchlist.isEmpty {
+                    Text("Watchlist Currently Empty")
+                }
+            })
         }
     }
 }
