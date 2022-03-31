@@ -70,17 +70,20 @@ struct ImageCapture: View {
     @State private var sourceType: UIImagePickerController.SourceType?
     @State private var isImagePickerDisplay = false
     @State private var showingAlert = false
-    //@State private var box_index : Int?
     @State private var is_presenting_actor = false
+    @State private var vstack_size : CGFloat = 670
     
     var body: some View {
-        VStack (alignment: .center, spacing: 50) {
+        VStack {
+            Spacer()
             Text(store.bounding_boxes == nil ? "Select Or Take An Image Of An Actor/Actress And Click Submit!" : "Select A Face And Click Submit!")
                 .padding(.leading, 30)
                 .padding(.trailing, 30)
                 .font(.system(size: 18, weight: .bold, design: .monospaced))
                 .multilineTextAlignment(.center)
-                .padding(.top, 50)
+                //.padding(.top, 50)
+                //.frame(width: UIScreen.main.bounds.size.width,height: 120, alignment: .bottom)
+            Spacer()
                 
             if selectedImage != nil {
                 if store.bounding_boxes == nil {
@@ -120,6 +123,7 @@ struct ImageCapture: View {
                     .clipShape(Rectangle())
                     .frame(width: 300, height: 300)
             }
+            Spacer()
             HStack(alignment: .center, spacing: 80) {
                 Button() {
                     self.sourceType = .camera
@@ -169,7 +173,7 @@ struct ImageCapture: View {
                         Button("OK", role: .cancel) {}
                     }
                 }
-            }.padding(.top, 10)
+            }.frame(width: UIScreen.main.bounds.size.width, height: 75)
             Spacer()
         }
         .sheet(isPresented: self.$isImagePickerDisplay) {
@@ -190,6 +194,9 @@ struct ActorInfoCapture: View {
                 .font(.system(size: 40, weight: .bold, design: .monospaced))
                 .multilineTextAlignment(.center)
                 .frame(alignment: .top)
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
+                .scaledToFill()
             Divider()
             if let imageUrl = store.resultPage.imageUrl! {
                 AsyncImage(url: URL(string: imageUrl)!,
@@ -233,7 +240,6 @@ struct ActorInfoCapture: View {
             ActorView(isPresented: $is_more_info_presenting, actorName: store.resultPage.actorName!, confidence: store.resultPage.confidence, actorUrl: store.resultPage.imageUrl!, history_or_capture: "capture")
         }
     }
-    //TODO - add sheet for more info
 }
 
 struct ActivityIndicator: UIViewRepresentable {
@@ -252,7 +258,12 @@ struct ActivityIndicator: UIViewRepresentable {
 
 struct CaptureView_Previews: PreviewProvider {
     static var previews: some View {
-        CaptureView()
-.previewInterfaceOrientation(.portrait)
+        Group {
+            CaptureView()
+                .previewDevice("iPhone 13 Pro Max")
+                .previewInterfaceOrientation(.portrait)
+            CaptureView()
+                .previewInterfaceOrientation(.portrait)
+        }
     }
 }

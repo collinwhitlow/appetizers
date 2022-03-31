@@ -11,6 +11,11 @@ struct HistoryListRow: View {
     var historyentry: HistoryEntry
     @State private var isPresenting = false
     @ObservedObject var store = Backend.shared
+    
+    func correctLineLimit() -> Int {
+        let wordcount = historyentry.actorName!.split(separator: " ")
+        return wordcount.count > 1 ? 2 : 1
+    }
 
     var body: some View {
         HStack (spacing: 0){
@@ -31,6 +36,11 @@ struct HistoryListRow: View {
                     Text(actorname)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
+                        .lineLimit(3)
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.75)
+                        .lineLimit(self.correctLineLimit())
+
                     if let confidence = historyentry.confidence {
                         Text("Confidence: " + confidence).padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                     }

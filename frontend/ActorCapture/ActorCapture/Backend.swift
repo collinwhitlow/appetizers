@@ -106,7 +106,6 @@ final class Backend: ObservableObject  {
             self.actorinfo = [MoreInfoEntry]()
             if let whole_dict = data2["known_for"] as? [[String:String]] {
                 for dict in whole_dict{
-                    //print(dict["id"]!)
                     self.actorinfo.append(MoreInfoEntry(imageUrl: dict["image"]!, characterName: dict["role"],movieName: dict["fullTitle"]))
                 }
             }else{
@@ -267,7 +266,6 @@ final class Backend: ObservableObject  {
                     print("getwatchlist: Received unexpected number of fields: \(watchlistentry.count) instead of \(self.nFieldsWatch).")
                 }
             }
-            print(movieNameSet)
         } catch {
             print("getwatchlist: NETWORKING ERROR")
         }

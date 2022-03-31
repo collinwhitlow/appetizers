@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67B469AE27E398D900D645EC /* Pods_ActorCapture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */; };
+		81445F5527F516BA000398E7 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81445F5427F516BA000398E7 /* SplashScreen.swift */; };
 		819315A027E048CA00A30DE1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8193159F27E048CA00A30DE1 /* ImagePicker.swift */; };
 		819315A227E0F3E000A30DE1 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819315A127E0F3E000A30DE1 /* Capture.swift */; };
 		81CCFBE727DD480F00BF9383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81CCFBE627DD480F00BF9383 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		3CDF83B6009E3910858D0930 /* Pods-ActorCapture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ActorCapture.release.xcconfig"; path = "Target Support Files/Pods-ActorCapture/Pods-ActorCapture.release.xcconfig"; sourceTree = "<group>"; };
 		7CC04931B9A39861D2BCCC77 /* Pods_ActorCapture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ActorCapture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81445F5427F516BA000398E7 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		8193159F27E048CA00A30DE1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		819315A127E0F3E000A30DE1 /* Capture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture.swift; sourceTree = "<group>"; };
 		819315A327E114E900A30DE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				8193159F27E048CA00A30DE1 /* ImagePicker.swift */,
 				81CCFBFC27DD4FE900BF9383 /* MenuBars.swift */,
 				819315A127E0F3E000A30DE1 /* Capture.swift */,
+				81445F5427F516BA000398E7 /* SplashScreen.swift */,
 			);
 			path = ActorCapture;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				819315A027E048CA00A30DE1 /* ImagePicker.swift in Sources */,
 				AAFBCED427DE373B0086625A /* ActorCaptureApp.swift in Sources */,
 				81CCFBF127DD4CD500BF9383 /* Backend.swift in Sources */,
+				81445F5527F516BA000398E7 /* SplashScreen.swift in Sources */,
 				81CCFBF727DD4FA000BF9383 /* History.swift in Sources */,
 				81CCFBFD27DD4FE900BF9383 /* MenuBars.swift in Sources */,
 				819315A227E0F3E000A30DE1 /* Capture.swift in Sources */,
@@ -373,7 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ActorCapture/Preview Content\"";
-				DEVELOPMENT_TEAM = 8DG9KS99YT;
+				DEVELOPMENT_TEAM = J7648TRL4B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ActorCapture/Info.plist;
@@ -388,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.tojocorm1.ActorCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo.ActorCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -407,7 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ActorCapture/Preview Content\"";
-				DEVELOPMENT_TEAM = 8DG9KS99YT;
+				DEVELOPMENT_TEAM = J7648TRL4B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ActorCapture/Info.plist;
@@ -422,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.tojocorm1.ActorCapture;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo.ActorCapture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
