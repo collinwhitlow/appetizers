@@ -35,7 +35,6 @@ struct HistoryListRow: View {
                     Text(actorname)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
-                        .lineLimit(3)
                         .allowsTightening(true)
                         .minimumScaleFactor(0.75)
                         .lineLimit(self.correctLineLimit())
@@ -66,7 +65,10 @@ struct HistoryListRow: View {
 struct WatchListRow: View {
     var watchlistentry: WatchListEntry
     @ObservedObject var store = Backend.shared
-
+    func correctLineLimit() -> Int {
+        let wordcount = watchlistentry.movieName!.split(separator: " ")
+        return wordcount.count > 1 ? 2 : 1
+    }
     var body: some View {
         HStack (spacing: 0){
             if let movieName = watchlistentry.movieName, let imageURL = watchlistentry.imageUrl {
@@ -86,6 +88,9 @@ struct WatchListRow: View {
                     Text(movieName)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.75)
+                        .lineLimit(self.correctLineLimit())
                     HStack (spacing: 40) {
                         Button(action: { Task {
                             await store.deleteWatchlist(watchlistentry)

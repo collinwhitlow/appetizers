@@ -23,11 +23,7 @@ struct SplashScreen: View {
                 MenuBottom()
             } else {
                 // 4.
-                Image(systemName: "person.crop.rectangle.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
-                    .clipShape(Rectangle())
+                Image("ImageForSplash")
 
                 Text("ActorCapture")
                     .font(.title)
