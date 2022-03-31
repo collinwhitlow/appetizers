@@ -196,7 +196,6 @@ struct ActorInfoCapture: View {
                 .frame(alignment: .top)
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
-                .scaledToFill()
             Divider()
             if let imageUrl = store.resultPage.imageUrl! {
                 AsyncImage(url: URL(string: imageUrl)!,

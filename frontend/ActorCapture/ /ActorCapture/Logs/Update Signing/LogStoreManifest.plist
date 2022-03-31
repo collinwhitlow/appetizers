@@ -6,34 +6,6 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>0527B849-AECA-4702-899E-6ED6C136E40B</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
-			<key>fileName</key>
-			<string>0527B849-AECA-4702-899E-6ED6C136E40B.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>E</string>
-			</dict>
-			<key>signature</key>
-			<string>Update Signing</string>
-			<key>timeStartedRecording</key>
-			<real>670373423.22525299</real>
-			<key>timeStoppedRecording</key>
-			<real>670373423.48373795</real>
-			<key>title</key>
-			<string>Update Signing</string>
-			<key>uniqueIdentifier</key>
-			<string>0527B849-AECA-4702-899E-6ED6C136E40B</string>
-		</dict>
 		<key>0CD03C77-AD99-431F-978F-6E7185E918A2</key>
 		<dict>
 			<key>className</key>
@@ -62,7 +34,7 @@
 			<key>uniqueIdentifier</key>
 			<string>0CD03C77-AD99-431F-978F-6E7185E918A2</string>
 		</dict>
-		<key>2098E44C-522B-4BF7-89B8-049BC164FE98</key>
+		<key>3E06B772-F518-4A90-BE09-9E9BA965EDAC</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -71,7 +43,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
 			<key>fileName</key>
-			<string>2098E44C-522B-4BF7-89B8-049BC164FE98.xcactivitylog</string>
+			<string>3E06B772-F518-4A90-BE09-9E9BA965EDAC.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -82,15 +54,15 @@
 			<key>signature</key>
 			<string>Update Signing</string>
 			<key>timeStartedRecording</key>
-			<real>670373437.43149495</real>
+			<real>670449713.53670502</real>
 			<key>timeStoppedRecording</key>
-			<real>670373438.59594297</real>
+			<real>670449714.56845605</real>
 			<key>title</key>
 			<string>Update Signing</string>
 			<key>uniqueIdentifier</key>
-			<string>2098E44C-522B-4BF7-89B8-049BC164FE98</string>
+			<string>3E06B772-F518-4A90-BE09-9E9BA965EDAC</string>
 		</dict>
-		<key>8CD0328E-CA0E-48AB-B000-23E3B5453D6D</key>
+		<key>400F98AA-4ACE-4A8A-A10D-82276489D220</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -99,7 +71,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
 			<key>fileName</key>
-			<string>8CD0328E-CA0E-48AB-B000-23E3B5453D6D.xcactivitylog</string>
+			<string>400F98AA-4ACE-4A8A-A10D-82276489D220.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -110,15 +82,15 @@
 			<key>signature</key>
 			<string>Update Signing</string>
 			<key>timeStartedRecording</key>
-			<real>669010316.89800894</real>
+			<real>670449720.43516505</real>
 			<key>timeStoppedRecording</key>
-			<real>669010318.43139303</real>
+			<real>670449721.58717203</real>
 			<key>title</key>
 			<string>Update Signing</string>
 			<key>uniqueIdentifier</key>
-			<string>8CD0328E-CA0E-48AB-B000-23E3B5453D6D</string>
+			<string>400F98AA-4ACE-4A8A-A10D-82276489D220</string>
 		</dict>
-		<key>A80A7B65-295B-4BDF-8BAE-77C4A7B908DA</key>
+		<key>475CADD2-4098-4A62-B269-832F36B09619</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -127,7 +99,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
 			<key>fileName</key>
-			<string>A80A7B65-295B-4BDF-8BAE-77C4A7B908DA.xcactivitylog</string>
+			<string>475CADD2-4098-4A62-B269-832F36B09619.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -138,15 +110,15 @@
 			<key>signature</key>
 			<string>Update Signing</string>
 			<key>timeStartedRecording</key>
-			<real>670373409.46497405</real>
+			<real>670449716.266294</real>
 			<key>timeStoppedRecording</key>
-			<real>670373410.01728702</real>
+			<real>670449717.74298</real>
 			<key>title</key>
 			<string>Update Signing</string>
 			<key>uniqueIdentifier</key>
-			<string>A80A7B65-295B-4BDF-8BAE-77C4A7B908DA</string>
+			<string>475CADD2-4098-4A62-B269-832F36B09619</string>
 		</dict>
-		<key>A8625998-B704-4BF4-ABE5-9CEECEA93288</key>
+		<key>E7AF7412-3441-44FE-9AE1-203DC510160E</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -155,7 +127,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
 			<key>fileName</key>
-			<string>A8625998-B704-4BF4-ABE5-9CEECEA93288.xcactivitylog</string>
+			<string>E7AF7412-3441-44FE-9AE1-203DC510160E.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -166,13 +138,41 @@
 			<key>signature</key>
 			<string>Update Signing</string>
 			<key>timeStartedRecording</key>
-			<real>670373433.30539894</real>
+			<real>670449516.53686404</real>
 			<key>timeStoppedRecording</key>
-			<real>670373433.57980502</real>
+			<real>670449517.06770897</real>
 			<key>title</key>
 			<string>Update Signing</string>
 			<key>uniqueIdentifier</key>
-			<string>A8625998-B704-4BF4-ABE5-9CEECEA93288</string>
+			<string>E7AF7412-3441-44FE-9AE1-203DC510160E</string>
+		</dict>
+		<key>F281C887-C2ED-453F-BED4-D4966C42AA31</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.ProvisioningLog</string>
+			<key>fileName</key>
+			<string>F281C887-C2ED-453F-BED4-D4966C42AA31.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>Update Signing</string>
+			<key>timeStartedRecording</key>
+			<real>670450581.58892405</real>
+			<key>timeStoppedRecording</key>
+			<real>670450583.65037203</real>
+			<key>title</key>
+			<string>Update Signing</string>
+			<key>uniqueIdentifier</key>
+			<string>F281C887-C2ED-453F-BED4-D4966C42AA31</string>
 		</dict>
 	</dict>
 </dict>

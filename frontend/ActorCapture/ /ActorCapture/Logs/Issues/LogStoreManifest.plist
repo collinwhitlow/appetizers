@@ -6,7 +6,35 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>2B5209E4-2575-4CBC-B99B-560F3BB65D39</key>
+		<key>B9051C44-C293-4C11-A08C-8BB9AB84020F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>B9051C44-C293-4C11-A08C-8BB9AB84020F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>ActorCapture-elzpelfsdwezixcuelmfdfigkdnu</string>
+			<key>timeStartedRecording</key>
+			<real>670452658.47422504</real>
+			<key>timeStoppedRecording</key>
+			<real>670452660.110255</real>
+			<key>title</key>
+			<string>Build target ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>B9051C44-C293-4C11-A08C-8BB9AB84020F</string>
+		</dict>
+		<key>D9961EB0-E7D8-44A7-AD48-1EE3F7093342</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,7 +43,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
 			<key>fileName</key>
-			<string>2B5209E4-2575-4CBC-B99B-560F3BB65D39.xcactivitylog</string>
+			<string>D9961EB0-E7D8-44A7-AD48-1EE3F7093342.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -26,15 +54,15 @@
 			<key>signature</key>
 			<string>Alamofire-fwchqsivfbtlviganwedvrmrbska</string>
 			<key>timeStartedRecording</key>
-			<real>670377250.35861003</real>
+			<real>670451087.19133997</real>
 			<key>timeStoppedRecording</key>
-			<real>670377250.49272501</real>
+			<real>670451087.193295</real>
 			<key>title</key>
 			<string>Build target Alamofire</string>
 			<key>uniqueIdentifier</key>
-			<string>2B5209E4-2575-4CBC-B99B-560F3BB65D39</string>
+			<string>D9961EB0-E7D8-44A7-AD48-1EE3F7093342</string>
 		</dict>
-		<key>A080CD10-2232-457F-BEFC-6BF4D79E3DD3</key>
+		<key>EA86F741-3672-4ED1-AF4A-E8E952A74932</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -43,63 +71,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
 			<key>fileName</key>
-			<string>A080CD10-2232-457F-BEFC-6BF4D79E3DD3.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>Pods-ActorCapture-fwchqsivfbtlviganwedvrmrbska</string>
-			<key>timeStartedRecording</key>
-			<real>670377114.70619798</real>
-			<key>timeStoppedRecording</key>
-			<real>670377114.72051203</real>
-			<key>title</key>
-			<string>Build target Pods-ActorCapture</string>
-			<key>uniqueIdentifier</key>
-			<string>A080CD10-2232-457F-BEFC-6BF4D79E3DD3</string>
-		</dict>
-		<key>CE572264-8AF7-4B72-980E-D633072A11DF</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
-			<key>fileName</key>
-			<string>CE572264-8AF7-4B72-980E-D633072A11DF.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>ActorCapture-elzpelfsdwezixcuelmfdfigkdnu</string>
-			<key>timeStartedRecording</key>
-			<real>670378192.69693696</real>
-			<key>timeStoppedRecording</key>
-			<real>670378194.60077906</real>
-			<key>title</key>
-			<string>Build target ActorCapture</string>
-			<key>uniqueIdentifier</key>
-			<string>CE572264-8AF7-4B72-980E-D633072A11DF</string>
-		</dict>
-		<key>D0DE5078-EED1-4DA9-A97F-7F32024E4908</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
-			<key>fileName</key>
-			<string>D0DE5078-EED1-4DA9-A97F-7F32024E4908.xcactivitylog</string>
+			<string>EA86F741-3672-4ED1-AF4A-E8E952A74932.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -110,13 +82,41 @@
 			<key>signature</key>
 			<string>SDWebImage-fwchqsivfbtlviganwedvrmrbska</string>
 			<key>timeStartedRecording</key>
-			<real>670377114.65423906</real>
+			<real>670451087.19459999</real>
 			<key>timeStoppedRecording</key>
-			<real>670377114.69830501</real>
+			<real>670451087.19944704</real>
 			<key>title</key>
 			<string>Build target SDWebImage</string>
 			<key>uniqueIdentifier</key>
-			<string>D0DE5078-EED1-4DA9-A97F-7F32024E4908</string>
+			<string>EA86F741-3672-4ED1-AF4A-E8E952A74932</string>
+		</dict>
+		<key>EE09B602-162B-42D5-ABE3-8C82C9A607C2</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.framework</string>
+			<key>fileName</key>
+			<string>EE09B602-162B-42D5-ABE3-8C82C9A607C2.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>Pods-ActorCapture-fwchqsivfbtlviganwedvrmrbska</string>
+			<key>timeStartedRecording</key>
+			<real>670451087.20188999</real>
+			<key>timeStoppedRecording</key>
+			<real>670451087.20313501</real>
+			<key>title</key>
+			<string>Build target Pods-ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>EE09B602-162B-42D5-ABE3-8C82C9A607C2</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

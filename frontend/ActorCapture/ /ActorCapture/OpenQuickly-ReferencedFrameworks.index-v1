@@ -17,10 +17,10 @@
 	<string>FoundationNetworking</string>
 	<string>SwiftUI</string>
 	<string>CoreServices</string>
-	<string>sys</string>
 	<string>UIKit</string>
 	<string>Combine</string>
 	<string>os</string>
+	<string>sys</string>
 	<string>CoreImage</string>
 	<string>SystemConfiguration</string>
 	<string>WatchKit</string>

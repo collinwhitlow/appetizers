@@ -77,7 +77,7 @@ struct WatchListRow: View {
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                    .frame(maxWidth:300, maxHeight: 130, alignment: .leading)
+                                    .frame(width:90, height: 160, alignment: .leading)
                                     .padding()
                                     },
                             placeholder: {
@@ -128,7 +128,7 @@ struct movieInfoRow: View {
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                                    .frame(maxWidth:300, maxHeight: 130, alignment: .leading)
+                                    .frame(width: 90, height: 160, alignment: .leading)
                                     .padding()
                                     },
                             placeholder: {
@@ -136,15 +136,17 @@ struct movieInfoRow: View {
                             }
                 ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 VStack (spacing: 1){
+                    Spacer()
                     Text(movieName)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
                     Text("as")
                         .multilineTextAlignment(.center)
-                        .font(.system(size: 21, weight: .heavy, design: .default))
+                        .font(.system(size: 16, weight: .heavy, design: .default).italic())
                     Text(role)
                         .multilineTextAlignment(.center)
-                        .font(.system(size: 21, weight: .heavy, design: .default))
+                        .font(.system(size: 16, weight: .heavy, design: .default).italic())
+                    Spacer()
                     HStack (spacing: 40) {
                         Button(action: { Task {
                             playerUIState.disable_add()
@@ -154,6 +156,7 @@ struct movieInfoRow: View {
                         }.buttonStyle(BorderlessButtonStyle())
                             .disabled(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true)
                     }
+                    Spacer()
 
                 }
             }

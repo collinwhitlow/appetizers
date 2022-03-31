@@ -6,40 +6,6 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>014ED9C0-0181-4175-933E-0DC3E60CBD39</key>
-		<dict>
-			<key>className</key>
-			<string>DBGConsoleLog</string>
-			<key>documentTypeString</key>
-			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
-			<key>fileName</key>
-			<string>014ED9C0-0181-4175-933E-0DC3E60CBD39.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>ActorCapture project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>ActorCapture</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Run ActorCapture</string>
-			<key>timeStartedRecording</key>
-			<real>670377370.395823</real>
-			<key>timeStoppedRecording</key>
-			<real>670377557.19743299</real>
-			<key>title</key>
-			<string>Run ActorCapture</string>
-			<key>uniqueIdentifier</key>
-			<string>014ED9C0-0181-4175-933E-0DC3E60CBD39</string>
-		</dict>
 		<key>17DA81CD-A51F-41DA-8971-C875ED9130ED</key>
 		<dict>
 			<key>className</key>
@@ -74,7 +40,7 @@
 			<key>uniqueIdentifier</key>
 			<string>17DA81CD-A51F-41DA-8971-C875ED9130ED</string>
 		</dict>
-		<key>42C6074E-B921-459D-A8B2-A29C5863B7A5</key>
+		<key>1AE80106-BA8A-4FC0-876F-B1AEC3E12301</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -83,7 +49,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>42C6074E-B921-459D-A8B2-A29C5863B7A5.xcactivitylog</string>
+			<string>1AE80106-BA8A-4FC0-876F-B1AEC3E12301.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -100,15 +66,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>669065909.98395205</real>
+			<real>670452260.63796699</real>
 			<key>timeStoppedRecording</key>
-			<real>669065976.22670996</real>
+			<real>670452295.85543597</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>42C6074E-B921-459D-A8B2-A29C5863B7A5</string>
+			<string>1AE80106-BA8A-4FC0-876F-B1AEC3E12301</string>
 		</dict>
-		<key>6DE9026C-9279-452E-B5E7-6349A8C7BDE7</key>
+		<key>351949B6-B7CC-444C-A8EC-68259B842175</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -117,7 +83,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>6DE9026C-9279-452E-B5E7-6349A8C7BDE7.xcactivitylog</string>
+			<string>351949B6-B7CC-444C-A8EC-68259B842175.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -134,15 +100,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670377252.32953405</real>
+			<real>670450294.79475403</real>
 			<key>timeStoppedRecording</key>
-			<real>670377368.43340003</real>
+			<real>670450303.70217299</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>6DE9026C-9279-452E-B5E7-6349A8C7BDE7</string>
+			<string>351949B6-B7CC-444C-A8EC-68259B842175</string>
 		</dict>
-		<key>8EA217FC-6995-42AE-90F9-AEFA1F95E162</key>
+		<key>4987FBB0-AAD3-4EFC-90A5-38D88BA61A7D</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -151,7 +117,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>8EA217FC-6995-42AE-90F9-AEFA1F95E162.xcactivitylog</string>
+			<string>4987FBB0-AAD3-4EFC-90A5-38D88BA61A7D.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -168,15 +134,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670377086.32848501</real>
+			<real>670451423.740013</real>
 			<key>timeStoppedRecording</key>
-			<real>670377250.15563405</real>
+			<real>670451671.01339805</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>8EA217FC-6995-42AE-90F9-AEFA1F95E162</string>
+			<string>4987FBB0-AAD3-4EFC-90A5-38D88BA61A7D</string>
 		</dict>
-		<key>9C666201-FDBE-4B9A-9810-5E154F6B8EEB</key>
+		<key>4E7CEE48-F7CE-4E55-921F-491EDC953347</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -185,7 +151,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>9C666201-FDBE-4B9A-9810-5E154F6B8EEB.xcactivitylog</string>
+			<string>4E7CEE48-F7CE-4E55-921F-491EDC953347.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -202,15 +168,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670377848.22512603</real>
+			<real>670451844.09236896</real>
 			<key>timeStoppedRecording</key>
-			<real>670377880.06771505</real>
+			<real>670452051.19552004</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>9C666201-FDBE-4B9A-9810-5E154F6B8EEB</string>
+			<string>4E7CEE48-F7CE-4E55-921F-491EDC953347</string>
 		</dict>
-		<key>B1BF4F08-F64D-4176-BA28-404BE02FF435</key>
+		<key>550CDA4C-5F92-4590-9F62-7E58292BEC0E</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -219,7 +185,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>B1BF4F08-F64D-4176-BA28-404BE02FF435.xcactivitylog</string>
+			<string>550CDA4C-5F92-4590-9F62-7E58292BEC0E.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -236,15 +202,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670377559.12201905</real>
+			<real>670450812.67841601</real>
 			<key>timeStoppedRecording</key>
-			<real>670377583.50922</real>
+			<real>670451002.97551799</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>B1BF4F08-F64D-4176-BA28-404BE02FF435</string>
+			<string>550CDA4C-5F92-4590-9F62-7E58292BEC0E</string>
 		</dict>
-		<key>BE713D72-91BE-47E1-B845-810979471C7E</key>
+		<key>5ACA1E1A-B973-4E47-9B11-BE7B32A472EF</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -253,7 +219,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>BE713D72-91BE-47E1-B845-810979471C7E.xcactivitylog</string>
+			<string>5ACA1E1A-B973-4E47-9B11-BE7B32A472EF.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -270,15 +236,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670377585.304111</real>
+			<real>670450460.72019506</real>
 			<key>timeStoppedRecording</key>
-			<real>670377628.46456397</real>
+			<real>670450505.14587104</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>BE713D72-91BE-47E1-B845-810979471C7E</string>
+			<string>5ACA1E1A-B973-4E47-9B11-BE7B32A472EF</string>
 		</dict>
-		<key>CF68C4A4-A959-405D-ADB7-544731C0580D</key>
+		<key>5F96E527-BE8E-43D6-AC93-232D2901FC3C</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -287,7 +253,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>CF68C4A4-A959-405D-ADB7-544731C0580D.xcactivitylog</string>
+			<string>5F96E527-BE8E-43D6-AC93-232D2901FC3C.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -304,15 +270,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670377827.34851694</real>
+			<real>670450518.12936604</real>
 			<key>timeStoppedRecording</key>
-			<real>670377846.35544503</real>
+			<real>670450529.61311996</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>CF68C4A4-A959-405D-ADB7-544731C0580D</string>
+			<string>5F96E527-BE8E-43D6-AC93-232D2901FC3C</string>
 		</dict>
-		<key>D231B321-03C7-4424-9F11-F00503E1F7EF</key>
+		<key>614AF15A-01E2-4DB6-BD7C-51442251F726</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -321,7 +287,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>D231B321-03C7-4424-9F11-F00503E1F7EF.xcactivitylog</string>
+			<string>614AF15A-01E2-4DB6-BD7C-51442251F726.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -338,15 +304,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670373575.74156594</real>
+			<real>670452089.46389902</real>
 			<key>timeStoppedRecording</key>
-			<real>670375856.28613901</real>
+			<real>670452140.49303496</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>D231B321-03C7-4424-9F11-F00503E1F7EF</string>
+			<string>614AF15A-01E2-4DB6-BD7C-51442251F726</string>
 		</dict>
-		<key>DFA238BF-8A66-4113-9F69-4A010AC1696A</key>
+		<key>621C9850-80DE-40E4-AF56-EC68AAABAB79</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -355,7 +321,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>DFA238BF-8A66-4113-9F69-4A010AC1696A.xcactivitylog</string>
+			<string>621C9850-80DE-40E4-AF56-EC68AAABAB79.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -372,15 +338,15 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670375858.77305996</real>
+			<real>670449726.16557205</real>
 			<key>timeStoppedRecording</key>
-			<real>670377083.67639196</real>
+			<real>670450213.81317604</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>DFA238BF-8A66-4113-9F69-4A010AC1696A</string>
+			<string>621C9850-80DE-40E4-AF56-EC68AAABAB79</string>
 		</dict>
-		<key>EBA2CA13-7594-4F26-84F9-A504C8863CA3</key>
+		<key>71AE1188-5AA7-4446-9EA7-5307AF5DB8A2</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -389,7 +355,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>EBA2CA13-7594-4F26-84F9-A504C8863CA3.xcactivitylog</string>
+			<string>71AE1188-5AA7-4446-9EA7-5307AF5DB8A2.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -406,13 +372,625 @@
 			<key>signature</key>
 			<string>Run ActorCapture</string>
 			<key>timeStartedRecording</key>
-			<real>670377630.28941298</real>
+			<real>670450392.75943995</real>
 			<key>timeStoppedRecording</key>
-			<real>670377825.32082498</real>
+			<real>670450411.29790294</real>
 			<key>title</key>
 			<string>Run ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>EBA2CA13-7594-4F26-84F9-A504C8863CA3</string>
+			<string>71AE1188-5AA7-4446-9EA7-5307AF5DB8A2</string>
+		</dict>
+		<key>72676A01-327A-4121-B79B-15A68B283312</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>72676A01-327A-4121-B79B-15A68B283312.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670450651.95607805</real>
+			<key>timeStoppedRecording</key>
+			<real>670450796.33108795</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>72676A01-327A-4121-B79B-15A68B283312</string>
+		</dict>
+		<key>7816650E-C926-44A6-AB2A-F7BA546309F9</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>7816650E-C926-44A6-AB2A-F7BA546309F9.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670452052.94413698</real>
+			<key>timeStoppedRecording</key>
+			<real>670452088.01822805</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>7816650E-C926-44A6-AB2A-F7BA546309F9</string>
+		</dict>
+		<key>84F47D2D-197D-48AD-9D35-B9357E4E132B</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>84F47D2D-197D-48AD-9D35-B9357E4E132B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670451090.16082096</real>
+			<key>timeStoppedRecording</key>
+			<real>670451227.93346703</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>84F47D2D-197D-48AD-9D35-B9357E4E132B</string>
+		</dict>
+		<key>85387E48-C603-4E19-9EAD-BD7AEE2C532F</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>85387E48-C603-4E19-9EAD-BD7AEE2C532F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670450530.82022798</real>
+			<key>timeStoppedRecording</key>
+			<real>670450557.86469197</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>85387E48-C603-4E19-9EAD-BD7AEE2C532F</string>
+		</dict>
+		<key>8A67BC63-3A6C-40CB-B6A3-FB1E514FAA01</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>8A67BC63-3A6C-40CB-B6A3-FB1E514FAA01.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670450565.32212698</real>
+			<key>timeStoppedRecording</key>
+			<real>670450575.51301205</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>8A67BC63-3A6C-40CB-B6A3-FB1E514FAA01</string>
+		</dict>
+		<key>8C85C159-BDD5-4767-902B-B0214C7B248B</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>8C85C159-BDD5-4767-902B-B0214C7B248B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670451389.21428096</real>
+			<key>timeStoppedRecording</key>
+			<real>670451422.27160394</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>8C85C159-BDD5-4767-902B-B0214C7B248B</string>
+		</dict>
+		<key>91678AD0-220B-476F-AD39-33D8035FFD66</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>91678AD0-220B-476F-AD39-33D8035FFD66.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670452142.187608</real>
+			<key>timeStoppedRecording</key>
+			<real>670452200.47112095</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>91678AD0-220B-476F-AD39-33D8035FFD66</string>
+		</dict>
+		<key>9D451CD1-6763-44CA-8450-7037241988E9</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>9D451CD1-6763-44CA-8450-7037241988E9.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670450587.61006606</real>
+			<key>timeStoppedRecording</key>
+			<real>670450594.57024205</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>9D451CD1-6763-44CA-8450-7037241988E9</string>
+		</dict>
+		<key>A05A444E-7E9A-41BD-BB0C-52A95E44DACF</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>A05A444E-7E9A-41BD-BB0C-52A95E44DACF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670450506.54528201</real>
+			<key>timeStoppedRecording</key>
+			<real>670450516.93177795</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>A05A444E-7E9A-41BD-BB0C-52A95E44DACF</string>
+		</dict>
+		<key>AA18D467-EF30-4B2C-8AFA-D077C7DA6ADF</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>AA18D467-EF30-4B2C-8AFA-D077C7DA6ADF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670450605.45775104</real>
+			<key>timeStoppedRecording</key>
+			<real>670450612.40829504</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>AA18D467-EF30-4B2C-8AFA-D077C7DA6ADF</string>
+		</dict>
+		<key>CE28217B-64B3-4E95-880E-A6D93DC3A492</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>CE28217B-64B3-4E95-880E-A6D93DC3A492.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670451362.87404704</real>
+			<key>timeStoppedRecording</key>
+			<real>670451387.55564106</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>CE28217B-64B3-4E95-880E-A6D93DC3A492</string>
+		</dict>
+		<key>D03210E5-D467-44D8-B4B5-5544211C3B8D</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>D03210E5-D467-44D8-B4B5-5544211C3B8D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670452297.55361998</real>
+			<key>timeStoppedRecording</key>
+			<real>670452658.40535402</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>D03210E5-D467-44D8-B4B5-5544211C3B8D</string>
+		</dict>
+		<key>D69D5D16-2EFD-453C-B102-3DB01121A4C8</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>D69D5D16-2EFD-453C-B102-3DB01121A4C8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670451229.47165799</real>
+			<key>timeStoppedRecording</key>
+			<real>670451361.13328195</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>D69D5D16-2EFD-453C-B102-3DB01121A4C8</string>
+		</dict>
+		<key>E034E435-772E-496A-A0D9-405C5FA47402</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>E034E435-772E-496A-A0D9-405C5FA47402.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670451673.07785201</real>
+			<key>timeStoppedRecording</key>
+			<real>670451768.76139498</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>E034E435-772E-496A-A0D9-405C5FA47402</string>
+		</dict>
+		<key>E56D2C92-36FF-4D99-90A2-3A051798B344</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>E56D2C92-36FF-4D99-90A2-3A051798B344.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670450434.82536101</real>
+			<key>timeStoppedRecording</key>
+			<real>670450446.72636199</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>E56D2C92-36FF-4D99-90A2-3A051798B344</string>
+		</dict>
+		<key>EB52517B-3177-4AAB-B7E9-E89681CECEEF</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>EB52517B-3177-4AAB-B7E9-E89681CECEEF.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670450412.76571405</real>
+			<key>timeStoppedRecording</key>
+			<real>670450433.55279005</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>EB52517B-3177-4AAB-B7E9-E89681CECEEF</string>
+		</dict>
+		<key>F556E4FF-8D4F-4FA0-9A37-D87C2662FBF4</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>F556E4FF-8D4F-4FA0-9A37-D87C2662FBF4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670451770.45244598</real>
+			<key>timeStoppedRecording</key>
+			<real>670451842.39635003</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>F556E4FF-8D4F-4FA0-9A37-D87C2662FBF4</string>
+		</dict>
+		<key>F5964DEE-B4B1-443F-B965-C157A68AA5A1</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>F5964DEE-B4B1-443F-B965-C157A68AA5A1.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>ActorCapture project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ActorCapture</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run ActorCapture</string>
+			<key>timeStartedRecording</key>
+			<real>670452202.14338505</real>
+			<key>timeStoppedRecording</key>
+			<real>670452258.69148898</real>
+			<key>title</key>
+			<string>Run ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>F5964DEE-B4B1-443F-B965-C157A68AA5A1</string>
 		</dict>
 	</dict>
 </dict>

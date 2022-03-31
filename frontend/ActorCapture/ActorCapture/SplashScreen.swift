@@ -24,9 +24,13 @@ struct SplashScreen: View {
             } else {
                 // 4.
                 Image("ImageForSplash")
-
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                    .frame(width: 75, height: 75)
+                
                 Text("ActorCapture")
                     .font(.title)
+                    .padding(.top, 75)
             }
         }
         .task {
