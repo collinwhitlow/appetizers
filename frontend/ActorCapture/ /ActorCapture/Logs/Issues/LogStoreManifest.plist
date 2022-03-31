@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>B9051C44-C293-4C11-A08C-8BB9AB84020F</key>
+		<key>C0D80148-B2E8-4163-AAD4-4380EF29DF34</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>B9051C44-C293-4C11-A08C-8BB9AB84020F.xcactivitylog</string>
+			<string>C0D80148-B2E8-4163-AAD4-4380EF29DF34.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -26,13 +26,13 @@
 			<key>signature</key>
 			<string>ActorCapture-elzpelfsdwezixcuelmfdfigkdnu</string>
 			<key>timeStartedRecording</key>
-			<real>670452658.47422504</real>
+			<real>670454357.49426997</real>
 			<key>timeStoppedRecording</key>
-			<real>670452660.110255</real>
+			<real>670454359.15756202</real>
 			<key>title</key>
 			<string>Build target ActorCapture</string>
 			<key>uniqueIdentifier</key>
-			<string>B9051C44-C293-4C11-A08C-8BB9AB84020F</string>
+			<string>C0D80148-B2E8-4163-AAD4-4380EF29DF34</string>
 		</dict>
 		<key>D9961EB0-E7D8-44A7-AD48-1EE3F7093342</key>
 		<dict>

@@ -23,7 +23,7 @@ struct ActorView: View {
         NavigationView {
             VStack(spacing: 0){
                 VStack (spacing: 0){
-                    VStack (spacing: 0){
+                    VStack (spacing: 10){
                         if let actorname = actorName {
                             Text(actorname)
                                 .frame(alignment: .center)
@@ -53,7 +53,11 @@ struct ActorView: View {
                     movieInfoRow(infoEntry: store.actorinfo[$0])
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
-                }
+                }.overlay(Group {
+                    if store.actorinfo.isEmpty {
+                        Text("No More Info to Display")
+                    }
+                })
                 .listStyle(.plain)
                 .navigationBarTitleDisplayMode(.inline)
 

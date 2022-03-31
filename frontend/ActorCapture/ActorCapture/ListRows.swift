@@ -31,7 +31,7 @@ struct HistoryListRow: View {
                                 ProgressView()
                             }
                 ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                VStack (spacing: 3){
+                VStack (spacing: 10){
                     Text(actorname)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
@@ -56,7 +56,7 @@ struct HistoryListRow: View {
                             ActorView(isPresented: $isPresenting, actorName: actorname, confidence: historyentry.confidence, actorUrl: historyentry.imageUrl!, history_or_capture: "history")
                         }.buttonStyle(BorderlessButtonStyle())
                     }
-                }
+                }.frame(width: UIScreen.main.bounds.size.width - 150, alignment: .center)
             }
         }
     }
@@ -84,13 +84,12 @@ struct WatchListRow: View {
                                 ProgressView()
                             }
                 ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                VStack (spacing: 3){
+                VStack (spacing: 10){
                     Text(movieName)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
                         .allowsTightening(true)
                         .minimumScaleFactor(0.75)
-                        .lineLimit(self.correctLineLimit())
                     HStack (spacing: 40) {
                         Button(action: { Task {
                             await store.deleteWatchlist(watchlistentry)
@@ -99,7 +98,7 @@ struct WatchListRow: View {
                         }.buttonStyle(BorderlessButtonStyle())
                     }
 
-                }
+                }.frame(width: UIScreen.main.bounds.size.width - 150, alignment: .center)
             }
         }
     }

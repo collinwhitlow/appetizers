@@ -21,9 +21,9 @@ struct WatchListView: View {
                     Text("Your Watchlist")
                 }
             }
-            //.task {
-                //await store.getWatchlist()
-            //}
+            .task {
+                await store.getWatchlist()
+            }
             .overlay(Group {
                 if store.watchlist.isEmpty {
                     Text("Watchlist Currently Empty")
