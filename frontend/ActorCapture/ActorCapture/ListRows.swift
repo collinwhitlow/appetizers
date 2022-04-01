@@ -42,16 +42,36 @@ struct HistoryListRow: View {
                     if let confidence = historyentry.confidence {
                         Text("Confidence: " + confidence + "%").padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 14))
                     }
-                    HStack (spacing: 40) {
+                    HStack (spacing: 20) {
                         Button(action: { Task {
                             await store.deleteHistory(historyentry)
                         }}) {
-                            Image(systemName: "trash")
+                            HStack {
+                                Image(systemName: "trash")
+                                    .font(.body)
+                                Text("Delete")
+                                    .fontWeight(.semibold)
+                                    .font(.body)
+                            }
+                            .padding(10)
+                            .foregroundColor(.black)
+                            .background(Color.red)
+                            .cornerRadius(15)
                         }.buttonStyle(BorderlessButtonStyle())
                         Button(action: {
                             isPresenting.toggle()
                         }) {
-                            Image(systemName: "info.circle")
+                            HStack {
+                                Image(systemName: "info.circle")
+                                    .font(.body)
+                                Text("Info")
+                                    .fontWeight(.semibold)
+                                    .font(.body)
+                            }
+                            .padding(10)
+                            .foregroundColor(.black)
+                            .background(Color.green)
+                            .cornerRadius(15)
                         }.sheet(isPresented: $isPresenting) {
                             ActorView(isPresented: $isPresenting, actorName: actorname, confidence: historyentry.confidence, actorUrl: historyentry.imageUrl!, history_or_capture: "history")
                         }.buttonStyle(BorderlessButtonStyle())
@@ -94,7 +114,17 @@ struct WatchListRow: View {
                         Button(action: { Task {
                             await store.deleteWatchlist(watchlistentry)
                         }}) {
-                            Image(systemName: "trash")
+                            HStack {
+                                Image(systemName: "trash")
+                                    .font(.body)
+                                Text("Delete")
+                                    .fontWeight(.semibold)
+                                    .font(.body)
+                            }
+                            .padding(10)
+                            .foregroundColor(.black)
+                            .background(Color.red)
+                            .cornerRadius(15)
                         }.buttonStyle(BorderlessButtonStyle())
                     }
 
@@ -139,25 +169,39 @@ struct movieInfoRow: View {
                     Text(movieName)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 21, weight: .heavy, design: .default))
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.75)
                     Text("as")
                         .multilineTextAlignment(.center)
                         .font(.system(size: 16, weight: .heavy, design: .default).italic())
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.75)
                     Text(role)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 16, weight: .heavy, design: .default).italic())
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.75)
                     Spacer()
                     HStack (spacing: 40) {
                         Button(action: { Task {
                             playerUIState.disable_add()
                             await store.addWatchlist(infoEntry)
                         }}) {
-                            Image(systemName: "plus.circle")
+                            HStack {
+                                Image(systemName: "plus.circle")
+                                    .font(.body)
+                                Text("Watchlist")
+                                    .fontWeight(.semibold)
+                                    .font(.body)
+                            }
+                            .padding(10)
+                            .background(Color.green)
+                            .cornerRadius(15)
                         }.buttonStyle(BorderlessButtonStyle())
                             .disabled(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true)
                     }
                     Spacer()
-
-                }
+                }.frame(width: UIScreen.main.bounds.size.width - 150, alignment: .center)
             }
         }
     }
