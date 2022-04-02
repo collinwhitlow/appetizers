@@ -190,12 +190,14 @@ struct movieInfoRow: View {
                             HStack {
                                 Image(systemName: "plus.circle")
                                     .font(.body)
+                                    .foregroundColor(Color.black)
                                 Text("Watchlist")
                                     .fontWeight(.semibold)
                                     .font(.body)
+                                    .foregroundColor(Color.black)
                             }
                             .padding(10)
-                            .background(Color.green)
+                            .background(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true ? Color.gray : Color.green)
                             .cornerRadius(15)
                         }.buttonStyle(BorderlessButtonStyle())
                             .disabled(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true)

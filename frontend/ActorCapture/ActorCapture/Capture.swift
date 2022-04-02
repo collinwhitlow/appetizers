@@ -167,6 +167,7 @@ struct ImageCapture: View {
                     } label: {
                         Image(systemName: "arrow.right.square.fill")
                             .scaleEffect(3)
+                            .foregroundColor(.green)
                     }.alert("Can't Find Any Faces", isPresented: $store.cant_find_faces) {
                         Button("OK", role: .cancel) {}
                     }.alert("Can't Find Name For Selected Face", isPresented: $store.cant_find_actor) {
@@ -225,12 +226,13 @@ struct ActorInfoCapture: View {
                 } label: {
                     Image(systemName: "arrow.left.square.fill")
                         .scaleEffect(3)
+                        .foregroundColor(.green)
                 }
                 
                 Button() {
                     self.is_more_info_presenting.toggle()
                 } label: {
-                    Image(systemName: "info")
+                    Image(systemName: "info.circle")
                         .scaleEffect(3)
                         .foregroundColor(Color.blue)
                 }
