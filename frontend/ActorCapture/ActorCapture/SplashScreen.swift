@@ -24,9 +24,11 @@ struct SplashScreen: View {
             } else {
                 // 4.
                 Image("ImageForSplash")
+                    .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
-                    .frame(width: 75, height: 75)
+                    .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                    .frame(width: 80, height: 80)
+                    //.clipped()
                 
                 Text("ActorCapture")
                     .font(.title)
