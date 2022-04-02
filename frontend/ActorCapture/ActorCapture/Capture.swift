@@ -36,7 +36,7 @@ struct BoundingBoxes: View {
                     self.box_index = index
                 }
             }) {
-                Rectangle()
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
                     .stroke(index == self.box_index ? Color.green : Color.purple, lineWidth: 3)
                     .frame(width: self.find_width(index), height: self.find_height(index))
             }.frame(width: self.find_width(index), height: self.find_height(index))
@@ -90,7 +90,7 @@ struct ImageCapture: View {
                     Image(uiImage: selectedImage!)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .clipShape(Rectangle())
+                        .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
                         .frame(width: 300, height: 300)
                         .clipped()
                         .opacity(store.waiting_for_find_faces ? 0.3 : 1)
@@ -103,7 +103,7 @@ struct ImageCapture: View {
                     Image(uiImage: selectedImage!)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .clipShape(Rectangle())
+                        .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
                         .frame(width: 300, height: 300)
                         .clipped()
                         .opacity(store.waiting_for_find_actor ? 0.3 : 1)
@@ -203,7 +203,7 @@ struct ActorInfoCapture: View {
                            content: { image in
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .clipShape(Rectangle())
+                                    .clipShape(Circle())
                                     .frame(width:100, height: 100)
                                     .padding()
                                     },

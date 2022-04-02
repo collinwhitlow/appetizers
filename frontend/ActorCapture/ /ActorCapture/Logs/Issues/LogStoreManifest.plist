@@ -6,6 +6,34 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
+		<key>5B20ED12-82F3-4EED-8C37-7D1BA2A7D9BC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>5B20ED12-82F3-4EED-8C37-7D1BA2A7D9BC.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>ActorCapture-elzpelfsdwezixcuelmfdfigkdnu</string>
+			<key>timeStartedRecording</key>
+			<real>670611060.00781</real>
+			<key>timeStoppedRecording</key>
+			<real>670611061.76719797</real>
+			<key>title</key>
+			<string>Build target ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>5B20ED12-82F3-4EED-8C37-7D1BA2A7D9BC</string>
+		</dict>
 		<key>915D1910-E25E-41DE-A026-D8B3C793FCE1</key>
 		<dict>
 			<key>className</key>
@@ -33,34 +61,6 @@
 			<string>Build target Alamofire</string>
 			<key>uniqueIdentifier</key>
 			<string>915D1910-E25E-41DE-A026-D8B3C793FCE1</string>
-		</dict>
-		<key>BA30AC2A-A703-4FAA-BCED-CA65444D59EF</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
-			<key>fileName</key>
-			<string>BA30AC2A-A703-4FAA-BCED-CA65444D59EF.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>ActorCapture-elzpelfsdwezixcuelmfdfigkdnu</string>
-			<key>timeStartedRecording</key>
-			<real>670551956.57630002</real>
-			<key>timeStoppedRecording</key>
-			<real>670551958.75969601</real>
-			<key>title</key>
-			<string>Build target ActorCapture</string>
-			<key>uniqueIdentifier</key>
-			<string>BA30AC2A-A703-4FAA-BCED-CA65444D59EF</string>
 		</dict>
 		<key>EA86F741-3672-4ED1-AF4A-E8E952A74932</key>
 		<dict>
