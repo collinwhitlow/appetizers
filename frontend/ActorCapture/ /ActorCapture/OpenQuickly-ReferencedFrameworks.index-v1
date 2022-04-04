@@ -3,29 +3,29 @@
 <plist version="1.0">
 <array>
 	<string>Foundation</string>
-	<string>objc</string>
+	<string>CommonCrypto</string>
 	<string>CoreVideo</string>
 	<string>AppKit</string>
 	<string>Dispatch</string>
-	<string>CoreGraphics</string>
 	<string>Accelerate</string>
+	<string>CoreGraphics</string>
 	<string>mach</string>
 	<string>QuartzCore</string>
 	<string>Alamofire</string>
-	<string>SDWebImage</string>
 	<string>libkern</string>
+	<string>SDWebImage</string>
 	<string>FoundationNetworking</string>
 	<string>SwiftUI</string>
 	<string>CoreServices</string>
-	<string>UIKit</string>
-	<string>Combine</string>
 	<string>os</string>
 	<string>sys</string>
+	<string>UIKit</string>
+	<string>Combine</string>
 	<string>CoreImage</string>
 	<string>SystemConfiguration</string>
 	<string>WatchKit</string>
 	<string>MobileCoreServices</string>
 	<string>ImageIO</string>
-	<string>CommonCrypto</string>
+	<string>objc</string>
 </array>
 </plist>

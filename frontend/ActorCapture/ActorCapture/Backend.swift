@@ -31,6 +31,10 @@ final class Backend: ObservableObject  {
     
     private let userid = UIDevice.current.identifierForVendor?.uuidString
     
+    func setHistory(_ hist: [HistoryEntry]) {
+        history = hist
+    }
+    
     func addWatchlist(_ moreInfo: MoreInfoEntry) async {
         guard let apiUrl = URL(string: serverUrl+"postwatchlist/") else {
             print("postwatchlist: Bad URL")

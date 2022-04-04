@@ -10,6 +10,7 @@ import UIKit
 
 struct MenuBottom: View {
     @State var selection = 2
+    @ObservedObject var store = Backend.shared
     
     var body: some View {
         NavigationView {
