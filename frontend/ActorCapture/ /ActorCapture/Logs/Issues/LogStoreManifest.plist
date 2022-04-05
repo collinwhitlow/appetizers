@@ -34,34 +34,6 @@
 			<key>uniqueIdentifier</key>
 			<string>915D1910-E25E-41DE-A026-D8B3C793FCE1</string>
 		</dict>
-		<key>AC2EE794-72FB-4D64-8362-2ED4242149AC</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogMajorGroupSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
-			<key>fileName</key>
-			<string>AC2EE794-72FB-4D64-8362-2ED4242149AC.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>signature</key>
-			<string>ActorCapture-elzpelfsdwezixcuelmfdfigkdnu</string>
-			<key>timeStartedRecording</key>
-			<real>670798393.21539497</real>
-			<key>timeStoppedRecording</key>
-			<real>670798394.67861199</real>
-			<key>title</key>
-			<string>Build target ActorCapture</string>
-			<key>uniqueIdentifier</key>
-			<string>AC2EE794-72FB-4D64-8362-2ED4242149AC</string>
-		</dict>
 		<key>EA86F741-3672-4ED1-AF4A-E8E952A74932</key>
 		<dict>
 			<key>className</key>
@@ -117,6 +89,34 @@
 			<string>Build target Pods-ActorCapture</string>
 			<key>uniqueIdentifier</key>
 			<string>EE09B602-162B-42D5-ABE3-8C82C9A607C2</string>
+		</dict>
+		<key>FDBA7424-051D-42CD-88BC-AB284EEDF85D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>FDBA7424-051D-42CD-88BC-AB284EEDF85D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>ActorCapture-elzpelfsdwezixcuelmfdfigkdnu</string>
+			<key>timeStartedRecording</key>
+			<real>670812105.16810203</real>
+			<key>timeStoppedRecording</key>
+			<real>670812106.68652105</real>
+			<key>title</key>
+			<string>Build target ActorCapture</string>
+			<key>uniqueIdentifier</key>
+			<string>FDBA7424-051D-42CD-88BC-AB284EEDF85D</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

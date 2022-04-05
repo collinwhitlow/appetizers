@@ -26,6 +26,7 @@ struct HistoryView: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color((index % 2 == 0) ? .systemGray5 : .systemGray6))
             }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search A Name")
             .listStyle(.plain)
             .refreshable {
                 await store.getHistory()
@@ -44,7 +45,6 @@ struct HistoryView: View {
                     Text("No History to Display")
                 }
             })
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search A Name")
         }
     }
 }

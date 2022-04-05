@@ -19,55 +19,51 @@ struct ActorView: View {
     var history_or_capture: String
     
     var body: some View {
-        
-        NavigationView {
-            VStack(spacing: 0){
-                VStack (spacing: 0){
-                    VStack (spacing: 10){
-                        if let actorname = actorName {
-                            Text(actorname)
-                                .frame(alignment: .center)
-                                .font(.system(size: 19, weight: .heavy, design: .default))
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                            if let confidence = confidence { // get confidence level
-                                Text("Confidence: " + confidence + "%").padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 16))
-                            }
+        VStack(spacing: 0){
+            VStack (spacing: 0){
+                VStack (spacing: 10){
+                    if let actorname = actorName {
+                        Text(actorname)
+                            .frame(alignment: .center)
+                            .font(.system(size: 19, weight: .heavy, design: .default))
+                            .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                        if let confidence = confidence { // get confidence level
+                            Text("Confidence: " + confidence + "%").padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)).font(.system(size: 16))
                         }
                     }
-                    if let actorUrl = actorUrl {
-                        AsyncImage(url: URL(string: actorUrl)!,
-                                   content: { image in
-                                        image.resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .clipShape(Circle())
-                                            .frame(maxWidth:300, maxHeight: 130, alignment: .center)
-                                            
-                                            },
-                                    placeholder: {
-                                        ProgressView()
-                                    }
-                        ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 150, alignment: .topLeading)
-                    }
                 }
-                List(store.actorinfo.indices, id: \.self) {
-                    movieInfoRow(infoEntry: store.actorinfo[$0])
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
-                }.overlay(Group {
-                    if store.actorinfo.isEmpty {
-                        Text("No More Info to Display")
-                    }
-                })
-                .listStyle(.plain)
-                .navigationBarTitleDisplayMode(.inline)
+                if let actorUrl = actorUrl {
+                    AsyncImage(url: URL(string: actorUrl)!,
+                               content: { image in
+                                    image.resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .clipShape(Circle())
+                                        .frame(maxWidth:300, maxHeight: 130, alignment: .center)
+                                        
+                                        },
+                                placeholder: {
+                                    ProgressView()
+                                }
+                    ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 150, alignment: .topLeading)
+                }
+            }
+            List(store.actorinfo.indices, id: \.self) {
+                movieInfoRow(infoEntry: store.actorinfo[$0])
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
+            }.overlay(Group {
+                if store.actorinfo.isEmpty {
+                    Text("No More Info to Display")
+                }
+            })
+            .listStyle(.plain)
+            .navigationBarTitleDisplayMode(.inline)
 
-                .task {
-                    await store.getactorinfo(actorName: actorName)
-                }
-                .refreshable {
-                    await store.getactorinfo(actorName: actorName)
-                }
-                
+            .task {
+                await store.getactorinfo(actorName: actorName)
+            }
+            .refreshable {
+                await store.getactorinfo(actorName: actorName)
             }
         }
     }
