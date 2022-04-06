@@ -150,8 +150,10 @@ struct movieInfoRow: View {
     @ObservedObject var store = Backend.shared
     @StateObject var playerUIState = PlayerUIState()
     var body: some View {
-        HStack (spacing: 0){
-            if let movieName = infoEntry.movieName, let imageURL = infoEntry.imageUrl, let role = infoEntry.characterName {
+        HStack (alignment: .center, spacing: 0){
+            // , let imageURL = infoEntry.imageUrl,
+            if let movieName = infoEntry.movieName, let role = infoEntry.characterName {
+                /*
                 AsyncImage(url: URL(string: imageURL)!,
                            content: { image in
                                 image.resizable()
@@ -164,6 +166,7 @@ struct movieInfoRow: View {
                                 ProgressView()
                             }
                 ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                */
                 VStack (spacing: 1){
                     Spacer()
                     Text(movieName)
@@ -171,11 +174,12 @@ struct movieInfoRow: View {
                         .font(.system(size: 21, weight: .heavy, design: .default))
                         .allowsTightening(true)
                         .minimumScaleFactor(0.75)
-                    Text("as")
+                    /*Text("as")
                         .multilineTextAlignment(.center)
                         .font(.system(size: 16, weight: .heavy, design: .default).italic())
                         .allowsTightening(true)
                         .minimumScaleFactor(0.75)
+                     */
                     Text(role)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 16, weight: .heavy, design: .default).italic())
@@ -203,7 +207,7 @@ struct movieInfoRow: View {
                             .disabled(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true)
                     }
                     Spacer()
-                }.frame(width: UIScreen.main.bounds.size.width - 150, alignment: .center)
+                }.frame(width: UIScreen.main.bounds.size.width - 30, alignment: .center)
             }
         }
     }
