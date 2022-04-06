@@ -16,7 +16,7 @@ import os, time
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from matplotlib.font_manager import json_dump
-from PIL import Image 
+from PIL import Image
 import boto3
 
 # This function sends a base64 encoded image to cloudVision to parse the image and detect faces
@@ -82,19 +82,19 @@ def findactor(request):
     for bound in bounds:
         x_cords.append(bound[0])
         y_cords.append(bound[1])
-    base_dir = Path(__file__).resolve().parent.parent 
+    base_dir = Path(__file__).resolve().parent.parent
     filename_full = base_dir / 'media' / filename
     img = Image.open(str(filename_full))
 
     # get right, left, top, bottom bounds
     x = min(x_cords)
     y = min(y_cords)
-    w = max(x_cords) - min(x_cords)	
+    w = max(x_cords) - min(x_cords)
     h = max(y_cords) - min(y_cords)
 
-    img_res = img.crop((x, y, x+w, y+h)) 
+    img_res = img.crop((x, y, x+w, y+h))
     img_res = img_res.save(filename_full)
-    
+
     client=boto3.client('rekognition')
 
     with open(filename_full, 'rb') as image:
@@ -165,7 +165,7 @@ def getactorinfo(request):
             int1 = int(dict1["year"][0:4])
         if len(dict2["year"][0:4]) == 4:
             int2 = int(dict2["year"][0:4])
-            
+
         return int1 - int2
     respArray = sorted(respArray, key=cmp_to_key(compare), reverse=True)
 
@@ -178,7 +178,8 @@ def getactorinfo(request):
         "known_for": jsonDict2["knownFor"],
         "cast_movies": respArray[0:end_of_cast_movies],
         "image": jsonDict2["image"],
-        "awards":jsonDict2["awards"]
+        "awards":jsonDict2["awards"],
+        "actorID": actorID
     }
 
 
@@ -199,7 +200,7 @@ def getwatchlist(request):
     rows = cursor.fetchall()
 
     response = {'watchlist': rows}
- 
+
     return JsonResponse(response)
 
 @csrf_exempt
@@ -271,7 +272,7 @@ def deletewatchlist(request):
     json_data = json.loads(request.body)
     if 'userid' not in json_data or 'uid' not in json_data :
         return HttpResponse(status=404)
-    
+
     userid = json_data['userid']
     uid = json_data['uid']
     cursor = connection.cursor()
