@@ -28,6 +28,10 @@ struct MoreInfoEntry {
     var movieName: String?
 }
 
+struct ActorID {
+    var actorID: String?
+}
+
 struct ResultPage {
     @ChattPropWrapper var imageUrl: String?
     var actorName: String?

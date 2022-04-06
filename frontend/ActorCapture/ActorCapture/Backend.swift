@@ -10,6 +10,7 @@ final class Backend: ObservableObject  {
     @Published private(set) var history = [HistoryEntry]()
     @Published private(set) var watchlist = [WatchListEntry]()
     @Published private(set) var actorinfo = [MoreInfoEntry]()
+    @Published private(set) var actorid = ActorID()
     @Published private(set) var movieNameSet : Set<String>?
     
     @Published private(set) var bounding_boxes: [[[Int]]]?
@@ -41,7 +42,8 @@ final class Backend: ObservableObject  {
             return
         }
         
-        let jsonObj = ["userid": userid, "movietitle": moreInfo.movieName, "imageURL" : moreInfo.imageUrl, ]
+        let jsonObj = ["userid": userid, "movietitle": moreInfo.movieName, "imageURL" : "", ]
+        print(jsonObj)
         guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
             print("postwatchlist: jsonData serialization error")
             return
@@ -94,10 +96,17 @@ final class Backend: ObservableObject  {
             }
              
             self.actorinfo = [MoreInfoEntry]()
+            self.actorid = ActorID()
+            let tem_p = "https://www.imdb.com/name/"
+            let actorName = data2["actorID"]! as! String
+            let mimo = tem_p + actorName  + "/"
+            self.actorid = (ActorID(actorID: mimo))
+            print(actorid)
             if let whole_dict = data2["cast_movies"] as? [[String:String]] {
                 for dict in whole_dict{
                     //dict["image"]!
-                    self.actorinfo.append(MoreInfoEntry(imageUrl: "", characterName: dict["description"],movieName: dict["title"]))
+                    self.actorinfo.append(MoreInfoEntry(imageUrl: actorName, characterName: dict["description"],movieName: dict["title"]))
+                    
                 }
             }else{
                 print("getactorinfo failed 1")

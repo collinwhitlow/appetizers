@@ -73,7 +73,7 @@ struct HistoryListRow: View {
                             .background(Color.green)
                             .cornerRadius(15)
                         }.sheet(isPresented: $isPresenting) {
-                            ActorView(isPresented: $isPresenting, actorName: actorname, confidence: historyentry.confidence, actorUrl: historyentry.imageUrl!, history_or_capture: "history")
+                            ActorView(isPresented: $isPresenting, actorName: actorname, confidence: historyentry.confidence, actorUrl: historyentry.imageUrl!,  history_or_capture: "history")
                         }.buttonStyle(BorderlessButtonStyle())
                     }
                 }.frame(width: UIScreen.main.bounds.size.width - 150, alignment: .center)
@@ -251,13 +251,7 @@ struct actorInfoRow: View {
                         }) {
                             Image(systemName: "back")
                         }.sheet(isPresented: $isPresenting) {
-                            // either history or capture
-                            if(history_or_capture == "history"){
-                                HistoryView()
-                            }
-                            else{
-                                // CaptureView()
-                            }
+
                             
                         }.buttonStyle(BorderlessButtonStyle())
                     }

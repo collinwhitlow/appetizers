@@ -47,7 +47,8 @@ struct ActorView: View {
                     ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 150, alignment: .topLeading)
                 }
                 // Link(destination: URL(string: "https://www.imdb.com/name/" + actorID + "/")!) {
-                Link(destination: URL(string: "https://www.imdb.com/name//")!) {
+                // store.actorid[0].actorID
+                Link(destination: URL(string: store.actorid.actorID ?? "https://www.imdb.com")!) {
                     Image(systemName: "link.circle.fill")
                         .font(.largeTitle)
                 }
@@ -56,14 +57,19 @@ struct ActorView: View {
                 movieInfoRow(infoEntry: store.actorinfo[$0])
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
+                
             }.overlay(Group {
                 if store.actorinfo.isEmpty {
-                    Text("No More Info to Display")
+                placeholder: do {
+                    ProgressView()
                 }
+                }
+            
             })
             .listStyle(.plain)
             .navigationBarTitleDisplayMode(.inline)
             .frame(alignment: .center)
+            
 
             .task {
                 await store.getactorinfo(actorName: actorName)
@@ -71,6 +77,7 @@ struct ActorView: View {
             .refreshable {
                 await store.getactorinfo(actorName: actorName)
             }
+            
         }
     }
 }
