@@ -94,9 +94,10 @@ final class Backend: ObservableObject  {
             }
              
             self.actorinfo = [MoreInfoEntry]()
-            if let whole_dict = data2["known_for"] as? [[String:String]] {
+            if let whole_dict = data2["cast_movies"] as? [[String:String]] {
                 for dict in whole_dict{
-                    self.actorinfo.append(MoreInfoEntry(imageUrl: dict["image"]!, characterName: dict["role"],movieName: dict["fullTitle"]))
+                    //dict["image"]!
+                    self.actorinfo.append(MoreInfoEntry(imageUrl: "", characterName: dict["description"],movieName: dict["title"]))
                 }
             }else{
                 print("getactorinfo failed 1")

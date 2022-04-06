@@ -19,8 +19,8 @@ struct ActorView: View {
     var history_or_capture: String
     
     var body: some View {
-        VStack(spacing: 0){
-            VStack (spacing: 0){
+        VStack(spacing: 10){
+            VStack (spacing: 8){
                 VStack (spacing: 10){
                     if let actorname = actorName {
                         Text(actorname)
@@ -46,6 +46,11 @@ struct ActorView: View {
                                 }
                     ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 150, alignment: .topLeading)
                 }
+                // Link(destination: URL(string: "https://www.imdb.com/name/" + actorID + "/")!) {
+                Link(destination: URL(string: "https://www.imdb.com/name//")!) {
+                    Image(systemName: "link.circle.fill")
+                        .font(.largeTitle)
+                }
             }
             List(store.actorinfo.indices, id: \.self) {
                 movieInfoRow(infoEntry: store.actorinfo[$0])
@@ -58,6 +63,7 @@ struct ActorView: View {
             })
             .listStyle(.plain)
             .navigationBarTitleDisplayMode(.inline)
+            .frame(alignment: .center)
 
             .task {
                 await store.getactorinfo(actorName: actorName)
