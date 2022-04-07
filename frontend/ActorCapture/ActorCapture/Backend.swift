@@ -10,6 +10,7 @@ final class Backend: ObservableObject  {
     @Published private(set) var history = [HistoryEntry]()
     @Published private(set) var watchlist = [WatchListEntry]()
     @Published private(set) var actorinfo = [MoreInfoEntry]()
+    @Published private(set) var actorinfo2 = [MoreInfoKnownfor]()
     @Published private(set) var actorid = ActorID()
     @Published private(set) var movieNameSet : Set<String>?
     
@@ -41,9 +42,8 @@ final class Backend: ObservableObject  {
             print("postwatchlist: Bad URL")
             return
         }
-        
+        print(moreInfo)
         let jsonObj = ["userid": userid, "movietitle": moreInfo.movieName, "imageURL" : "", ]
-        print(jsonObj)
         guard let jsonData = try? JSONSerialization.data(withJSONObject: jsonObj) else {
             print("postwatchlist: jsonData serialization error")
             return
@@ -96,12 +96,13 @@ final class Backend: ObservableObject  {
             }
              
             self.actorinfo = [MoreInfoEntry]()
+            self.actorinfo2 = [MoreInfoKnownfor]()
             self.actorid = ActorID()
             let tem_p = "https://www.imdb.com/name/"
             let actorName = data2["actorID"]! as! String
             let mimo = tem_p + actorName  + "/"
+            
             self.actorid = (ActorID(actorID: mimo))
-            print(actorid)
             if let whole_dict = data2["cast_movies"] as? [[String:String]] {
                 for dict in whole_dict{
                     //dict["image"]!
@@ -110,6 +111,14 @@ final class Backend: ObservableObject  {
                 }
             }else{
                 print("getactorinfo failed 1")
+            }
+            if let whole_dict2 = data2["known_for"] as? [[String:String]] {
+                for dict2 in whole_dict2{
+                    //dict["image"]!
+                    self.actorinfo2.append(MoreInfoKnownfor(imageUrl: dict2["image"]!, characterName: dict2["role"],movieName: dict2["fullTitle"]))
+                }
+            }else{
+                print("getactorinfo failed 2")
             }
         } catch {
             print("getactorinfo: NETWORKING ERROR")

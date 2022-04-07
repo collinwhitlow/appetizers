@@ -27,6 +27,11 @@ struct MoreInfoEntry {
     var characterName: String?
     var movieName: String?
 }
+struct MoreInfoKnownfor {
+    @ChattPropWrapper var imageUrl: String?
+    var characterName: String?
+    var movieName: String?
+}
 
 struct ActorID {
     var actorID: String?

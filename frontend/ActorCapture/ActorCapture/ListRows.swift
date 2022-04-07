@@ -152,8 +152,8 @@ struct movieInfoRow: View {
     var body: some View {
         HStack (alignment: .center, spacing: 0){
             // , let imageURL = infoEntry.imageUrl,
-            if let movieName = infoEntry.movieName, let role = infoEntry.characterName {
-                /*
+            if let movieName = infoEntry.movieName,let imageURL = "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png", let role = infoEntry.characterName {
+                
                 AsyncImage(url: URL(string: imageURL)!,
                            content: { image in
                                 image.resizable()
@@ -166,7 +166,7 @@ struct movieInfoRow: View {
                                 ProgressView()
                             }
                 ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
-                */
+                
                 VStack (spacing: 1){
                     Spacer()
                     Text(movieName)
@@ -207,11 +207,81 @@ struct movieInfoRow: View {
                             .disabled(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true)
                     }
                     Spacer()
-                }.frame(width: UIScreen.main.bounds.size.width - 30, alignment: .center)
+                }.frame(width: UIScreen.main.bounds.size.width - 150, alignment: .center)
             }
         }
     }
 }
+
+struct movieInfoRow2: View {
+    var infoEntry2: MoreInfoKnownfor
+    @ObservedObject var store = Backend.shared
+    @StateObject var playerUIState = PlayerUIState()
+    var body: some View {
+        HStack (alignment: .center, spacing: 0){
+        
+            if let movieName = infoEntry2.movieName, let imageURL = infoEntry2.imageUrl, let role = infoEntry2.characterName {
+                
+                AsyncImage(url: URL(string: imageURL)!,
+                           content: { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
+                                    .frame(width: 90, height: 160, alignment: .leading)
+                                    .padding()
+                                    },
+                            placeholder: {
+                                ProgressView()
+                            }
+                ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+                
+                VStack (spacing: 1){
+                    Spacer()
+                    Text(movieName)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 21, weight: .heavy, design: .default))
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.75)
+                    /*Text("as")
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 16, weight: .heavy, design: .default).italic())
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.75)
+                     */
+                    Text(role)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 16, weight: .heavy, design: .default).italic())
+                        .allowsTightening(true)
+                        .minimumScaleFactor(0.75)
+                    Spacer()
+                    HStack (spacing: 40) {
+                        Button(action: { Task {
+                            playerUIState.disable_add()
+                            await store.addWatchlist(MoreInfoEntry(imageUrl: infoEntry2.imageUrl, characterName: infoEntry2.characterName, movieName: infoEntry2.movieName))
+                        }}) {
+                            HStack {
+                                Image(systemName: "plus.circle")
+                                    .font(.body)
+                                    .foregroundColor(Color.black)
+                                Text("Watchlist")
+                                    .fontWeight(.semibold)
+                                    .font(.body)
+                                    .foregroundColor(Color.black)
+                            }
+                            .padding(10)
+                            .background(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true ? Color.gray : Color.green)
+                            .cornerRadius(15)
+                        }.buttonStyle(BorderlessButtonStyle())
+                            .disabled(playerUIState.gette() || store.movieNameSet?.contains(movieName) == true)
+                    }
+                    Spacer()
+                }.frame(width: UIScreen.main.bounds.size.width - 150, alignment: .center)
+            }
+        }
+    }
+}
+
+
 
 struct actorInfoRow: View {
     var actorName: String

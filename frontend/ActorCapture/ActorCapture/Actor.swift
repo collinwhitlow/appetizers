@@ -53,13 +53,22 @@ struct ActorView: View {
                         .font(.largeTitle)
                 }
             }
-            List(store.actorinfo.indices, id: \.self) {
-                movieInfoRow(infoEntry: store.actorinfo[$0])
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
-                
+            
+            List {
+                ForEach(store.actorinfo2.indices, id: \.self){
+                    movieInfoRow2(infoEntry2: store.actorinfo2[$0])
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
+                    
+                }
+                ForEach(store.actorinfo.indices, id: \.self){
+                    movieInfoRow(infoEntry: store.actorinfo[$0])
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color(($0 % 2 == 0) ? .systemGray5 : .systemGray6))
+                    
+                }
             }.overlay(Group {
-                if store.actorinfo.isEmpty {
+                if store.actorinfo2.isEmpty {
                 placeholder: do {
                     ProgressView()
                 }
@@ -69,7 +78,6 @@ struct ActorView: View {
             .listStyle(.plain)
             .navigationBarTitleDisplayMode(.inline)
             .frame(alignment: .center)
-            
 
             .task {
                 await store.getactorinfo(actorName: actorName)
