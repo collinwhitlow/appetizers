@@ -1,6 +1,8 @@
 # all media from backend
 backend/media/*
 frontend/ActorCapture/ /*
+superb-garden-342817-a513aa1e0d3e.json
+appetizers.pem
 # macOS files
 .DS_Store
 .DS_Store?

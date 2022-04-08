@@ -377,7 +377,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ActorCapture/Preview Content\"";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = J7648TRL4B;
+=======
+				DEVELOPMENT_TEAM = 8DG9KS99YT;
+>>>>>>> 6a94f9457f08bb08d87f92cbae4eb48a1dd6a595
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ActorCapture/Info.plist;
@@ -392,7 +396,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo1.ActorCapture;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.tojocorm.ActorCapture;
+>>>>>>> 6a94f9457f08bb08d87f92cbae4eb48a1dd6a595
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -411,7 +419,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ActorCapture/Preview Content\"";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = J7648TRL4B;
+=======
+				DEVELOPMENT_TEAM = 8DG9KS99YT;
+>>>>>>> 6a94f9457f08bb08d87f92cbae4eb48a1dd6a595
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ActorCapture/Info.plist;
@@ -426,7 +438,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.jrallo1.ActorCapture;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = edu.umich.tojocorm.ActorCapture;
+>>>>>>> 6a94f9457f08bb08d87f92cbae4eb48a1dd6a595
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
