@@ -11,18 +11,13 @@ import UIKit
 
 struct SplashScreen: View {
     @ObservedObject var store = Backend.shared
-    
-    // 1.
     @State var isActive:Bool = false
     
     var body: some View {
         VStack {
-            // 2.
             if self.isActive {
-                // 3.
                 MenuBottom()
             } else {
-                // 4.
                 Image("ImageForSplash")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -39,11 +34,8 @@ struct SplashScreen: View {
             await store.getHistory()
             await store.getWatchlist()
         }
-        // 5.
         .onAppear {
-            // 6.
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                // 7.
                 withAnimation {
                     self.isActive = true
                 }

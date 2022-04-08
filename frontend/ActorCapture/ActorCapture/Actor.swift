@@ -46,8 +46,6 @@ struct ActorView: View {
                                 }
                     ).frame(minWidth: 0, maxWidth: 200, minHeight: 0, maxHeight: 150, alignment: .topLeading)
                 }
-                // Link(destination: URL(string: "https://www.imdb.com/name/" + actorID + "/")!) {
-                // store.actorid[0].actorID
                 Link(destination: URL(string: store.actorid.actorID ?? "https://www.imdb.com")!) {
                     Image(systemName: "link.circle.fill")
                         .font(.largeTitle)

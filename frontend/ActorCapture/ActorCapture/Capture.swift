@@ -81,8 +81,6 @@ struct ImageCapture: View {
                 .padding(.trailing, 30)
                 .font(.system(size: 18, weight: .bold, design: .monospaced))
                 .multilineTextAlignment(.center)
-                //.padding(.top, 50)
-                //.frame(width: UIScreen.main.bounds.size.width,height: 120, alignment: .bottom)
             Spacer()
                 
             if selectedImage != nil {

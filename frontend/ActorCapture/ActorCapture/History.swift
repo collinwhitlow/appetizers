@@ -3,7 +3,6 @@ import SwiftUI
 struct HistoryView: View {
     @ObservedObject var store = Backend.shared
     @State private var searchText = ""
-//    @State private var isPresenting = false
     
     var filteredIndicies: [Int]{
         if searchText.isEmpty {
@@ -26,7 +25,7 @@ struct HistoryView: View {
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color((index % 2 == 0) ? .systemGray5 : .systemGray6))
             }
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search A Name")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search a name")
             .listStyle(.plain)
             .refreshable {
                 await store.getHistory()

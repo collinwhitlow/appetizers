@@ -44,7 +44,7 @@ struct WatchListView: View {
                     Text("Watchlist Currently Empty")
                 }
             })
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search A Show")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search a show")
         }
     }
 }

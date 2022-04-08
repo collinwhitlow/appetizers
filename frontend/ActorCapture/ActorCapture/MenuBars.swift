@@ -15,7 +15,6 @@ struct MenuBottom: View {
     var body: some View {
         NavigationView {
             TabView(selection: $selection) {
-//                Text("WatchList Tab")
                 WatchListView()
                     .tabItem {
                         Image(systemName: "list.and.film")
@@ -26,7 +25,6 @@ struct MenuBottom: View {
                         Image(systemName: "camera.fill")
                         Text("Capture")
                 }.tag(2)
-//                Text("History Tab")
                 HistoryView()
                     .tabItem {
                         Image(systemName: "bookmark.square.fill")

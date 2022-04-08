@@ -151,7 +151,6 @@ struct movieInfoRow: View {
     @StateObject var playerUIState = PlayerUIState()
     var body: some View {
         HStack (alignment: .center, spacing: 0){
-            // , let imageURL = infoEntry.imageUrl,
             if let movieName = infoEntry.movieName,let imageURL = "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png", let role = infoEntry.characterName {
                 
                 AsyncImage(url: URL(string: imageURL)!,
@@ -174,12 +173,6 @@ struct movieInfoRow: View {
                         .font(.system(size: 21, weight: .heavy, design: .default))
                         .allowsTightening(true)
                         .minimumScaleFactor(0.75)
-                    /*Text("as")
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 16, weight: .heavy, design: .default).italic())
-                        .allowsTightening(true)
-                        .minimumScaleFactor(0.75)
-                     */
                     Text(role)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 16, weight: .heavy, design: .default).italic())
@@ -242,12 +235,6 @@ struct movieInfoRow2: View {
                         .font(.system(size: 21, weight: .heavy, design: .default))
                         .allowsTightening(true)
                         .minimumScaleFactor(0.75)
-                    /*Text("as")
-                        .multilineTextAlignment(.center)
-                        .font(.system(size: 16, weight: .heavy, design: .default).italic())
-                        .allowsTightening(true)
-                        .minimumScaleFactor(0.75)
-                     */
                     Text(role)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 16, weight: .heavy, design: .default).italic())
@@ -330,16 +317,3 @@ struct actorInfoRow: View {
         }
     }
 }
-
-
-
-
-//struct HistoryEntry {
-//    var actorName: String?
-//    @ChattPropWrapper var imageUrl: String?
-//}
-//
-//struct WatchListEntry {
-//    @ChattPropWrapper var imageUrl: String?
-//    var movieName: String?
-//}

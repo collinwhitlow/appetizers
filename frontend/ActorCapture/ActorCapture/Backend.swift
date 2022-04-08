@@ -105,7 +105,6 @@ final class Backend: ObservableObject  {
             self.actorid = (ActorID(actorID: mimo))
             if let whole_dict = data2["cast_movies"] as? [[String:String]] {
                 for dict in whole_dict{
-                    //dict["image"]!
                     self.actorinfo.append(MoreInfoEntry(imageUrl: actorName, characterName: dict["description"],movieName: dict["title"]))
                     
                 }
