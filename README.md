@@ -8,5 +8,5 @@
 ![Team](/assets/team.png)
 
 [demo_page]: https://youtu.be/sample
-[wiki_page]: https://github.com/member/team/wiki
-[process_page]: https://trello.com/b/sample/general
+[wiki_page]: https://github.com/collinwhitlow/appetizers/wiki
+[process_page]: https://trello.com/b/6pPl08ex/appetizers
