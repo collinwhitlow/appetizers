@@ -8,6 +8,6 @@
 ![Team Slide](https://raw.githubusercontent.com/collinwhitlow/appetizers/main/Skeletal%20Product.jpg?token=GHSAT0AAAAAABSHNE4ZURFTISAIMDSLE2RGYS6DF2A) <!-- MUST be placed in user-images.githubusercontent.com -->
 
 
-[demo_page]: https://www.youtube.com/watch?v=5leJ-xSV5O8
+[demo_page]: https://www.youtube.com/watch?v=kIQmYgFqIYE
 [wiki_page]: https://github.com/collinwhitlow/appetizers/wiki
 [process_page]: https://trello.com/b/6pPl08ex/appetizers
